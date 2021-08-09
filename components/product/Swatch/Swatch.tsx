@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import React from 'react'
-import s from './Swatch.module.css'
+import s from './Swatch.module.scss'
 import { Check } from '@components/icons'
 import Button, { ButtonProps } from '@components/ui/Button'
 import { isDark } from '@lib/colors'

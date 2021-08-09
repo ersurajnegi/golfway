@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import { inherits } from 'util'
-import s from './ProductTag.module.css'
+import s from './ProductTag.module.scss'
 
 interface ProductTagProps {
   className?: string
@@ -25,7 +25,7 @@ const ProductTag: React.FC<ProductTagProps> = ({
             lineHeight: `${fontSize}px`,
           }}
         >
-          {name}
+          {name.toUpperCase()}
         </span>
       </h3>
       <div className={s.price}>{price}</div>

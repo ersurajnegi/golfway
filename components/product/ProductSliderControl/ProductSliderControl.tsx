@@ -1,6 +1,6 @@
 import { FC, MouseEventHandler, memo } from 'react'
 import cn from 'classnames'
-import s from './ProductSliderControl.module.css'
+import s from './ProductSliderControl.module.scss'
 import { ArrowLeft, ArrowRight } from '@components/icons'
 
 interface ProductSliderControl {

@@ -1,11 +1,11 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-import s from './ProductView.module.css'
+import s from './ProductView.module.scss'
 import { FC } from 'react'
 import type { Product } from '@commerce/types/product'
 import usePrice from '@framework/product/use-price'
-import { WishlistButton } from '@components/wishlist'
+// import { WishlistButton } from '@components/wishlist'
 import { ProductSlider, ProductCard } from '@components/product'
 import { Container, Text } from '@components/ui'
 import ProductSidebar from '../ProductSidebar'
@@ -25,19 +25,14 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   return (
     <>
       <Container className="max-w-none w-full" clean>
-        <div className={cn(s.root, 'fit')}>
+        <div className={s.sliderContainerWrap}>
           <div className={cn(s.main, 'fit')}>
-            <ProductTag
-              name={product.name}
-              price={`${price} ${product.price?.currencyCode}`}
-              fontSize={32}
-            />
             <div className={s.sliderContainer}>
               <ProductSlider key={product.id}>
                 {product.images.map((image, i) => (
                   <div key={image.url} className={s.imageContainer}>
                     <Image
-                      className={s.img}
+                      // className={s.img}
                       src={image.url!}
                       alt={image.alt || 'Product Image'}
                       width={600}
@@ -49,15 +44,14 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 ))}
               </ProductSlider>
             </div>
-            {process.env.COMMERCE_WISHLIST_ENABLED && (
+            {/* {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
                 productId={product.id}
                 variant={product.variants[0]}
               />
-            )}
+            )} */}
           </div>
-
           <ProductSidebar product={product} className={s.sidebar} />
         </div>
         <hr className="mt-7 border-accent-2" />

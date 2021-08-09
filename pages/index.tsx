@@ -65,6 +65,8 @@ export default function Home(
     fifthSection,
   } = homePage[0].fields
 
+  console.log(heroTwo)
+
   // below code is an effore to remove the video completely from mobile phones
 
   // const [shouldPlay, setShouldPLay] = useState(
@@ -144,6 +146,7 @@ export default function Home(
             src={'https:' + heroTwo.fields.file.url}
             width={heroTwo.fields.file.details.image.width}
             height={heroTwo.fields.file.details.image.height}
+            alt={heroTwo.fields.title}
           />
         </div>
         <div className={s.secondSection}>
@@ -153,11 +156,12 @@ export default function Home(
               src={'https:' + secondSectionBackground.fields.file.url}
               width={secondSectionBackground.fields.file.details.image.width}
               height={secondSectionBackground.fields.file.details.image.height}
+              alt={secondSectionBackground.fields.title}
             />
           </div>
           <div className={s.secondSectionText}>
             {documentToReactComponents(secondSection)}
-            <Link href="">
+            <Link href="/brand">
               <a className={s.link}>Discover</a>
             </Link>
           </div>
@@ -169,6 +173,7 @@ export default function Home(
             src={'https:' + ProductImage.fields.file.url}
             width={ProductImage.fields.file.details.image.width}
             height={ProductImage.fields.file.details.image.height}
+            alt={ProductImage.fields.title}
           />
         </div>
         <div className={s.fourthSection}>

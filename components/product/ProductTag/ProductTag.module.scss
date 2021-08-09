@@ -1,0 +1,8 @@
+@use '../../../assets' as *;
+.name {
+    @include fontHeadingThree;
+}
+
+.price {
+    @include fontOne;
+}

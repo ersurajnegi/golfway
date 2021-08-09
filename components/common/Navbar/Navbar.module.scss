@@ -20,5 +20,15 @@
     .link {
         color: $white;
         @include navFont;
+        @media (max-width: 620px) {
+            display: none;
+        }
     }
+    .active {
+        @include navFont;
+        color: $grey-1;
+    }
+    // @media (max-width: 620px) {
+    //     display: none;
+    // }
 }

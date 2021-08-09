@@ -1,0 +1,87 @@
+@use '../../../assets/' as *;
+.footer {
+    background-color: $grey-1;
+    padding: 6vw;
+    .topBanner {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+        grid-gap: 2vw;
+        @media (max-width: 720px) {
+            grid-template-columns: 1fr;
+        }
+        .logoContact {
+            .logoFooter {
+                @media (max-width: 720px) {
+                    @include center;
+                }
+            }
+            .contactDetails {
+                @include fontOne;
+                color: $white;
+                @media (max-width: 720px) {
+                    font-size: 15px;
+                    margin-top: 1vw;
+                    @include center;
+                    flex-direction: column;
+                }
+            }
+        }
+        .footerElements {
+            display: flex;
+            flex-direction: column;
+            @media (max-width: 720px) {
+                @include center;
+            }
+            h2 {
+                @include fontTwo;
+                color: $white;
+                margin-bottom: 1.5vw;
+                font-size: 1.5vw;
+                @media (max-width: 720px) {
+                    font-size: 18px;
+                }
+            }
+            a {
+                color: $white;
+                font-weight: 300;
+            }
+            .socialWrap {
+                display: flex;
+                margin: 10px;
+                margin-left: 0;
+            }
+        }
+    }
+    .bottomBanner {
+        margin-top: 2vw;
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+        display: flex;
+        justify-content: space-between;
+        padding: 4vw 0;
+        @media (max-width: 720px) {
+            flex-direction: column;
+            @include center;
+        }
+        .cardsAccepted {
+            display: flex;
+            flex-wrap: wrap;
+            .logos {
+                color: $white;
+                margin: 0 1vw;
+                opacity: 0.5;
+                // @media (max-width: 720px) {
+                //     margin-top: 1vw;
+                // }
+            }
+        }
+        .copyrite {
+            span {
+                color: $white
+            }
+            @media (max-width: 720px) {
+                margin-top: 1vw;
+            }
+        }
+    }
+}
