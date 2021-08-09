@@ -82,9 +82,9 @@ export default function Games(
         </div>
         <div className={s.firstSection}>
           {documentToReactComponents(firstSection)}
-          <Link href="">
+          {/* <Link href="">
             <a className={s.link}>Start Now</a>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>

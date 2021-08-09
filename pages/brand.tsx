@@ -132,9 +132,8 @@ export default function Brand(
           {documentToReactComponents(fourthSection)}
           <div className={s.logoWrap}>
             {worldWidePartners.map((logo: any) => (
-              <div className={s.logo}>
+              <div key={logo.sys.id} className={s.logo}>
                 <Image
-                  key={logo.sys.id}
                   layout="responsive"
                   src={'https:' + logo.fields.file.url}
                   width={logo.fields.file.details.image.width}

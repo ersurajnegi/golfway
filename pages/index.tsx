@@ -9,7 +9,6 @@ import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import s from '../assets/pages/page.module.scss'
 import { useState, useEffect } from 'react'
-import document from 'next/document'
 
 export async function getStaticProps({
   preview,
@@ -135,7 +134,7 @@ export default function Home(
         </div>
         <div className={s.firstSection}>
           {documentToReactComponents(firstSection)}
-          <Link href="">
+          <Link href="/games">
             <a className={s.link}>Start Now!</a>
           </Link>
         </div>
