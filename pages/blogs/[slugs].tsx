@@ -40,7 +40,7 @@ export async function getStaticProps({ params }: { params: any }) {
 
 const option = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
       let { file, title } = node.data.target.fields
       return (
         <div>
