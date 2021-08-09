@@ -107,7 +107,7 @@ const Layout: FC<Props> = ({
         <TopBar />
         <Navbar links={navBarlinks} />
         <main className="fit">{children}</main>
-        <Footer pages={pageProps.pages} />
+        <Footer />
         <ModalUI />
         <SidebarUI />
         <FeatureBar
