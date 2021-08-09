@@ -1,0 +1,202 @@
+@use '../../assets' as *;
+.pageWrap {
+    @include pageWidth;
+    .heroContainer {
+        position: relative;
+        .videoWrap {
+            height: 75vh;
+            min-height: 500px;
+            @media (max-width: 620px) {
+                display: none;
+            }
+            .video {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                @media (max-width: 620px) {
+                    display: none;
+                }
+            }
+        }
+        .heroImage {
+            display: none;
+            @media (max-width: 620px) {
+                display: block;
+            }
+        }
+        .heroOverlay {
+            @include overlay;
+        }
+        // home hero text styles
+        .heroTextWrap {
+            @include heroTextWrap;
+            h1 {
+                @include fontHeadingHero;
+                position: absolute;
+                max-width: 26vw;
+                color: $white;
+                text-align: center;
+                @media (max-width: 590px) {
+                    max-width: 29vw;
+                }
+            }
+            // ids for hero text for each page if required
+            #brandHeroText {
+                max-width: 60vw;
+            }
+            #gamesHeroText {
+                max-width: 35vw;
+            }
+        }
+    }
+    .firstSection,
+    .thirdSection,
+    .fourthSection,
+    .fifthSection {
+        padding: 4.333333vw;
+        h2 {
+            @include fontHeadingTwo;
+            margin-bottom: 1vw;
+        }
+        p {
+            @include fontOne;
+        }
+    }
+    .firstSection {
+        @include center;
+        flex-direction: column;
+        .link {
+            margin-top: 2vw;
+            background-color: $green-1;
+            @include buttonOne;
+            color: $white;
+        }
+    }
+    .secondSection {
+        position: relative;
+        margin-bottom: -6px;
+        @media (max-width: 620px) {
+            div {
+                display: none;
+            }
+        }
+        .secondSectionText {
+            width: 40%;
+            top: calc(50% - 13vw);
+            right: 4.333333vw;
+            position: absolute;
+            h2 {
+                @include fontHeadingTwo;
+                margin-bottom: 1vw;
+                color: $white;
+            }
+            p {
+                @include fontOne;
+                color: $white;
+            }
+            .link {
+                margin-top: 2vw;
+                background-color: $white;
+                @include buttonOne;
+                color: $grey-1;
+            }
+            @media (max-width: 620px) {
+                position: relative;
+                background-color: $green-1;
+                width: 100%;
+                top: 0;
+                right: 0;
+                @include center;
+                padding: 4.333333vw;
+                flex-direction: column;
+                p {
+                    width: 80%;
+                }
+            }
+        }
+    }
+    .firstSection,
+    .thirdSection,
+    .fourthSection,
+    .fifthSection {
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+            // font-size: 30px;
+        }
+    }
+    // Alternative layout for first section
+    // Used on the following pages
+    // * Brand Page
+    .firstSectionWrap {
+        display: flex;
+        .firstSection {
+            width: 50%;
+            align-items: flex-start;
+            h2,
+            p {
+                text-align: left;
+                width: 100%;
+            }
+        }
+        .firstSectionImage {
+            padding: 4.333333vw;
+            width: 50%;
+            padding-left: 0;
+            @include center;
+            .imageWrap {
+                width: 80%;
+                padding-bottom: 4vw;
+            }
+        }
+        @media (max-width: 620px) {
+            flex-direction: column;
+            .firstSection {
+                width: 80%;
+                margin: 0 auto;
+                align-items: center;
+                h2,
+                p {
+                    text-align: center;
+                }
+            }
+            .firstSectionImage {
+                margin: 0 auto;
+                width: 80%;
+                padding-left: 4.333333vw;
+                @include center;
+                .imageWrap {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .thirdSection {
+        background-color: $grey-0;
+    }
+    #brandThirdSection {
+        background-color: $white;
+    }
+    .fourthSection {
+        h2 {
+            margin-bottom: 4.333333vw;
+        }
+    }
+    #brandFourthSection {
+        background-color: $grey-0;
+        .logoWrap {
+            width: 90%;
+            margin: 0 auto;
+            padding: 4vw 0;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr;
+            .logo {
+                width: 80%;
+            }
+        }
+    }
+}

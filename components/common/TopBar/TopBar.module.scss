@@ -1,0 +1,31 @@
+@use '../../../assets/' as *;
+.topbar {
+    display: flex;
+    background-color: $grey-1;
+    width: 100vw;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    .linksWrap {
+        display: flex;
+        align-items: center;
+        .login {
+            margin-right: 20px;
+            .topBarLinks {
+                @include navFont;
+                color: $white;
+            }
+            .topBarLinks:nth-child(1) {
+                margin-right: 10px;
+            }
+        }
+        .socialLinks {
+            align-items: center;
+            display: flex;
+            a {
+                margin-right: 10px;
+            }
+        }
+    }
+}

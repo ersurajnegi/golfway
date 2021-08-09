@@ -1,0 +1,185 @@
+/* Custom Colour Golfway */
+
+$green-1: #04af9a;
+$black: #000000;
+$grey-1: #53575a;
+$grey-0: #d9d9d6;
+$grey-background-1:#a0a0a01f;
+$grey-overlay-1: #a0a0a06e;
+$white: #ffffff;
+
+/* Fonts */
+
+$heading: countach,
+sans-serif;
+$text: sofia-pro,
+sans-serif;
+
+/* Layout */
+
+@mixin pageWidth {
+    margin: 0 auto;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin centerGrid {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+@mixin heroTextWrap {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include center;
+}
+
+
+/* Overlay */
+
+@mixin overlay {
+    background-color: $grey-overlay-1;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Shadows */
+
+@mixin boxShadow {
+    box-shadow: 7px 7px 18px 1px #00000014;
+}
+
+
+/* fonts */
+
+@mixin fontHeadingHero {
+    font-family: $heading;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 10vw;
+    line-height: 10vw;
+    @media (max-width: 590px) {
+        font-size: 11vw;
+    }
+}
+
+@mixin fontHeadingOne {
+    font-family: $heading;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 5vw;
+    line-height: 5vw;
+    @media (max-width: 590px) {
+        font-size: 30px;
+        line-height: 30px;
+    }
+}
+
+@mixin fontHeadingTwo {
+    font-family: $heading;
+    font-weight: 700;
+    font-style: normal;
+    color: $grey-1;
+    font-size: 5vw;
+    @media (max-width: 590px) {
+        font-size: 25px;
+    }
+}
+
+@mixin fontHeadingThree {
+    font-family: $heading;
+    font-weight: 700;
+    font-style: normal;
+    color: $grey-1;
+    font-size: 3vw;
+    @media (max-width: 590px) {
+        font-size: 25px;
+    }
+}
+
+@mixin fontHeadingFour {
+    font-family: $heading;
+    font-weight: 700;
+    font-style: normal;
+    color: $grey-1;
+    font-size: 2vw;
+    @media (max-width: 1000px) {
+        font-size: 25px;
+    }
+}
+
+
+/* Nav Fonts */
+
+@mixin navFont {
+    font-family: $text;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 18px;
+    @media (max-width: 590px) {
+        font-size: 13px;
+    }
+}
+
+@mixin fontOne {
+    font-family: $text;
+    font-weight: 100;
+    font-style: normal;
+    color: $grey-1;
+    font-size: 1.5vw;
+    @media (max-width: 800px) {
+        font-size: 15px;
+    }
+}
+
+@mixin fontTwo {
+    font-family: $text;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.5vw;
+    @media (max-width: 590px) {
+        font-size: 13px;
+    }
+}
+
+@mixin fontThree {
+    font-family: $text;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.2vw;
+    @media (max-width: 1000px) {
+        font-size: 13px;
+    }
+}
+
+
+/* Buttons */
+
+@mixin buttonOne {
+    display: inline-block;
+    padding: 1.2vw 4vw 1.6vw;
+    border-radius: 5vw;
+    @include fontTwo;
+    transition: 300ms;
+}
+
+@mixin buttonTwo {
+    display: inline-block;
+    padding: 1vw 2vw 1.2vw;
+    border-radius: 5vw;
+    @include fontThree;
+    transition: 300ms;
+    &:hover {
+        background-color: $grey-1;
+    }
+}

@@ -1,0 +1,103 @@
+@use '../../assets' as *;
+.blogs {
+    .blogsWelcome {
+        padding: 2vw;
+        h1 {
+            @include fontHeadingHero;
+            color: $grey-1;
+            text-align: center;
+            max-width: 45vw;
+            margin: 0 auto 2vw;
+        }
+        h2 {
+            @include fontOne;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/* Blogs Page = blogs this page lists the blogs */
+
+.blogsCardWrap {
+    box-sizing: border-box;
+    margin: 4vw;
+    display: grid;
+    grid-template-columns: 21.5vw 21.5vw 21.5vw 21.5vw;
+    grid-gap: 2vw;
+    @media(max-width: 1130px) {
+        margin: 3vw;
+        grid-template-columns: 30vw 30vw 30vw;
+        grid-gap: 2vw;
+    }
+    @media(max-width: 950px) {
+        margin: 4vw;
+        grid-template-columns: 45vw 45vw;
+        grid-gap: 2vw;
+    }
+    @media(max-width: 650px) {
+        margin: 5vw;
+        grid-template-columns: 90vw;
+        grid-gap: 2vw;
+    }
+}
+
+
+/* Individual Blog Posts Styles = blogs/[slugs] */
+
+.blog {
+    padding: 8vw;
+    @include center;
+    flex-direction: column;
+    .blogHero {
+        @include center;
+        margin-bottom: 2vw;
+    }
+    .textWrap {
+        max-width: 1200px;
+        h1 {
+            @include fontHeadingOne;
+            color: $grey-1;
+            margin: 4vw 0;
+            text-align: center
+        }
+        h2 {
+            @include fontHeadingTwo;
+            color: $grey-1;
+            margin: 2vw 0;
+        }
+        h3 {
+            @include fontHeadingThree;
+            color: $grey-1;
+            margin: 2vw 0;
+        }
+        p {
+            @include fontOne;
+            margin: 1vw 0;
+            color: $grey-1;
+            b {
+                font-weight: 700;
+                color: inherit;
+            }
+        }
+        div {
+            @include center;
+        }
+        picture {
+            margin: 2vw auto;
+            display: block;
+        }
+        blockquote {
+            border-left: 10px solid $green-1;
+            padding: 1vw;
+            margin: 4vw 0;
+            background-color: $grey-background-1;
+        }
+        .author {
+            margin-top: 2vw;
+            @include fontTwo;
+        }
+    }
+}

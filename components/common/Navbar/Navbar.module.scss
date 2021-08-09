@@ -1,0 +1,24 @@
+@use '../../../assets/' as *;
+.nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    align-items: center;
+}
+
+.mobNavSearch {
+    display: none;
+}
+
+.navMenu {
+    padding: 0 4vw;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $green-1;
+    .link {
+        color: $white;
+        @include navFont;
+    }
+}
