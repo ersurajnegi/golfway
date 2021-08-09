@@ -70,6 +70,7 @@ export default function Blog({ blogs }: { blogs: any }) {
           src={'https:' + thumbnail.fields.file.url}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
+          alt={title}
         />
       </div>
       <div className={s.textWrap}>
