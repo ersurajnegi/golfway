@@ -86,7 +86,7 @@ export default function Brand(
         <div className={s.firstSectionWrap}>
           <div className={s.firstSection}>
             {documentToReactComponents(firstSection)}
-            <Link href="">
+            <Link href="/games">
               <a className={s.link}>Start Now</a>
             </Link>
           </div>
@@ -110,11 +110,12 @@ export default function Brand(
               src={'https:' + secondSectionBackground.fields.file.url}
               width={secondSectionBackground.fields.file.details.image.width}
               height={secondSectionBackground.fields.file.details.image.height}
+              alt={secondSectionBackground.fields.title}
             />
           </div>
           <div className={s.secondSectionText}>
             {documentToReactComponents(secondSection)}
-            <Link href="">
+            <Link href="/brand">
               <a className={s.link}>Discover</a>
             </Link>
           </div>
@@ -126,6 +127,7 @@ export default function Brand(
             src={'https:' + ProductImage.fields.file.url}
             width={ProductImage.fields.file.details.image.width}
             height={ProductImage.fields.file.details.image.height}
+            alt={ProductImage.fields.title}
           />
         </div>
         <div id={s.brandFourthSection} className={s.fourthSection}>
@@ -134,10 +136,12 @@ export default function Brand(
             {worldWidePartners.map((logo: any) => (
               <div className={s.logo}>
                 <Image
+                  key={logo.sys.id}
                   layout="responsive"
                   src={'https:' + logo.fields.file.url}
                   width={logo.fields.file.details.image.width}
                   height={logo.fields.file.details.image.height}
+                  alt={logo.fields.title}
                 />
               </div>
             ))}
