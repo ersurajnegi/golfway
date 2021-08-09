@@ -20,6 +20,11 @@ module.exports = withCommerceConfig({
         locales: ['en-US', 'es'],
         defaultLocale: 'en-US',
     },
+    eslint: {
+        // Warning: Dangerously allow production builds to successfully complete even if
+        // your project has ESLint errors.
+        ignoreDuringBuilds: true,
+    },
     rewrites() {
         return [
             (isBC) && {
