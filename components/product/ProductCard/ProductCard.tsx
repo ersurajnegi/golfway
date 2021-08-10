@@ -42,9 +42,6 @@ const ProductCard: FC<Props> = ({
       <a className={rootClassName}>
         {variant === 'slim' && (
           <>
-            <div className={s.header}>
-              <span>{product.name}</span>
-            </div>
             {product?.images && (
               <Image
                 quality="85"
@@ -56,18 +53,21 @@ const ProductCard: FC<Props> = ({
                 {...imgProps}
               />
             )}
+            <div className={s.header}>
+              <span>{product.name}</span>
+            </div>
           </>
         )}
 
         {variant === 'simple' && (
           <>
-            {process.env.COMMERCE_WISHLIST_ENABLED && (
+            {/* {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
                 productId={product.id}
                 variant={product.variants[0]}
               />
-            )}
+            )} */}
             {!noNameTag && (
               <div className={s.header}>
                 <h3 className={s.name}>
@@ -97,17 +97,14 @@ const ProductCard: FC<Props> = ({
 
         {variant === 'default' && (
           <>
-            {process.env.COMMERCE_WISHLIST_ENABLED && (
+            {/* {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
                 productId={product.id}
                 variant={product.variants[0] as any}
               />
-            )}
-            <ProductTag
-              name={product.name}
-              price={`${price} ${product.price?.currencyCode}`}
-            />
+            )} */}
+
             <div className={s.imageContainer}>
               {product?.images && (
                 <Image
@@ -122,6 +119,10 @@ const ProductCard: FC<Props> = ({
                 />
               )}
             </div>
+            <ProductTag
+              name={product.name}
+              price={`${price} ${product.price?.currencyCode}`}
+            />
           </>
         )}
       </a>

@@ -1,3 +1,4 @@
+@use '../../../assets' as *;
 .root {
     @apply relative max-h-full w-full box-border overflow-hidden bg-no-repeat bg-center bg-cover transition-transform ease-linear cursor-pointer inline-block bg-accent-1;
     height: 100% !important;
@@ -35,7 +36,7 @@
 }
 
 .header {
-    @apply transition-colors ease-in-out duration-500 absolute top-0 left-0 z-20 pr-16;
+    @apply transition-colors ease-in-out duration-500 z-20;
 }
 
 .header .name {
@@ -91,11 +92,17 @@
 }
 
 .slim .header {
-    @apply absolute inset-0 flex items-center justify-end mr-8 z-20;
+    @apply inset-0 flex items-center justify-end mr-8 z-20;
 }
 
 .slim span {
-    @apply bg-accent-9 text-accent-0 inline-block p-3 font-bold text-xl break-words;
+    color: $grey-1;
+    @include fontTwo;
+    text-align: center;
+    transition: 300ms;
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 .root:global(.secondary) .header span {

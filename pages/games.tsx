@@ -86,6 +86,11 @@ export default function Games(
             <a className={s.link}>Start Now</a>
           </Link> */}
         </div>
+        <Marquee>
+          {products.map((product: any, i: number) => (
+            <ProductCard key={product.id} product={product} variant="slim" />
+          ))}
+        </Marquee>
       </div>
     </>
   )

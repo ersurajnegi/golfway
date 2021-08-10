@@ -1,3 +1,4 @@
+@use '../../../assets' as *;
 .root {
     @apply relative grid items-start gap-1 grid-cols-1 overflow-x-hidden;
     min-height: auto;
@@ -36,4 +37,10 @@
 
 .button {
     width: 100%;
+}
+
+.relatedProductsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
 }

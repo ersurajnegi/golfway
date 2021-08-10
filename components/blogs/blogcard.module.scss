@@ -2,55 +2,51 @@
     /* Blog Cards Styles appears on the Blog Page */
     
     .blogCard {
-        @include center;
-        justify-content: flex-end;
-        flex-direction: column;
-        @include boxShadow;
-        padding: 1vw;
-        padding-bottom: 2vw;
-        // height: 20vw;
-        // @media (max-width: 1900px) {
-        //     height: 30vw;
-        // }
-        .thumbnail {
-            position: relative;
-            height: 13vw;
-            overflow: hidden;
-            @media(max-width: 950px) {
-                height: 25vw;
-            }
-            @media(max-width: 650px) {
-                height: 45vw;
-            }
-            .titleWrap {
-                @include overlay;
-                @include center;
-                height: 100%;
-                h4 {
-                    @include fontHeadingFour;
-                    color: $white;
-                    text-align: center;
-                    padding: 1vw;
+        a {
+            @include center;
+            justify-content: space-between;
+            flex-direction: column;
+            @include boxShadow;
+            padding: 1rem;
+            .thumbnail {
+                position: relative;
+                height: 12vw;
+                overflow: hidden;
+                .overlay {
+                    @include overlay;
+                }
+                @media(max-width: 950px) {
+                    height: 25vw;
+                }
+                @media(max-width: 650px) {
+                    height: 45vw;
                 }
             }
-        }
-        .info {
-            margin-top: 1vw;
-            @include center;
-            flex-direction: column;
-            p {
-                text-align: center;
-                @include fontThree;
+            .titleWrap {
+                @include center;
+                padding: 0 1rem;
+                h4 {
+                    @include fontHeadingFour;
+                    color: $grey-1;
+                }
             }
-            color: $grey-1
-        }
-        .link {
-            margin-top: 10px;
-            @include center;
-            p {
-                @include buttonTwo;
-                background-color: $green-1;
-                color: $white;
+            .info {
+                @include center;
+                flex-direction: column;
+                p {
+                    text-align: center;
+                    @include fontThree;
+                }
+                color: $grey-1
+            }
+            .link {
+                margin-top: 10px;
+                @include center;
+                p {
+                    @include buttonTwo;
+                    background-color: $green-1;
+                    color: $white;
+                }
             }
         }
     }

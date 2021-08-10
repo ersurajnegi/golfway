@@ -28,14 +28,19 @@ export default function Navbar() {
             Stories
           </a>
         </Link>
-        <Link href="/">
+        {/* <Link href="/">
           <a className={`${router.pathname == '/' ? s.active : s.link}`}>
             Academy
           </a>
-        </Link>
-        <Link href="/">
+        </Link> */}
+        {/* <Link href="/">
           <a className={`${router.pathname == '/' ? s.active : s.link}`}>
             Tournament
+          </a>
+        </Link> */}
+        <Link href="/recycle">
+          <a className={`${router.pathname == '/recycle' ? s.active : s.link}`}>
+            Recycle
           </a>
         </Link>
         <Link href="/blogs">

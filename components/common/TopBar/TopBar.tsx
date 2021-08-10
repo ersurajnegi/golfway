@@ -21,15 +21,27 @@ const TopBar = () => (
       </div>
 
       <div className={s.socialLinks}>
-        <a href="" target="_blank" rel="noopener">
+        <a
+          href="https://twitter.com/GolfwayOfficial"
+          target="_blank"
+          rel="noopener"
+        >
           <img src="/twitter.svg" height="20" width="20" alt="twitter icon" />
         </a>
 
-        <a href="" target="_blank" rel="noopener">
+        <a
+          href="https://www.facebook.com/golfway.official/"
+          target="_blank"
+          rel="noopener"
+        >
           <img src="/facebook.svg" height="20" width="20" alt="facebook icon" />
         </a>
 
-        <a href="" target="_blank" rel="noopener">
+        <a
+          href="https://www.instagram.com/golfway_official/"
+          target="_blank"
+          rel="noopener"
+        >
           <img
             src="/instagram.svg"
             height="20"

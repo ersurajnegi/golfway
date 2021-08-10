@@ -81,9 +81,9 @@
             }
         }
         .secondSectionText {
-            width: 40%;
-            top: calc(50% - 13vw);
-            right: 4.333333vw;
+            max-width: 600px;
+            top: calc(50% - 194px);
+            right: 12%;
             position: absolute;
             h2 {
                 @include fontHeadingTwo;
@@ -175,10 +175,19 @@
             }
         }
     }
+    .heroTwo,
+    .firstSection,
+    .fifthSection,
+    .firstSectionWrap {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
     .thirdSection {
         background-color: $grey-0;
     }
     #brandThirdSection {
+        max-width: 1800px;
+        margin: 0 auto;
         background-color: $white;
     }
     .fourthSection {

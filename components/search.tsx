@@ -63,6 +63,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
     setActiveFilter(filter)
   }
 
+  console.log(categories)
+
   return (
     <Container>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">

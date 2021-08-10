@@ -90,7 +90,7 @@ sans-serif;
     font-weight: 700;
     font-style: normal;
     color: $grey-1;
-    font-size: 5vw;
+    font-size: 95px;
     @media (max-width: 590px) {
         font-size: 25px;
     }
@@ -136,7 +136,7 @@ sans-serif;
     font-weight: 100;
     font-style: normal;
     color: $grey-1;
-    font-size: 1.5vw;
+    font-size: 25px;
     @media (max-width: 800px) {
         font-size: 15px;
     }
@@ -146,9 +146,9 @@ sans-serif;
     font-family: $text;
     font-weight: 800;
     font-style: normal;
-    font-size: 1.5vw;
+    font-size: 25px;
     @media (max-width: 590px) {
-        font-size: 13px;
+        font-size: 15px;
     }
 }
 
@@ -167,16 +167,19 @@ sans-serif;
 
 @mixin buttonOne {
     display: inline-block;
-    padding: 1.2vw 4vw 1.6vw;
-    border-radius: 5vw;
+    padding: 20px 50px 25px;
+    border-radius: 50px;
     @include fontTwo;
     transition: 300ms;
+    &:hover {
+        background-color: $grey-1;
+    }
 }
 
 @mixin buttonTwo {
     display: inline-block;
-    padding: 1vw 2vw 1.2vw;
-    border-radius: 5vw;
+    padding: 20px 50px 25px;
+    border-radius: 50px;
     @include fontThree;
     transition: 300ms;
     &:hover {

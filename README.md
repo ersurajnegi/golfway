@@ -23,7 +23,7 @@ Demo live at: [demo.vercel.store](https://demo.vercel.store/)
 - Theming
 - Standardized Data Hooks
 - Integrations - Integrate seamlessly with the most common ecommerce platforms.
-- Dark Mode Support
+- Mode Support
 
 ## Integrations
 
@@ -79,7 +79,7 @@ For example: Turning `cart` off will disable Cart capabilities.
 
 > NOTE: The selected provider should support the feature that you are toggling. (This means that you can't turn wishlist on if the provider doesn't support this functionality out the box)
 
-- Open `commerce.config.json` 
+- Open `commerce.config.json`
 - You'll see a config file like this:
   ```json
   {

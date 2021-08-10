@@ -65,7 +65,7 @@ export default function Home(
     fifthSection,
   } = homePage[0].fields
 
-  console.log(heroTwo)
+  // console.log(heroTwo)
 
   // below code is an effore to remove the video completely from mobile phones
 
@@ -91,6 +91,10 @@ export default function Home(
   //   return () => window.removeEventListener('resize', updateVideo)
   // })
 
+  // const getWidth = (width: any) => {
+  //   if (width > 620) return tablet
+  // }
+
   return (
     <>
       <div className={s.pageWrap}>
@@ -105,7 +109,7 @@ export default function Home(
               src="video.mp4"
             ></video>
 
-            {/* {shouldPlay ? (
+            {/* {tablet ? (
               <video
                 className={s.video}
                 autoPlay

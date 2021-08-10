@@ -20,15 +20,20 @@
     .link {
         color: $white;
         @include navFont;
-        @media (max-width: 620px) {
-            display: none;
-        }
     }
     .active {
+        color: $white;
         @include navFont;
-        color: $grey-1;
+        position: relative;
+        opacity: 0.6;
+        &::after {
+            content: "";
+            position: absolute;
+            border-bottom: 2px solid $white;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+        }
     }
-    // @media (max-width: 620px) {
-    //     display: none;
-    // }
 }
