@@ -5,8 +5,10 @@
 }
 
 .sliderContainerWrap {
+    padding: 4vw;
     display: grid;
     grid-template-columns: 4fr 2fr;
+    @include pageSectionWidth;
 }
 
 .main {
@@ -32,7 +34,7 @@
 }
 
 .sliderContainer .img {
-    @apply w-full h-auto max-h-full object-cover;
+    @apply h-auto max-h-full object-cover;
 }
 
 .button {
@@ -40,7 +42,9 @@
 }
 
 .relatedProductsGrid {
+    padding: 4vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1.5rem;
+    @include pageSectionWidth;
 }

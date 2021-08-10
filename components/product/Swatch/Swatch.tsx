@@ -4,6 +4,7 @@ import s from './Swatch.module.scss'
 import { Check } from '@components/icons'
 import Button, { ButtonProps } from '@components/ui/Button'
 import { isDark } from '@lib/colors'
+import { serialize } from 'cookie'
 interface SwatchProps {
   active?: boolean
   children?: any
@@ -39,6 +40,8 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
       },
       className
     )
+
+    console.log(variant)
 
     return (
       <Button

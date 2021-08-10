@@ -1,0 +1,8 @@
+@use "../../../assets" as *;
+.option {
+    h2 {
+        margin-top: 0.7rem;
+        @include fontTwo;
+        color: $grey-1;
+    }
+}

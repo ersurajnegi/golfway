@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import s from './ProductOptions.module.scss'
 import { Swatch } from '@components/product'
 import type { ProductOption } from '@commerce/types/product'
 import { SelectedOptions } from '../helpers'
@@ -14,13 +15,12 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
   selectedOptions,
   setSelectedOptions,
 }) => {
+  console.log(options)
   return (
     <div>
       {options.map((opt) => (
-        <div className="pb-4" key={opt.displayName}>
-          <h2 className="uppercase font-medium text-sm tracking-wide">
-            {opt.displayName}
-          </h2>
+        <div className={s.option} key={opt.displayName}>
+          <h2>{opt.displayName.toUpperCase()}:</h2>
           <div className="flex flex-row py-4">
             {opt.values.map((v, i: number) => {
               const active = selectedOptions[opt.displayName.toLowerCase()]

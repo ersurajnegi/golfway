@@ -71,7 +71,6 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           <Button
             aria-label="Add to Cart"
             type="button"
-            className={s.button}
             onClick={addToCart}
             loading={loading}
             disabled={variant?.availableForSale === false}

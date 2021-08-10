@@ -178,16 +178,14 @@
     .heroTwo,
     .firstSection,
     .fifthSection,
-    .firstSectionWrap {
-        max-width: 1800px;
-        margin: 0 auto;
+    .firstSectionWrap,
+    #brandThirdSection {
+        @include pageSectionWidth
     }
     .thirdSection {
         background-color: $grey-0;
     }
     #brandThirdSection {
-        max-width: 1800px;
-        margin: 0 auto;
         background-color: $white;
     }
     .fourthSection {

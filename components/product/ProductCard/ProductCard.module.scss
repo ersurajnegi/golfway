@@ -1,40 +1,39 @@
 @use '../../../assets' as *;
 .root {
-    @apply relative max-h-full w-full box-border overflow-hidden bg-no-repeat bg-center bg-cover transition-transform ease-linear cursor-pointer inline-block bg-accent-1;
+    @apply relative max-h-full w-full box-border overflow-hidden bg-no-repeat bg-center bg-cover transition-transform ease-linear cursor-pointer inline-block;
     height: 100% !important;
 }
 
-.root:hover {
-    & .productImage {
-        transform: scale(1.2625);
-    }
-    & .header .name span,
-    & .header .price,
-    & .wishlistButton {
-        @apply bg-secondary text-secondary;
-    }
-    &:nth-child(6n + 1) .header .name span,
-    &:nth-child(6n + 1) .header .price,
-    &:nth-child(6n + 1) .wishlistButton {
-        @apply bg-violet text-white;
-    }
-    &:nth-child(6n + 5) .header .name span,
-    &:nth-child(6n + 5) .header .price,
-    &:nth-child(6n + 5) .wishlistButton {
-        @apply bg-blue text-white;
-    }
-    &:nth-child(6n + 3) .header .name span,
-    &:nth-child(6n + 3) .header .price,
-    &:nth-child(6n + 3) .wishlistButton {
-        @apply bg-pink text-white;
-    }
-    &:nth-child(6n + 6) .header .name span,
-    &:nth-child(6n + 6) .header .price,
-    &:nth-child(6n + 6) .wishlistButton {
-        @apply bg-cyan text-white;
-    }
-}
-
+// .root:hover {
+//     & .productImage {
+//         transform: scale(1.2625);
+//     }
+//     & .header .name span,
+//     & .header .price,
+//     & .wishlistButton {
+//         @apply bg-secondary text-secondary;
+//     }
+//     &:nth-child(6n + 1) .header .name span,
+//     &:nth-child(6n + 1) .header .price,
+//     &:nth-child(6n + 1) .wishlistButton {
+//         @apply bg-violet text-white;
+//     }
+//     &:nth-child(6n + 5) .header .name span,
+//     &:nth-child(6n + 5) .header .price,
+//     &:nth-child(6n + 5) .wishlistButton {
+//         @apply bg-blue text-white;
+//     }
+//     &:nth-child(6n + 3) .header .name span,
+//     &:nth-child(6n + 3) .header .price,
+//     &:nth-child(6n + 3) .wishlistButton {
+//         @apply bg-pink text-white;
+//     }
+//     &:nth-child(6n + 6) .header .name span,
+//     &:nth-child(6n + 6) .header .price,
+//     &:nth-child(6n + 6) .wishlistButton {
+//         @apply bg-cyan text-white;
+//     }
+// }
 .header {
     @apply transition-colors ease-in-out duration-500 z-20;
 }
@@ -46,7 +45,9 @@
 }
 
 .header .name span {
-    @apply py-4 px-6 bg-primary text-primary font-bold transition-colors ease-in-out duration-500;
+    @include fontTwo;
+    color: $grey-1;
+    // @apply py-4 px-6 bg-primary text-primary font-bold transition-colors ease-in-out duration-500;
     font-size: inherit;
     letter-spacing: inherit;
     box-decoration-break: clone;
@@ -54,7 +55,8 @@
 }
 
 .header .price {
-    @apply pt-2 px-6 pb-4 text-sm bg-primary text-accent-9 font-semibold inline-block tracking-wide transition-colors ease-in-out duration-500;
+    @include fontOne;
+    color: $grey-1;
 }
 
 .imageContainer {

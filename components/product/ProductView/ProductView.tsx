@@ -54,15 +54,12 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           </div>
           <ProductSidebar product={product} className={s.sidebar} />
         </div>
-        <hr className="mt-7 border-accent-2" />
+        {/* <hr className="mt-7" /> */}
         <section className="py-12 px-6 mb-10">
           <Text variant="sectionHeading">Related Products</Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
-              <div
-                key={p.path}
-                className="animated fadeIn bg-accent-0 border border-accent-2"
-              >
+              <div key={p.path} className="animated fadeIn bg-accent-0">
                 <ProductCard
                   noNameTag
                   product={p}

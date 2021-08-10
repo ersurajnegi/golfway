@@ -13,5 +13,9 @@
 }
 
 .sectionHeading {
-    @apply pt-1 pb-2 text-2xl font-bold tracking-wide cursor-pointer mb-2;
+    padding: 0 4vw;
+    @include fontTwo;
+    @include pageSectionWidth;
+    color: $grey-1;
+    @apply pt-1 pb-2 tracking-wide cursor-pointer mb-2;
 }
