@@ -46,7 +46,6 @@
 .header .name span {
   @include fontTwo;
   color: $grey-1;
-  // @apply py-4 px-6 bg-primary text-primary font-bold transition-colors ease-in-out duration-500;
   font-size: inherit;
   letter-spacing: inherit;
   box-decoration-break: clone;
@@ -91,7 +90,7 @@
 }
 
 .slim .header {
-  @apply inset-0 flex items-center justify-center mr-8 z-20;
+  @apply inset-0 flex items-center justify-center z-20;
 }
 
 .slim span {
