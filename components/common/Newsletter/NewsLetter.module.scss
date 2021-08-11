@@ -1,0 +1,48 @@
+@use '../../../assets' as *;
+
+.newsLetterWrap {
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  .newsLetterContainer {
+    margin: 1.5rem auto;
+    display: flex;
+    .inputWrap {
+      margin-right: 1.5rem;
+      input::placeholder {
+        color: $grey-01;
+      }
+      .input {
+        @include buttonOne;
+        border: 1px solid $grey-01;
+        outline: none;
+        color: $grey-1;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
+    .buttonWrap {
+      .button {
+        @include buttonOne;
+        background-color: $green-1;
+        color: $white;
+      }
+    }
+  }
+  .newsLetterInfoContainer {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    @include fontTwo;
+    color: $green-1;
+    .newsLetterValid {
+      @include fontOne;
+    }
+    .newsLetterError {
+      @include fontOne;
+      color: $red-1;
+    }
+  }
+}

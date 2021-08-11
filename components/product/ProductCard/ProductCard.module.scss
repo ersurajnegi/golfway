@@ -1,7 +1,8 @@
 @use '../../../assets' as *;
 .root {
-    @apply relative max-h-full w-full box-border overflow-hidden bg-no-repeat bg-center bg-cover transition-transform ease-linear cursor-pointer inline-block;
-    height: 100% !important;
+  @apply relative max-h-full w-full box-border overflow-hidden bg-no-repeat bg-center bg-cover transition-transform ease-linear cursor-pointer inline-block;
+  height: 100% !important;
+  margin: 0 1rem;
 }
 
 // .root:hover {
@@ -35,78 +36,74 @@
 //     }
 // }
 .header {
-    @apply transition-colors ease-in-out duration-500 z-20;
 }
 
 .header .name {
-    @apply pt-0 max-w-full w-full leading-extra-loose transition-colors ease-in-out duration-500;
-    font-size: 2rem;
-    letter-spacing: 0.4px;
+  font-size: 2rem;
+  letter-spacing: 0.4px;
 }
 
 .header .name span {
-    @include fontTwo;
-    color: $grey-1;
-    // @apply py-4 px-6 bg-primary text-primary font-bold transition-colors ease-in-out duration-500;
-    font-size: inherit;
-    letter-spacing: inherit;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+  @include fontTwo;
+  color: $grey-1;
+  // @apply py-4 px-6 bg-primary text-primary font-bold transition-colors ease-in-out duration-500;
+  font-size: inherit;
+  letter-spacing: inherit;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .header .price {
-    @include fontOne;
-    color: $grey-1;
+  @include fontOne;
+  color: $grey-1;
 }
 
 .imageContainer {
-    @apply flex items-center justify-center overflow-hidden;
+  @apply flex items-center justify-center overflow-hidden;
 }
 
-.imageContainer>div {
-    min-width: 100%;
+.imageContainer > div {
+  min-width: 100%;
 }
 
 .imageContainer .productImage {
-    @apply transform transition-transform duration-500 object-cover scale-120;
+  @apply transform transition-transform duration-500 object-cover scale-120;
 }
 
 .root .wishlistButton {
-    @apply top-0 right-0 z-30 absolute;
+  @apply top-0 right-0 z-30 absolute;
 }
-
 
 /* Variant Simple */
 
 .simple .header .name {
-    @apply pt-2 text-lg leading-10 -mt-1;
+  @apply pt-2 text-lg leading-10 -mt-1;
 }
 
 .simple .header .price {
-    @apply text-sm;
+  @apply text-sm;
 }
-
 
 /* Variant Slim */
 
 .slim {
-    @apply bg-transparent relative overflow-hidden box-border;
+  @apply bg-transparent relative overflow-hidden box-border;
 }
 
 .slim .header {
-    @apply inset-0 flex items-center justify-end mr-8 z-20;
+  @apply inset-0 flex items-center justify-center mr-8 z-20;
 }
 
 .slim span {
-    color: $grey-1;
-    @include fontTwo;
-    text-align: center;
-    transition: 300ms;
-    &:hover {
-        opacity: 0.5;
-    }
+  color: $grey-1;
+  @include fontTwo;
+  text-align: center;
+  transition: 300ms;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .root:global(.secondary) .header span {
-    @apply bg-accent-0 text-accent-9;
+  @apply bg-accent-0 text-accent-9;
 }

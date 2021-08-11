@@ -7,6 +7,7 @@ import { Grid, Marquee, Hero } from '@components/ui'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import NewsLetter from '../components/common/Newsletter/NewsLetter'
 import s from '../assets/pages/page.module.scss'
 import { useState, useEffect } from 'react'
 
@@ -64,36 +65,6 @@ export default function Home(
     fourthSection,
     fifthSection,
   } = homePage[0].fields
-
-  // console.log(heroTwo)
-
-  // below code is an effore to remove the video completely from mobile phones
-
-  // const [shouldPlay, setShouldPLay] = useState(
-  //   typeof window !== 'undefined'
-  //     ? (() => {
-  //         window.innerWidth > 620
-  //       })()
-  //     : ''
-  // )
-  // const updateVideo = () => {
-  //   setShouldPLay(
-  //     typeof window !== 'undefined'
-  //       ? (() => {
-  //           window.innerWidth > 620
-  //         })()
-  //       : ''
-  //   )
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', updateVideo)
-  //   return () => window.removeEventListener('resize', updateVideo)
-  // })
-
-  // const getWidth = (width: any) => {
-  //   if (width > 620) return tablet
-  // }
 
   return (
     <>
@@ -190,6 +161,7 @@ export default function Home(
         </div>
         <div className={s.fifthSection}>
           {documentToReactComponents(fifthSection)}
+          <NewsLetter />
         </div>
         {/* 
         <Grid variant="filled">

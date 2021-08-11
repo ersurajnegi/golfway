@@ -1,5 +1,5 @@
 import s from './TopBar.module.scss'
-import Link from 'next/link'
+import Image from 'next/image'
 // import { I18nWidget } from '@components/common'
 
 const TopBar = () => (
@@ -24,25 +24,30 @@ const TopBar = () => (
         <a
           href="https://twitter.com/GolfwayOfficial"
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
         >
-          <img src="/twitter.svg" height="20" width="20" alt="twitter icon" />
+          <Image src="/twitter.svg" height="20" width="20" alt="twitter icon" />
         </a>
 
         <a
           href="https://www.facebook.com/golfway.official/"
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
         >
-          <img src="/facebook.svg" height="20" width="20" alt="facebook icon" />
+          <Image
+            src="/facebook.svg"
+            height="20"
+            width="20"
+            alt="facebook icon"
+          />
         </a>
 
         <a
           href="https://www.instagram.com/golfway_official/"
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
         >
-          <img
+          <Image
             src="/instagram.svg"
             height="20"
             width="20"

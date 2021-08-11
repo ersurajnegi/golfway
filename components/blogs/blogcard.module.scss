@@ -1,56 +1,59 @@
-    @use '../../assets' as *;
-    /* Blog Cards Styles appears on the Blog Page */
-    
-    .blogCard {
-        a {
-            @include center;
-            justify-content: space-between;
-            flex-direction: column;
-            @include boxShadow;
-            padding: 1rem;
-            .thumbnail {
-                position: relative;
-                height: 12vw;
-                overflow: hidden;
-                .overlay {
-                    @include overlay;
-                }
-                @media(max-width: 950px) {
-                    height: 25vw;
-                }
-                @media(max-width: 650px) {
-                    height: 45vw;
-                }
-            }
-            .titleWrap {
-                @include center;
-                padding: 0 1rem;
-                h4 {
-                    @include fontHeadingFour;
-                    color: $grey-1;
-                }
-            }
-            .info {
-                @include center;
-                flex-direction: column;
-                p {
-                    text-align: center;
-                    @include fontThree;
-                }
-                color: $grey-1
-            }
-            .link {
-                margin-top: 10px;
-                @include center;
-                p {
-                    @include buttonTwo;
-                    background-color: $green-1;
-                    color: $white;
-                }
-            }
-        }
+@use '../../assets' as *;
+/* Blog Cards Styles appears on the Blog Page */
+
+.blogCard {
+  a {
+    @include center;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid $grey-01;
+    // border-radius: 5px;
+    // @include boxShadow;
+    padding: 1.5rem;
+    .thumbnail {
+      position: relative;
+      height: 12vw;
+      overflow: hidden;
+      .overlay {
+        @include overlay;
+      }
+      @media (max-width: 950px) {
+        height: 25vw;
+      }
+      @media (max-width: 650px) {
+        height: 45vw;
+      }
     }
-    
-    .blogCard:last-child {
-        margin-right: 0vw;
+    .titleWrap {
+      @include center;
+      padding: 0 1rem;
+      h4 {
+        @include fontHeadingFour;
+        color: $grey-1;
+        text-align: center;
+      }
     }
+    .info {
+      @include center;
+      flex-direction: column;
+      p {
+        text-align: center;
+        @include fontThree;
+      }
+      color: $grey-01;
+    }
+    .link {
+      margin-top: 10px;
+      @include center;
+      p {
+        @include buttonTwo;
+        background-color: $green-1;
+        color: $white;
+      }
+    }
+  }
+}
+
+.blogCard:last-child {
+  margin-right: 0vw;
+}
