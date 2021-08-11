@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, ReactChild } from 'react'
 import s from './ProductOptions.module.scss'
 import { Swatch } from '@components/product'
 import type { ProductOption } from '@commerce/types/product'
@@ -7,7 +7,7 @@ import { SelectedOptions } from '../helpers'
 interface ProductOptionsProps {
   options: ProductOption[]
   selectedOptions: SelectedOptions
-  setSelectedOptions: React.Dispatch<React.SetStateAction<SelectedOptions>>
+  setSelectedOptions: React.Dispatch<React<SelectedOptions>>
 }
 
 const ProductOptions: React.FC<ProductOptionsProps> = ({
@@ -32,7 +32,7 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
                   color={v.hexColors ? v.hexColors[0] : ''}
                   label={v.label}
                   onClick={() => {
-                    setSelectedOptions((selectedOptions) => {
+                    setSelectedOptions((selectedOptions: any) => {
                       return {
                         ...selectedOptions,
                         [opt.displayName.toLowerCase()]: v.label.toLowerCase(),
