@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
+    "build:local":"env-cmd -f .env.local next dev",
     "start": "next start",
     "analyze": "BUNDLE_ANALYZE=both yarn build",
     "lint": "next lint",
@@ -29,6 +30,7 @@
     "contentful": "^8.4.2",
     "cookie": "^0.4.1",
     "email-validator": "^2.0.4",
+    "env-cmd": "^10.1.0",
     "html-entities": "^2.3.2",
     "immutability-helper": "^3.1.1",
     "js-cookie": "^2.2.1",

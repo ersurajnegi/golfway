@@ -35,6 +35,8 @@ export async function getStaticProps({
     accessToken: `${process.env.CONTENTFUL_ACCESS_KEY}`,
   })
 
+  console.log(process.env)
+
   const res = await client.getEntries({ content_type: 'home' })
 
   return {
@@ -44,13 +46,18 @@ export async function getStaticProps({
       brands,
       pages,
       homePage: res.items,
+      url: process.env.MAILCHIMP_URL,
     },
     revalidate: 60,
   }
 }
 
 export default function Home(
-  { homePage, products }: { products: any; homePage: any; categories: string },
+  {
+    homePage,
+    products,
+    url,
+  }: { products: any; homePage: any; categories: string; url: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const {
@@ -161,7 +168,7 @@ export default function Home(
         </div>
         <div className={s.fifthSection}>
           {documentToReactComponents(fifthSection)}
-          <NewsLetter />
+          <NewsLetter url={url} />
         </div>
         {/* 
         <Grid variant="filled">
