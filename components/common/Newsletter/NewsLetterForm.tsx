@@ -11,8 +11,8 @@ const NewsletterForm = ({
   message: any
   onValidated: any
 }) => {
-  const [error, setError] = useState(null)
-  const [email, setEmail] = useState(null)
+  const [error, setError] = useState('')
+  const [email, setEmail] = useState('')
 
   /**
    * Handle form submit.
@@ -20,7 +20,7 @@ const NewsletterForm = ({
    * @return {{value}|*|boolean|null}
    */
   const handleFormSubmit = () => {
-    setError(null)
+    setError('')
 
     if (!email) {
       setError('Please enter a valid email address')
@@ -39,7 +39,7 @@ const NewsletterForm = ({
    * @param event
    */
   const handleInputKeyEvent = (event: any) => {
-    setError(null)
+    setError('')
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
       // Cancel the default action, if needed
@@ -57,14 +57,14 @@ const NewsletterForm = ({
    */
   const getMessage = (message: any) => {
     if (!message) {
-      return null
+      return ''
     }
-    const result = message?.split('-') ?? null
+    const result = message?.split('-') ?? ''
     if ('0' !== result?.[0]?.trim()) {
       return decode(message)
     }
-    const formattedMessage = result?.[1]?.trim() ?? null
-    return formattedMessage ? decode(formattedMessage) : null
+    const formattedMessage = result?.[1]?.trim() ?? ''
+    return formattedMessage ? decode(formattedMessage) : ''
   }
 
   return (

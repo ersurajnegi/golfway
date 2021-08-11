@@ -7,7 +7,7 @@ import { SelectedOptions } from '../helpers'
 interface ProductOptionsProps {
   options: ProductOption[]
   selectedOptions: SelectedOptions
-  setSelectedOptions: React.Dispatch<React<SelectedOptions>>
+  setSelectedOptions: React.Dispatch<SelectedOptions>
 }
 
 const ProductOptions: React.FC<ProductOptionsProps> = ({
