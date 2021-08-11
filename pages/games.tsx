@@ -91,6 +91,7 @@ export default function Games(
             <ProductCard key={product.id} product={product} variant="slim" />
           ))}
         </Marquee>
+        <h1>Brews</h1>
       </div>
     </>
   )
