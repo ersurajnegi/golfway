@@ -1,0 +1,15 @@
+@use '../../../assets' as *;
+
+// bag icon
+.bag {
+  padding: 1px;
+  transition: 200ms;
+  border-radius: 50%;
+  border: 2px solid $white;
+  &:hover {
+    border: 2px solid $grey-1;
+  }
+  .st1 {
+    fill: $grey-1;
+  }
+}

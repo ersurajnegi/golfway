@@ -1,32 +1,28 @@
+import s from './icons styles/icons.module.scss'
+
 const Bag = ({ ...props }) => {
   return (
-    <svg
-      width="20"
-      height="22"
-      viewBox="0 0 20 22"
-      fill="none"
-      stroke="currentColor"
-      {...props}
-    >
-      <path
-        d="M4 1L1 5V19C1 19.5304 1.21071 20.0391 1.58579 20.4142C1.96086 20.7893 2.46957 21 3 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V5L16 1H4Z"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M1 5H19"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14 9C14 10.0609 13.5786 11.0783 12.8284 11.8284C12.0783 12.5786 11.0609 13 10 13C8.93913 13 7.92172 12.5786 7.17157 11.8284C6.42143 11.0783 6 10.0609 6 9"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <div className={s.bag}>
+      <svg
+        width="25"
+        height="24"
+        viewBox="0 0 25 24"
+        fill="none"
+        className={s.st2}
+        // stroke="currentColor"
+        {...props}
+        version="1.1"
+        id="Layer_1"
+      >
+        <path className={s.st0} d="M0,0h24v24H0V0z" />
+        <path
+          className={s.st1}
+          d="M22,9h-4.8l-4.4-6.6C12.6,2.2,12.3,2,12,2s-0.6,0.1-0.8,0.4L6.8,9H2c-0.5,0-1,0.4-1,1c0,0.1,0,0.2,0,0.3
+	l2.5,9.3c0.2,0.8,1,1.5,1.9,1.5h13c0.9,0,1.7-0.6,1.9-1.5l2.5-9.3l0-0.3C23,9.4,22.5,9,22,9z M12,4.8L14.8,9H9.2L12,4.8z M18.5,19
+	l-13,0l-2.2-8h17.4L18.5,19z M12,13c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,13,12,13z"
+        />
+      </svg>
+    </div>
   )
 }
 

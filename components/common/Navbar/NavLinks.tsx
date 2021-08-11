@@ -8,6 +8,11 @@ export default function Navbar() {
   return (
     <>
       <nav className={s.navMenu}>
+        <Link href="/">
+          <a className={`${router.pathname == '/' ? s.active : s.link}`}>
+            Home
+          </a>
+        </Link>
         <Link href="/games">
           <a className={`${router.pathname == '/games' ? s.active : s.link}`}>
             Games
