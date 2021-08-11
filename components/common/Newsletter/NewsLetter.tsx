@@ -1,8 +1,10 @@
 import NewsLetterForm from './NewsLetterForm'
+// import { ReactMailchimpEmailSignupForm } from 'react-mailchimp-email-signup-form'
+
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 const Newsletter = () => {
-  const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL
+  const MAILCHIMP_URL = process.env.MAILCHIMP_URL
 
   return (
     <MailchimpSubscribe
