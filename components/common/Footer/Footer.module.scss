@@ -1,87 +1,119 @@
 @use '../../../assets/' as *;
 .footer {
-    background-color: $grey-1;
-    padding: 6vw;
-    .topBanner {
+  background-color: $grey-1;
+  padding: 6rem;
+  @media (max-width: 1400px) {
+    padding: 5rem;
+  }
+
+  @media (max-width: 500px) {
+    padding: 5rem 1rem;
+  }
+  .topBanner {
+    display: grid;
+    grid-template-columns: 1.4fr 5fr;
+    grid-gap: 1rem;
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+    .logoContact {
+      margin-right: 2rem;
+      @media (max-width: 900px) {
+        margin-right: 0;
+      }
+      .logoFooter {
+        @media (max-width: 900px) {
+          @include center;
+        }
+      }
+      .contactDetails {
+        @include fontOne;
+        color: $white;
+        margin: 2rem 1rem 3rem 0rem;
+        @media (max-width: 900px) {
+          margin: 1rem;
+          margin-left: 0rem;
+          @include center;
+          flex-direction: column;
+        }
+      }
+    }
+    .footerElementsWrap {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 0.8fr 1fr 0.8fr 0.5fr;
+      grid-gap: 1rem;
+      @media (max-width: 900px) {
+        margin: 3rem auto;
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-        grid-gap: 2vw;
-        @media (max-width: 720px) {
-            grid-template-columns: 1fr;
-        }
-        .logoContact {
-            .logoFooter {
-                @media (max-width: 720px) {
-                    @include center;
-                }
-            }
-            .contactDetails {
-                @include fontOne;
-                color: $white;
-                @media (max-width: 720px) {
-                    font-size: 15px;
-                    margin-top: 1vw;
-                    @include center;
-                    flex-direction: column;
-                }
-            }
-        }
-        .footerElements {
-            display: flex;
-            flex-direction: column;
-            @media (max-width: 720px) {
-                @include center;
-            }
-            h2 {
-                @include fontTwo;
-                color: $white;
-                margin-bottom: 1.5vw;
-                font-size: 1.5vw;
-                @media (max-width: 720px) {
-                    font-size: 18px;
-                }
-            }
-            a {
-                color: $white;
-                font-weight: 300;
-            }
-            .socialWrap {
-                display: flex;
-                margin: 10px;
-                margin-left: 0;
-            }
-        }
-    }
-    .bottomBanner {
-        margin-top: 2vw;
-        border-top: 1px solid $white;
-        border-bottom: 1px solid $white;
+        grid-template-columns: 1fr 1fr;
+        width: 300px;
+        padding-left: 10px;
+      }
+      @media (max-width: 330px) {
+        width: 100%;
+        padding-left: 20px;
+        grid-gap: 0;
+      }
+      .footerElements {
         display: flex;
-        justify-content: space-between;
-        padding: 4vw 0;
-        @media (max-width: 720px) {
-            flex-direction: column;
-            @include center;
+        flex-direction: column;
+        @media (max-width: 900px) {
+          margin-bottom: 1rem;
         }
-        .cardsAccepted {
-            display: flex;
-            flex-wrap: wrap;
-            .logos {
-                color: $white;
-                margin: 0 1vw;
-                opacity: 0.5;
-                // @media (max-width: 720px) {
-                //     margin-top: 1vw;
-                // }
-            }
+        h2 {
+          @include fontTwo;
+          color: $white;
+          margin-bottom: 1rem;
         }
-        .copyrite {
-            span {
-                color: $white
-            }
-            @media (max-width: 720px) {
-                margin-top: 1vw;
-            }
+        a {
+          color: $white;
+          @include fontTwo;
+          font-weight: 300;
         }
+        .socialWrap {
+          display: flex;
+          width: 74px;
+          justify-content: space-between;
+          // margin: 10px;
+          // margin-left: 0;
+        }
+      }
     }
+  }
+  .bottomBanner {
+    margin-top: 1rem;
+    border-top: 1px solid $grey-01;
+    border-bottom: 1px solid $grey-01;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      @include center;
+    }
+    .cardsAccepted {
+      display: flex;
+      flex-wrap: wrap;
+      .logos {
+        color: $white;
+        margin: 0 1rem;
+        opacity: 0.5;
+        // @media (max-width: 900px) {
+        //     margin-top: 1vw;
+        // }
+      }
+    }
+    .copyrite {
+      margin-right: 1rem;
+      span {
+        @include fontOne;
+        color: $white;
+      }
+      @media (max-width: 900px) {
+        margin-top: 1rem;
+      }
+    }
+  }
 }
