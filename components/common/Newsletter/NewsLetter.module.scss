@@ -7,8 +7,15 @@
   .newsLetterContainer {
     margin: 1.5rem auto;
     display: flex;
+
+    @media (max-width: 620px) {
+      flex-direction: column;
+    }
     .inputWrap {
       margin-right: 1.5rem;
+      @media (max-width: 620px) {
+        margin-right: 0;
+      }
       input::placeholder {
         color: $grey-01;
       }
@@ -24,6 +31,10 @@
     }
 
     .buttonWrap {
+      @media (max-width: 620px) {
+        margin-top: 1rem;
+        @include center;
+      }
       .button {
         @include buttonOne;
         background-color: $green-1;

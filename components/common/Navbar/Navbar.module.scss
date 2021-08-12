@@ -4,6 +4,9 @@
   justify-content: space-around;
   padding: 30px;
   align-items: center;
+  @media (max-width: 700px) {
+    padding: 1rem;
+  }
 }
 
 .mobNavSearch {
@@ -32,13 +35,14 @@
       border-bottom: 2px solid $white;
       bottom: 0;
       left: 0;
-      width: 50%;
+      width: 20px;
       height: 10px;
     }
   }
   @media (max-width: 700px) {
     position: absolute;
     flex-direction: column;
+    top: 0;
     height: 300px;
     justify-content: center;
     align-items: flex-start;
@@ -78,17 +82,15 @@
 
 .menu {
   position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 8px;
-  margin-right: 8px;
+  top: 25px;
+  right: 13px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   display: none;
   padding: 0px;
-  height: 39px;
-  background-color: $white;
+  //   height: 39px;
+  //   background-color: $white;
 
   @media (max-width: 700px) {
     display: flex;
@@ -97,7 +99,7 @@
 
 .line {
   fill: none;
-  stroke: $green-1;
+  stroke: $grey-1;
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);

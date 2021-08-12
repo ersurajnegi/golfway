@@ -12,8 +12,8 @@ const Footer = () => {
         <div className={s.logoContact}>
           <div className={s.logoFooter}>
             <Link href="/">
-              <a className="flex flex-initial items-center font-bold md:mr-24">
-                <span className="rounded-full border border-accent-6 mr-2">
+              <a>
+                <span>
                   <LogoWhite />
                 </span>
               </a>

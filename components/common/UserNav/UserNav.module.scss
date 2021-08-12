@@ -1,6 +1,9 @@
 @use '../../../assets' as *;
 .root {
   @apply relative;
+  @media (max-width: 700px) {
+    margin-right: 50px;
+  }
 }
 
 .list {
