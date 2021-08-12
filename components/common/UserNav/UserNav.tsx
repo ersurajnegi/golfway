@@ -25,21 +25,6 @@ const UserNav: FC<Props> = ({ className }) => {
   return (
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
-        {process.env.COMMERCE_CART_ENABLED && (
-          <li className={s.item} onClick={toggleSidebar}>
-            <Bag />
-            {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>}
-          </li>
-        )}
-        {/* {process.env.COMMERCE_WISHLIST_ENABLED && (
-          <li className={s.item}>
-            <Link href="/wishlist">
-              <a onClick={closeSidebarIfPresent} aria-label="Wishlist">
-                <Heart />
-              </a>
-            </Link>
-          </li>
-        )} */}
         {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
           <li className={s.item}>
             {customer ? (
@@ -55,6 +40,24 @@ const UserNav: FC<Props> = ({ className }) => {
             )}
           </li>
         )}
+        {process.env.COMMERCE_CART_ENABLED && (
+          <li className={s.item} onClick={toggleSidebar}>
+            <Bag />
+            {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>}
+          </li>
+        )}
+        {/* {process.env.COMMERCE_WISHLIST_ENABLED && (
+          <li className={s.item}>
+            <Link href="/wishlist">
+              <a onClick={closeSidebarIfPresent} aria-label="Wishlist">
+                <Heart />
+              </a>
+            </Link>
+          </li>
+        )} */}
+        <li className={s.donate}>
+          <a href="/">Donate</a>
+        </li>
       </ul>
     </nav>
   )

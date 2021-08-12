@@ -66,8 +66,8 @@ export default function Navbar() {
             Products
           </a>
         </Link>
-        <Link href="/">
-          <a className={`${router.pathname == '/' ? s.active : s.link}`}>
+        <Link href="/stories">
+          <a className={`${router.pathname == '/stories' ? s.active : s.link}`}>
             Stories
           </a>
         </Link>
@@ -96,6 +96,9 @@ export default function Navbar() {
             KidZone
           </a>
         </Link>
+        <li className={s.donate}>
+          <a href="/">Donate</a>
+        </li>
         {/* {links?.map((l) => (
           <Link href={l.href} key={l.href}>
             <a className={s.link}>{l.label}</a>

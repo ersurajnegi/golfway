@@ -49,6 +49,9 @@ const Footer = () => {
               <a>Blog</a>
             </Link>
             <Link href="/">
+              <a>Privacy Policy</a>
+            </Link>
+            <Link href="/">
               <a>Sitemap</a>
             </Link>
           </div>
@@ -117,15 +120,15 @@ const Footer = () => {
       </div>
       <div className={s.bottomBanner}>
         <div className={s.cardsAccepted}>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
-          <div className={s.logos}>Cards</div>
+          <div className={s.paymentsWrap}>
+            <Image
+              src="/payment-gateways.png"
+              width={728}
+              height={46}
+              layout="responsive"
+              alt="payment gateways logo's"
+            />
+          </div>
         </div>
 
         <div className={s.copyrite}>

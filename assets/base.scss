@@ -9,6 +9,7 @@ $grey-01: #bdbdbd;
 $grey-background-1: #a0a0a01f;
 $grey-overlay-1: #a0a0a06e;
 $white: #ffffff;
+$white-opacity: #ffffff8f;
 
 /* Variant Colours */
 
@@ -99,14 +100,23 @@ $text: sofia-pro, sans-serif;
   font-style: normal;
   color: $grey-1;
   font-size: 95px;
+  line-height: 90px;
   @media (max-width: 1750px) {
     font-size: 85px;
+    line-height: 80px;
   }
   @media (max-width: 1150px) {
     font-size: 65px;
+    line-height: 60px;
   }
+  @media (max-width: 700px) {
+    font-size: 45px;
+    line-height: 40px;
+  }
+
   @media (max-width: 590px) {
-    font-size: 25px;
+    font-size: 30px;
+    line-height: 30px;
   }
 }
 
