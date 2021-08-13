@@ -30,7 +30,7 @@ export default function Navbar() {
       </button>
       <nav className={`${s.navMenu} ${navMenu}`}>
         <button
-          className={`${s.menu} ${navButton}`}
+          className={`${s.menu} ${s.menuButton} ${navButton}`}
           onClick={() => setNavState(!navState)}
           aria-label="Main Menu"
         >
@@ -47,27 +47,42 @@ export default function Navbar() {
           </svg>
         </button>
         <Link href="/">
-          <a className={`${router.pathname == '/' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/' ? s.active : s.link}`}
+          >
             Home
           </a>
         </Link>
         <Link href="/games">
-          <a className={`${router.pathname == '/games' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/games' ? s.active : s.link}`}
+          >
             Games
           </a>
         </Link>
         <Link href="/brand">
-          <a className={`${router.pathname == '/brand' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/brand' ? s.active : s.link}`}
+          >
             Brand
           </a>
         </Link>
         <Link href="/search">
-          <a className={`${router.pathname == '/search' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/search' ? s.active : s.link}`}
+          >
             Products
           </a>
         </Link>
         <Link href="/stories">
-          <a className={`${router.pathname == '/stories' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/stories' ? s.active : s.link}`}
+          >
             Stories
           </a>
         </Link>
@@ -82,21 +97,30 @@ export default function Navbar() {
           </a>
         </Link> */}
         <Link href="/recycle">
-          <a className={`${router.pathname == '/recycle' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/recycle' ? s.active : s.link}`}
+          >
             Recycle
           </a>
         </Link>
         <Link href="/blogs">
-          <a className={`${router.pathname == '/blogs' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/blogs' ? s.active : s.link}`}
+          >
             Blogs
           </a>
         </Link>
         <Link href="/">
-          <a className={`${router.pathname == '/kidzone' ? s.active : s.link}`}>
+          <a
+            onClick={() => setNavState(!navState)}
+            className={`${router.pathname == '/kidzone' ? s.active : s.link}`}
+          >
             KidZone
           </a>
         </Link>
-        <li className={s.donate}>
+        <li onClick={() => setNavState(!navState)} className={s.donate}>
           <a href="/">Donate</a>
         </li>
         {/* {links?.map((l) => (
