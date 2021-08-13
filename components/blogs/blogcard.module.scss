@@ -17,36 +17,52 @@
       .overlay {
         @include overlay;
       }
-      @media (max-width: 950px) {
-        height: 25vw;
+      @media (max-width: 1410px) {
+        height: 10vw;
+      }
+      @media (max-width: 1330px) {
+        height: 15vw;
+      }
+      @media (max-width: 990px) {
+        height: 22vw;
+      }
+      @media (max-width: 750px) {
+        height: 18vw;
       }
       @media (max-width: 650px) {
-        height: 45vw;
+        height: 32vw;
       }
     }
-    .titleWrap {
-      @include center;
-      padding: 0 1rem;
-      h4 {
-        @include fontHeadingFour;
-        color: $grey-1;
-        text-align: center;
-      }
-    }
-    .info {
+    .titeInfoWrap {
       @include center;
       flex-direction: column;
-      p {
-        text-align: center;
-        @include fontThree;
+      height: 7rem;
+      margin: 0.5rem 0 0;
+      .titleWrap {
+        @include center;
+        padding: 0 1rem;
+        h4 {
+          @include fontHeadingFour;
+          color: $grey-1;
+          text-align: center;
+        }
       }
-      color: $grey-01;
+      .info {
+        @include center;
+        flex-direction: column;
+        p {
+          text-align: center;
+          @include fontThree;
+        }
+        color: $grey-01;
+      }
     }
+
     .link {
       margin-top: 10px;
       @include center;
       p {
-        @include buttonTwo;
+        @include buttonOne;
         background-color: $green-1;
         color: $white;
       }

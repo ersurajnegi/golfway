@@ -28,7 +28,7 @@ export async function getStaticProps({
   }
 }
 
-export default function Recycle(
+export default function KidZone(
   { products }: { products: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -42,4 +42,4 @@ export default function Recycle(
   )
 }
 
-Recycle.Layout = Layout
+KidZone.Layout = Layout

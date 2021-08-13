@@ -76,48 +76,49 @@
   }
   .secondSection {
     position: relative;
-    // margin-bottom: -6px;
-    // @media (max-width: 620px) {
-    //   div {
-    //     display: none;
-    //   }
-    // }
+    .secondSectionBackground {
+      @media (max-width: 590px) {
+        display: none;
+      }
+    }
+
     .secondSectionText {
       max-width: 600px;
-      top: calc(50% - 203px);
+      top: calc(50% - 165px);
       right: 12%;
       position: absolute;
       @media (max-width: 1750px) {
-        top: calc(50% - 170px);
+        top: calc(50% - 136px);
       }
 
       @media (max-width: 1450px) {
         max-width: 470px;
-        top: calc(50% - 176px);
+        top: calc(50% - 150px);
       }
 
       @media (max-width: 1150px) {
-        top: calc(50% - 151px);
+        top: calc(50% - 99px);
         right: 8%;
       }
 
       @media (max-width: 800px) {
         max-width: 360px;
-        top: calc(50% - 136px);
+        top: calc(50% - 96px);
       }
 
       @media (max-width: 590px) {
-        max-width: 258px;
-        top: calc(50% - 103px);
-      }
-
-      @media (max-width: 490px) {
-        max-width: 100%;
-        height: 102%;
-        // background-color: $green-1;
+        position: relative;
+        top: 0;
+        right: 0%;
         @include center;
         flex-direction: column;
-        right: 0%;
+        background-color: $green-1;
+        position: relative;
+        padding: 4rem 0;
+        max-width: 100%;
+        p {
+          width: 80%;
+        }
       }
 
       h2 {
@@ -140,9 +141,58 @@
         &:hover {
           color: $white;
         }
+        @media (max-width: 1150px) {
+          margin-top: 1.5rem;
+        }
+        @media (max-width: 590px) {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    #brandSecondSectionText {
+      @media (max-width: 1750px) {
+        top: calc(50% - 136px);
+      }
+
+      @media (max-width: 1450px) {
+        max-width: 520px;
+        top: calc(50% - 160px);
+      }
+
+      @media (max-width: 1150px) {
+        top: calc(50% - 99px);
+        right: 8%;
+      }
+
+      @media (max-width: 800px) {
+        max-width: 420px;
+        top: calc(50% - 116px);
+      }
+
+      @media (max-width: 700px) {
+        position: relative;
+        top: 0;
+        right: 0%;
+        @include center;
+        flex-direction: column;
+        background-color: $green-1;
+        position: relative;
+        padding: 4rem 0;
+        max-width: 100%;
+        p {
+          width: 80%;
+        }
+      }
+    }
+
+    #brandSecondSectionBackground {
+      @media (max-width: 700px) {
+        display: none;
       }
     }
   }
+
   #storiesSecondSection {
     background-color: $green-1;
     padding: 4rem 4vw;
@@ -185,6 +235,7 @@
       // font-size: 30px;
     }
   }
+
   // Alternative layout for first section
   // Used on the following pages
   // * Brand Page
@@ -252,6 +303,10 @@
       margin: 0 auto;
     }
   }
+
+  @media (max-width: 700px) {
+  }
+
   #brandThirdSection {
     background-color: $white;
   }

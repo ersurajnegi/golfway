@@ -92,7 +92,7 @@ export default function Navbar() {
           </a>
         </Link>
         <Link href="/">
-          <a className={`${router.pathname == '/' ? s.active : s.link}`}>
+          <a className={`${router.pathname == '/kidzone' ? s.active : s.link}`}>
             KidZone
           </a>
         </Link>

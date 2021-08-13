@@ -102,7 +102,10 @@ export default function Brand(
         </div>
 
         <div className={s.secondSection}>
-          <div className={s.secondSectionBackground}>
+          <div
+            id={s.brandSecondSectionBackground}
+            className={s.secondSectionBackground}
+          >
             <Image
               layout="responsive"
               src={'https:' + secondSectionBackground.fields.file.url}
@@ -111,7 +114,7 @@ export default function Brand(
               alt={secondSectionBackground.fields.title}
             />
           </div>
-          <div className={s.secondSectionText}>
+          <div id={s.brandSecondSectionText} className={s.secondSectionText}>
             {documentToReactComponents(secondSection)}
             <Link href="/brand">
               <a className={s.link}>Discover</a>

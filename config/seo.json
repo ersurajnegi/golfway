@@ -13,12 +13,12 @@
             "url": "/card.png",
             "width": 800,
             "height": 600,
-            "alt": "Next.js Commerce"
+            "alt": "Golfway"
         }]
     },
     "twitter": {
-        "handle": "@nextjs",
-        "site": "@nextjs",
+        "handle": "@GolfwayOfficial",
+        "site": "@GolfwayOfficial",
         "cardType": "summary_large_image"
     }
 }

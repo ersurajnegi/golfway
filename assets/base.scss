@@ -136,10 +136,8 @@ $text: sofia-pro, sans-serif;
   font-weight: 700;
   font-style: normal;
   color: $grey-1;
-  font-size: 2vw;
-  @media (max-width: 1000px) {
-    font-size: 25px;
-  }
+  font-size: 25px;
+  line-height: 25px;
 }
 
 /* Nav Fonts */

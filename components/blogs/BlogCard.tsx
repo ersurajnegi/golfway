@@ -21,11 +21,13 @@ export default function BlogCard({ blog }: { blog: any }) {
             />
             <div className={s.overlay}></div>
           </div>
-          <div className={s.titleWrap}>
-            <h4>{title}</h4>
-          </div>
-          <div className={s.info}>
-            <p>{date}</p>
+          <div className={s.titeInfoWrap}>
+            <div className={s.titleWrap}>
+              <h4>{title}</h4>
+            </div>
+            <div className={s.info}>
+              <p>{date}</p>
+            </div>
           </div>
           <div className={s.link}>
             <p>Read the Blog</p>
