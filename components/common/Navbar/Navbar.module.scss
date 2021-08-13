@@ -69,11 +69,12 @@
     position: absolute;
     flex-direction: column;
     top: 41px;
-    min-height: 416px;
+    min-height: 370px;
     justify-content: center;
     align-items: flex-start;
     padding-bottom: 3px;
-    width: 100%;
+    width: 50%;
+    padding: 0;
     @include boxShadow;
     .active,
     .link {
@@ -81,6 +82,9 @@
       margin-left: calc(50% - 29px);
       text-align: left;
     }
+  }
+  @media (max-width: 450px) {
+    width: 70%;
   }
 }
 
