@@ -12,6 +12,7 @@ interface SwatchProps {
   variant?: 'size' | 'color' | string
   color?: string
   label?: string | null
+  bgcolor?: string | null
 }
 
 const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
@@ -21,6 +22,7 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
     color = '',
     label = null,
     variant = 'size',
+    bgcolor,
     ...props
   }) => {
     variant = variant?.toLowerCase()
@@ -35,27 +37,27 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
         [s.color]: color,
         [s.active]: active,
         [s.size]: variant === 'size',
-        [s.dark]: color ? isDark(color) : false,
+        // [s.dark]: color ? isDark(color) : false,
         [s.textLabel]: !color && label && label.length > 3,
       },
       className
     )
 
-    console.log(variant)
+    console.log(label)
 
     return (
       <Button
         aria-label="Variant Swatch"
         className={swatchClassName}
         {...(label && color && { title: label })}
-        style={color ? { backgroundColor: color } : {}}
+        style={bgcolor ? { backgroundColor: bgcolor } : {}}
         {...props}
       >
-        {color && active && (
+        {/* {color && active && (
           <span>
             <Check />
           </span>
-        )}
+        )} */}
         {!color ? label : null}
       </Button>
     )

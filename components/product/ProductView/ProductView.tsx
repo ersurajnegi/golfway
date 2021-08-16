@@ -1,4 +1,4 @@
-import cn from 'classnames'
+// import cn from 'classnames'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import s from './ProductView.module.scss'
@@ -24,9 +24,11 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
   return (
     <>
-      <Container className="max-w-none w-full" clean>
+      {/* <Container className="max-w-none w-full" clean> */}
+      <Container clean>
         <div className={s.sliderContainerWrap}>
-          <div className={cn(s.main, 'fit')}>
+          {/* <div className={cn(s.main, 'fit')}> */}
+          <div>
             <div className={s.sliderContainer}>
               <ProductSlider key={product.id}>
                 {product.images.map((image, i) => (

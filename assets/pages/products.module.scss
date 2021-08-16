@@ -1,18 +1,1 @@
 @use '../../assets' as *;
-.pageWrap {
-    @include pageWidth;
-    .filterWrap {
-        background-color: $grey-0;
-        padding-left: 4vw;
-        padding-right: 4vw;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .productsWrap {
-        box-sizing: border-box;
-        margin: 4vw;
-        display: grid;
-        grid-template-columns: 21.5vw 21.5vw 21.5vw 21.5vw;
-        grid-gap: 2vw;
-    }
-}

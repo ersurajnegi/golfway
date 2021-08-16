@@ -9,7 +9,7 @@ import React, {
 } from 'react'
 import cn from 'classnames'
 import { a } from '@react-spring/web'
-import s from './ProductSlider.module.css'
+import s from './ProductSlider.module.scss'
 import ProductSliderControl from '../ProductSliderControl'
 
 interface ProductSliderProps {

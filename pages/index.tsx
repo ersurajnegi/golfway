@@ -73,21 +73,19 @@ export default function Home(
     fifthSection,
   } = homePage[0].fields
 
+  const [mobile, setMobile] = useState(false)
+
+  useEffect(() => {
+    let width = window.innerWidth || screen.width
+    setMobile(width >= 620 ? false : true)
+  }, [])
+
   return (
     <>
       <div className={s.pageWrap}>
         <div className={s.heroContainer}>
           <div className={s.videoWrap}>
-            <video
-              className={s.video}
-              autoPlay
-              loop
-              preload="none"
-              muted
-              src="video.mp4"
-            ></video>
-
-            {/* {tablet ? (
+            {!mobile ? (
               <video
                 className={s.video}
                 autoPlay
@@ -98,7 +96,7 @@ export default function Home(
               ></video>
             ) : (
               ''
-            )} */}
+            )}
           </div>
           <div className={s.heroImage}>
             <Image

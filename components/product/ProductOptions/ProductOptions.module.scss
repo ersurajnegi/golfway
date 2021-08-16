@@ -1,8 +1,32 @@
 @use "../../../assets" as *;
 .option {
-    h2 {
-        margin-top: 0.7rem;
-        @include fontTwo;
-        color: $grey-1;
-    }
+  h2 {
+    margin-top: 0.7rem;
+    @include fontTwo;
+    color: $grey-1;
+  }
+}
+
+.color90 {
+  color: $green-1;
+}
+
+.color110 {
+  color: $yellow-1;
+}
+
+.color130 {
+  color: $blue-1;
+}
+
+.color150 {
+  color: $purple-1;
+}
+
+.color170 {
+  color: $grey-0;
+}
+
+.colorDefault {
+  color: $white;
 }

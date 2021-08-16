@@ -1,6 +1,7 @@
 import { Layout } from '@components/common'
 import Image from 'next/image'
 import Link from 'next/link'
+import { StoryCards } from '@components/story'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -23,7 +24,7 @@ export async function getStaticProps({}: GetStaticPropsContext) {
 }
 
 export default function Stories(
-  { storiesPage }: { products: any; storiesPage: any },
+  { storiesPage, story }: { storiesPage: any; story: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const {
@@ -36,15 +37,11 @@ export default function Stories(
     ProductImage,
   } = storiesPage[0].fields
 
-  console.log(storiesPage)
-
   return (
     <>
       <div className={s.pageWrap}>
         <div className={s.heroContainer}>
           <Image
-            // blurDataURL="true"
-            // placeholder="blur"
             priority={true}
             layout="responsive"
             src={'https:' + heroImage.fields.file.url}
@@ -60,9 +57,6 @@ export default function Stories(
         <div className={s.firstSectionWrap}>
           <div className={s.firstSection}>
             {documentToReactComponents(firstSection)}
-            <Link href="/games">
-              <a className={s.link}>Start Now</a>
-            </Link>
           </div>
           <div className={s.firstSectionImage}>
             <div className={s.imageWrap}>
@@ -80,6 +74,7 @@ export default function Stories(
         <div id={s.storiesSecondSection} className={s.secondSection}>
           {documentToReactComponents(secondSection)}
         </div>
+        {/* <StoryCards /> */}
 
         <div className={s.thirdSection}>
           {documentToReactComponents(thirdSection)}

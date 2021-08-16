@@ -1,31 +1,36 @@
 @use '../../../assets' as *;
 .control {
-    @apply absolute bottom-10 flex flex-row border-accent-0 border text-accent-0 z-30 shadow-xl select-none;
-    height: 48px;
-    background-color: $green-1;
-    left: 2.5rem;
+  @apply bottom-10 shadow-xl select-none;
+  z-index: 30;
+  border: 1px solid $white;
+  color: $white;
+  @include center;
+  position: absolute;
+  height: 48px;
+  background-color: $green-1;
+  left: 2.5rem;
 }
 
 .leftControl,
 .rightControl {
-    @apply px-9 cursor-pointer;
-    transition: background-color 0.2s ease;
+  @apply px-9 cursor-pointer;
+  transition: background-color 0.2s ease;
 }
 
 .leftControl:hover,
 .rightControl:hover {
-    background-color: $grey-1;
+  background-color: $grey-1;
 }
 
 .leftControl:focus,
 .rightControl:focus {
-    @apply outline-none;
+  @apply outline-none;
 }
 
 .rightControl {
-    @apply border-l border-accent-0;
+  @apply border-l border-accent-0;
 }
 
 .leftControl {
-    margin-right: -1px;
+  margin-right: -1px;
 }

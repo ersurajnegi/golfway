@@ -15,7 +15,7 @@ export default function Navbar() {
     { link: '/search', text: 'Products', key: 40 },
     { link: '/stories', text: 'Stories', key: 50 },
     { link: '/recycle', text: 'Recycle', key: 60 },
-    { link: '/bogs', text: 'Blogs', key: 70 },
+    { link: '/blogs', text: 'Blogs', key: 70 },
     { link: '/kidzone', text: 'KidZone', key: 80 },
   ]
 

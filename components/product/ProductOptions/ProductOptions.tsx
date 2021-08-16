@@ -10,6 +10,23 @@ interface ProductOptionsProps {
   setSelectedOptions: React.Dispatch<SelectedOptions>
 }
 
+const colourCode = function (value: string) {
+  switch (value) {
+    case '90':
+      return '#04af9a'
+    case '110':
+      return '#fbdb65'
+    case '130':
+      return '#1a658f'
+    case '150':
+      return '#686d9f'
+    case '170':
+      return '#d9d9d6'
+    default:
+      return 'white'
+  }
+}
+
 const ProductOptions: React.FC<ProductOptionsProps> = ({
   options,
   selectedOptions,
@@ -31,6 +48,7 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
                   variant={opt.displayName}
                   color={v.hexColors ? v.hexColors[0] : ''}
                   label={v.label}
+                  bgcolor={colourCode(v.label)}
                   onClick={() => {
                     setSelectedOptions((selectedOptions: any) => {
                       return {
