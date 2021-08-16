@@ -13,7 +13,7 @@ interface ProductOptionsProps {
 const colourCode = function (value: string) {
   switch (value) {
     case '90':
-      return '#04af9a'
+      return '#02e0c5'
     case '110':
       return '#fbdb65'
     case '130':
@@ -36,16 +36,18 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
   return (
     <div>
       {options.map((opt) => (
-        <div className={s.option} key={opt.displayName}>
+        <div className={s.optionWrap} key={opt.displayName}>
           <h2>{opt.displayName.toUpperCase()}:</h2>
-          <div className="flex flex-row py-4">
+          <div className={s.options}>
             {opt.values.map((v, i: number) => {
               const active = selectedOptions[opt.displayName.toLowerCase()]
+              console.log(v)
               return (
                 <Swatch
                   key={`${opt.id}-${i}`}
                   active={v.label.toLowerCase() === active}
                   variant={opt.displayName}
+                  // className={s.colour}
                   color={v.hexColors ? v.hexColors[0] : ''}
                   label={v.label}
                   bgcolor={colourCode(v.label)}

@@ -1,9 +1,9 @@
 import cn from 'classnames'
 import React from 'react'
 import s from './Swatch.module.scss'
-import { Check } from '@components/icons'
+
 import Button, { ButtonProps } from '@components/ui/Button'
-import { isDark } from '@lib/colors'
+
 import { serialize } from 'cookie'
 interface SwatchProps {
   active?: boolean
@@ -18,7 +18,7 @@ interface SwatchProps {
 const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
   ({
     active,
-    className,
+    // className,
     color = '',
     label = null,
     variant = 'size',
@@ -36,11 +36,11 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
       {
         [s.color]: color,
         [s.active]: active,
-        [s.size]: variant === 'size',
+        // [s.size]: variant === 'size',
         // [s.dark]: color ? isDark(color) : false,
         [s.textLabel]: !color && label && label.length > 3,
-      },
-      className
+      }
+      // className
     )
 
     console.log(label)
@@ -53,11 +53,6 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
         style={bgcolor ? { backgroundColor: bgcolor } : {}}
         {...props}
       >
-        {/* {color && active && (
-          <span>
-            <Check />
-          </span>
-        )} */}
         {!color ? label : null}
       </Button>
     )

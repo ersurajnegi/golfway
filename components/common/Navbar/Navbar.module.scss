@@ -32,7 +32,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    .menuButton {
+      display: none;
+    }
     .link {
       color: $white;
       @include navFont;
@@ -102,6 +104,7 @@
         position: absolute;
         top: 10px;
         right: 10px;
+        display: block;
       }
     }
   }
@@ -120,9 +123,26 @@
 
   @media (max-width: 700px) {
     opacity: 0;
-    transform: translateX(-110%);
-    -webkit-transform: translatX(-110%);
-    transition: 500ms;
+    animation-name: menu-hide;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+  }
+  @keyframes menu-hide {
+    0% {
+      transform: translateX(0);
+      -webkit-transform: translatX(0);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(0);
+      -webkit-transform: translatX(0);
+    }
+
+    100% {
+      transform: translateX(-110%);
+      -webkit-transform: translatX(-110%);
+    }
   }
 }
 

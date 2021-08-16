@@ -1,20 +1,23 @@
 @use '../../../assets' as *;
 .control {
-  @apply bottom-10 shadow-xl select-none;
   z-index: 30;
   border: 1px solid $white;
   color: $white;
   @include center;
   position: absolute;
   height: 48px;
-  background-color: $green-1;
   left: 2.5rem;
+  bottom: 10px;
+  left: 0;
 }
 
 .leftControl,
 .rightControl {
-  @apply px-9 cursor-pointer;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: $green-1;
   transition: background-color 0.2s ease;
+  border-radius: 100%;
 }
 
 .leftControl:hover,
@@ -24,13 +27,13 @@
 
 .leftControl:focus,
 .rightControl:focus {
-  @apply outline-none;
+  outline: none;
 }
 
 .rightControl {
-  @apply border-l border-accent-0;
+  border: 1px solid $white;
 }
 
 .leftControl {
-  margin-right: -1px;
+  margin-right: 10px;
 }

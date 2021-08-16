@@ -1,6 +1,9 @@
 @use '../../../assets' as *;
 .root {
   @include fontTwo;
+  @include buttonOne;
+  background-color: $green-1;
+  color: $white;
 }
 
 .root:hover {
