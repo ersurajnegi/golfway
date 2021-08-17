@@ -63,7 +63,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
             {relatedProducts.map((p) => (
               <div key={p.path} className="animated fadeIn bg-accent-0">
                 <ProductCard
-                  noNameTag
                   product={p}
                   key={p.path}
                   variant="simple"

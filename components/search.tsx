@@ -104,7 +104,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
               <div
                 className={`${
                   s.dropDown
-                } origin-top-left absolute lg:relative left-0 mt-2 w-full shadow-lg lg:shadow-none z-10 mb-10 lg:block ${
+                } origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-10 lg:block ${
                   activeFilter !== 'categories' || toggleFilter !== true
                     ? 'hidden'
                     : ''
@@ -119,7 +119,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     <ul>
                       <li
                         className={cn(
-                          'block text-sm leading-5 text-accent-0 lg:text-base lg:no-underline lg:font-bold lg:tracking-wide lg:hover:bg-transparent hover:--seconday focus:outline-none focus:bg-accent-1 focus:text-accent-01',
+                          `${s.link}`,
+                          'block leading-5 lg:text-base lg:no-underline lg:font-bold lg:tracking-wide lg:hover:bg-transparent hover:--seconday focus:outline-none focus:bg-accent-1 focus:text-accent-01',
                           {
                             underline: !activeCategory?.name,
                           }
@@ -142,7 +143,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                         <li
                           key={cat.path}
                           className={cn(
-                            'block text-sm leading-5 text-accent-4 hover:bg-accent-1 lg:hover:bg-transparent hover:text-accent-8 focus:outline-none focus:bg-accent-1 focus:text-accent-8',
+                            `${s.link}`,
+                            'block leading-5 hover:bg-accent-1 lg:hover:bg-transparent hover:text-accent-8 focus:outline-none focus:bg-accent-1 focus:text-accent-8',
                             {
                               underline: activeCategory?.id === cat.id,
                             }
@@ -275,7 +277,9 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 </span>
               </div>
               <div
-                className={`origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-10 lg:block ${
+                className={`${
+                  s.dropDown
+                } origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-10 lg:block ${
                   activeFilter !== 'sort' || toggleFilter !== true
                     ? 'hidden'
                     : ''
@@ -290,7 +294,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     <ul>
                       <li
                         className={cn(
-                          'block text-sm leading-5 text-accent-4 lg:text-base lg:no-underline lg:font-bold lg:tracking-wide hover:bg-accent-1 lg:hover:bg-transparent hover:text-accent-8 focus:outline-none focus:bg-accent-1 focus:text-accent-8',
+                          `${s.link}`,
+                          'block leading-5 lg:text-base lg:no-underline lg:font-bold lg:tracking-wide hover:bg-accent-1 lg:hover:bg-transparent hover:text-accent-8 focus:outline-none focus:bg-accent-1 focus:text-accent-8',
                           {
                             underline: !sort,
                           }
@@ -311,7 +316,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                         <li
                           key={key}
                           className={cn(
-                            'block text-sm leading-5 text-accent-4 hover:bg-accent-1 lg:hover:bg-transparent hover:text-accent-8 focus:outline-none focus:bg-accent-1 focus:text-accent-8',
+                            `${s.link}`,
+                            'block leading-5 hover:bg-accent-1 lg:hover:bg-transparent hover:text-accent-8 focus:outline-none focus:bg-accent-1 focus:text-accent-8',
                             {
                               underline: sort === key,
                             }

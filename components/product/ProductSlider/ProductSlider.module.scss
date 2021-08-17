@@ -2,8 +2,35 @@
 
 .album {
   display: flex;
+  box-sizing: content-box;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  max-height: 120px;
+}
+
+.album::-webkit-scrollbar {
+  display: none;
 }
 
 .thumb {
-  margin: 1rem;
+  // margin: 1rem;
+  margin: 2px;
+  cursor: pointer;
+  max-height: 120px;
+  max-width: 120px;
+  border: 2px solid $white;
+  border-radius: 50%;
+  padding: 3px;
+  transition: 300ms;
+  &:hover {
+    border: 2px solid $green-1;
+  }
+}
+
+.thumb img {
+  border-radius: 50%;
+  // border: 1px solid $grey-01;
+  // height: 85% !important;
 }

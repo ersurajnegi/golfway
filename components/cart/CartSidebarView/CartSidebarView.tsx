@@ -48,7 +48,7 @@ const CartSidebarView: FC = () => {
             Your cart is empty
           </h2>
           <p className="text-accent-3 px-10 text-center pt-2">
-            Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
+            Please continue shopping to add items to your cart.
           </p>
         </div>
       ) : error ? (

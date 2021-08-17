@@ -6,9 +6,9 @@
     @include center;
     justify-content: space-between;
     flex-direction: column;
-    border: 1px solid $grey-01;
-    // border-radius: 5px;
-    // @include boxShadow;
+    // border: 1px solid $grey-01;
+    border-radius: 5px;
+    @include boxShadow;
     padding: 1.5rem;
     .thumbnail {
       position: relative;
