@@ -9,6 +9,9 @@
   left: 2.5rem;
   bottom: 10px;
   left: 0;
+  @media (max-width: 770px) {
+    right: 0;
+  }
 }
 
 .leftControl,

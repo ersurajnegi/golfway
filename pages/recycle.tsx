@@ -18,7 +18,7 @@ export async function getStaticProps({
 
   const { products } = await productsPromise
 
-  console.log(products)
+  // console.log(products)
 
   return {
     props: {
@@ -32,7 +32,7 @@ export default function Recycle(
   { products }: { products: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  console.log(products)
+  // console.log(products)
   return (
     <div>
       <h1>Recycle</h1>
