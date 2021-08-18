@@ -40,8 +40,10 @@ export async function getStaticProps({ params }: { params: any }) {
 
 const option = {
   renderNode: {
+    // eslint-disable-next-line react/display-name
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
       let { file, title } = node.data.target.fields
+
       return (
         <div>
           <picture>
@@ -62,7 +64,6 @@ export default function Blog({ blogs }: { blogs: any }) {
   const { thumbnail, title, body } = blogs.fields
   const heading = title.toUpperCase()
 
-  console.log(body)
   return (
     <div className={s.blog}>
       <div className={s.blogHero}>

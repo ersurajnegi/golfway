@@ -16,7 +16,7 @@
   width: 2rem;
   height: 100%;
   background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0) 90%);
-  z-index: 1000;
+  z-index: 1;
 }
 
 .main:after {
@@ -27,7 +27,7 @@
   height: 100%;
   right: -2px;
   background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0) 90%);
-  z-index: 1000;
+  z-index: 1;
 }
 
 .sidebar {
