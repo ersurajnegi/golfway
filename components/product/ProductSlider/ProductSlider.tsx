@@ -9,7 +9,7 @@ import React, {
 } from 'react'
 import cn from 'classnames'
 import { a } from '@react-spring/web'
-import s from './ProductSlider.module.scss'
+import s from './ProductSlider.module.css'
 import ProductSliderControl from '../ProductSliderControl'
 
 interface ProductSliderProps {
@@ -105,6 +105,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
       </div>
 
       <a.div className={s.album} ref={thumbsContainerRef}>
+        <div className={s.overlay}></div>
         {slider &&
           Children.map(children, (child, idx) => {
             if (isValidElement(child)) {

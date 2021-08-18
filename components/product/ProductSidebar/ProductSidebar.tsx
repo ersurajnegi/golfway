@@ -1,4 +1,4 @@
-import s from './ProductSidebar.module.scss'
+import s from './ProductSidebar.module.css'
 import { useAddItem } from '@framework/cart'
 import { FC, useEffect, useState } from 'react'
 import { ProductOptions, ProductTag } from '@components/product'

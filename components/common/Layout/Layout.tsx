@@ -90,6 +90,11 @@ const SidebarUI: FC = () => {
   ) : null
 }
 
+// embedCheckout({
+//   "containerId": "golfway-checkout",
+//   "url": "https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=1cb89bf4-1f4b-47ad-b4c8-d4776cfcca61&token=32c6422999e56f69de8c1b50c1650c385b9b3f438833609334da8003b42397d8"
+// })
+
 const Layout: FC<Props> = ({
   children,
   pageProps: { categories = [], ...pageProps },
@@ -104,6 +109,7 @@ const Layout: FC<Props> = ({
   return (
     <CommerceProvider locale={locale}>
       <div className={cn(s.root)}>
+        <div id="golfway-checkout"></div>
         <TopBar />
         <Navbar links={navBarlinks} />
         <main className="fit">{children}</main>

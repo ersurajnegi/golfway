@@ -4,7 +4,7 @@
     margin-top: 0.7rem;
     @include fontTwo;
     color: $grey-1;
-    @media (max-width: 770px) {
+    @media (max-width: 1023px) {
       text-align: center;
     }
   }
@@ -12,7 +12,7 @@
   .options {
     margin: 1rem 0;
     display: flex;
-    @media (max-width: 770px) {
+    @media (max-width: 1023px) {
       justify-content: center;
     }
   }

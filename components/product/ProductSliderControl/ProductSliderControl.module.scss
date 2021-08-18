@@ -1,6 +1,7 @@
 @use '../../../assets' as *;
 .control {
   z-index: 30;
+  z-index: 10000;
   // border: 1px solid $white;
   color: $white;
   @include center;
@@ -9,7 +10,7 @@
   left: 2.5rem;
   bottom: 10px;
   left: 0;
-  @media (max-width: 770px) {
+  @media (max-width: 1024px) {
     right: 0;
   }
 }

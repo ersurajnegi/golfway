@@ -1,7 +1,7 @@
-// import cn from 'classnames'
+import cn from 'classnames'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-import s from './ProductView.module.scss'
+import s from './ProductView.module.css'
 import { FC } from 'react'
 import type { Product } from '@commerce/types/product'
 import usePrice from '@framework/product/use-price'
@@ -24,11 +24,9 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
   return (
     <>
-      {/* <Container className="max-w-none w-full" clean> */}
-      <Container clean>
-        <div className={s.sliderContainerWrap}>
-          {/* <div className={cn(s.main, 'fit')}> */}
-          <div>
+      <Container className="max-w-none w-full" clean>
+        <div className={cn(s.root, 'fit')}>
+          <div className={cn(s.main, 'fit')}>
             <div className={s.sliderContainer}>
               <ProductSlider key={product.id}>
                 {product.images.map((image, i) => (
@@ -56,12 +54,12 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           </div>
           <ProductSidebar product={product} className={s.sidebar} />
         </div>
-        {/* <hr className="mt-7" /> */}
+        <hr className="mt-7" />
         <section className="py-12 px-6 mb-10">
           <Text variant="sectionHeading">Related Products</Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
-              <div key={p.path} className="animated fadeIn bg-accent-0">
+              <div key={p.path} className="animated fadeIn">
                 <ProductCard
                   product={p}
                   key={p.path}

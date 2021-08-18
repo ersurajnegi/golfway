@@ -1,14 +1,14 @@
 @use '../../../assets' as *;
 .name {
   @include fontHeadingThree;
-  @media (max-width: 770px) {
+  @media (max-width: 1023px) {
     text-align: center;
   }
 }
 
 .price {
   @include fontOne;
-  @media (max-width: 770px) {
+  @media (max-width: 1023px) {
     text-align: center;
   }
 }

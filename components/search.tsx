@@ -28,6 +28,7 @@ import {
   getDesignerPath,
   useSearchMeta,
 } from '@lib/search'
+import products from 'pages/api/catalog/products'
 
 export default function Search({ categories, brands }: SearchPropsType) {
   const [activeFilter, setActiveFilter] = useState('')
@@ -63,8 +64,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
     }
     setActiveFilter(filter)
   }
-
-  console.log(categories)
 
   return (
     <Container>
@@ -222,6 +221,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
             )}
             {data ? (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {console.log(data.products)}
                 {data.products.map((product: Product) => (
                   <ProductCard
                     variant="simple"

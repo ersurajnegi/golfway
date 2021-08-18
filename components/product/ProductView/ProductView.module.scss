@@ -1,55 +1,55 @@
 @use '../../../assets' as *;
-.sliderContainerWrap {
-  padding: 4vw;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-gap: 1.5rem;
-  @include pageSectionWidth;
-  @media (max-width: 770px) {
-    grid-template-columns: 1fr;
-  }
-}
+// .sliderContainerWrap {
+//   padding: 4vw;
+//   display: grid;
+//   grid-template-columns: 3fr 2fr;
+//   grid-gap: 1.5rem;
+//   @include pageSectionWidth;
+//   @media (max-width: 770px) {
+//     grid-template-columns: 1fr;
+//   }
+// }
 
-.main {
-  @apply relative px-0 pb-0 box-border flex flex-col col-span-1;
-  min-height: 500px;
-}
+// .main {
+//   @apply relative px-0 pb-0 box-border flex flex-col col-span-1;
+//   min-height: 500px;
+// }
 
-.sidebar {
-  @apply flex flex-col col-span-1 mx-auto max-w-8xl px-6 py-6 w-full h-full;
-  @media (max-width: 770px) {
-    align-items: center;
-  }
-}
+// .sidebar {
+//   @apply flex flex-col col-span-1 mx-auto max-w-8xl px-6 py-6 w-full h-full;
+//   @media (max-width: 770px) {
+//     align-items: center;
+//   }
+// }
 
-.sliderContainer {
-  @apply flex items-center justify-center overflow-x-hidden;
-  @media (max-width: 770px) {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
+// .sliderContainer {
+//   @apply flex items-center justify-center overflow-x-hidden;
+//   @media (max-width: 770px) {
+//     width: 80%;
+//     margin: 0 auto;
+//   }
+// }
 
-.imageContainer {
-  @apply text-center;
-}
+// .imageContainer {
+//   @apply text-center;
+// }
 
-.imageContainer > div,
-.imageContainer > div > div {
-  @apply h-full;
-}
+// .imageContainer > div,
+// .imageContainer > div > div {
+//   @apply h-full;
+// }
 
-.sliderContainer .img {
-  @apply h-auto max-h-full object-cover;
-}
+// .sliderContainer .img {
+//   @apply h-auto max-h-full object-cover;
+// }
 
-.relatedProductsGrid {
-  padding: 4vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1.5rem;
-  @include pageSectionWidth;
-  @media (max-width: 770px) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+// .relatedProductsGrid {
+//   padding: 4vw;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   grid-gap: 1.5rem;
+//   @include pageSectionWidth;
+//   @media (max-width: 770px) {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
