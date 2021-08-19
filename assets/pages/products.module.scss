@@ -4,7 +4,6 @@
   box-sizing: border-box;
   margin: 4rem 2rem;
   .heroContainer {
-    // @include pageSectionWidth;
     margin: 0rem;
     @include center;
     align-items: flex-start;
@@ -49,7 +48,6 @@
       margin-right: 0;
     }
   }
-
   }
 
 
