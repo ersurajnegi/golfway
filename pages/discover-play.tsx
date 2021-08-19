@@ -55,7 +55,7 @@ export async function getStaticProps({
   }
 }
 
-export default function Home(
+export default function Play(
   {
     discoverPage,
 
@@ -162,4 +162,4 @@ export default function Home(
   )
 }
 
-Home.Layout = Layout
+Play.Layout = Layout
