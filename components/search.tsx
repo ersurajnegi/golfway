@@ -4,12 +4,12 @@ import type { SearchPropsType } from '@lib/search-props'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-
-import { Layout } from '@components/common'
+import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import { createClient } from 'contentful'
+import { Layout, NewsLetter } from '@components/common'
 import { ProductCard } from '@components/product'
 import type { Product } from '@commerce/types/product'
 import { Container, Skeleton } from '@components/ui'
-
 import useSearch from '@framework/product/use-search'
 
 import getSlug from '@lib/get-slug'
@@ -18,8 +18,8 @@ import rangeMap from '@lib/range-map'
 const SORT = {
   'trending-desc': 'Trending',
   'latest-desc': 'Latest arrivals',
-  'price-asc': 'Price: Low to high',
-  'price-desc': 'Price: High to low',
+  'price-asc': 'Low to high',
+  'price-desc': 'High to low',
 }
 
 import {
@@ -57,6 +57,11 @@ export default function Search({ categories, brands }: SearchPropsType) {
   })
 
   const handleClick = (event: any, filter: string) => {
+    console.log(
+      `Filter value ${filter} : , activeFilter : ${activeFilter}, activeCategory: ${JSON.stringify(
+        activeCategory
+      )}`
+    )
     if (filter !== activeFilter) {
       setToggleFilter(true)
     } else {
@@ -65,9 +70,94 @@ export default function Search({ categories, brands }: SearchPropsType) {
     setActiveFilter(filter)
   }
 
+  console.log('checking categories', categories)
+
+  const getBannerBasedOnActiveCategory = () => {
+    if (activeCategory && activeCategory.id == '26') {
+      return (
+        <div className={s.banners}>
+          <div className={s.textWrap}>
+            <h2>Champion</h2>
+            <p>
+              We haven’t just revised junior golf, we’ve re-examined, resized,
+              and redesigned it. Oh, and it’s for adults too.
+            </p>
+          </div>
+          <div className={s.polygon}></div>
+        </div>
+      )
+    } else if (activeCategory && activeCategory.id == '27') {
+      return (
+        <div className={s.banners}>
+          <div className={s.textWrap}>
+            <h2>Play</h2>
+            <p>
+              Golfway Play is a fast-paced exciting game based on traditional
+              golf and perfect for learning and enjoying the game.
+            </p>
+          </div>
+          <div className={s.polygon}></div>
+        </div>
+      )
+    } else {
+      return (
+        <>
+          <div className={s.heroContainer}>
+            <div className={s.titleDiv}>
+              <h1>All Products</h1>
+            </div>
+            <div className={s.productsHero}>
+              <Link
+                href={{
+                  pathname: getCategoryPath(categories[0].path, brand),
+                  query,
+                }}
+              >
+                <a onClick={(e) => handleClick(e, 'categories')}>
+                  <div className={s.banners}>
+                    <div className={s.textWrap}>
+                      <h2>Champion</h2>
+                      <p>
+                        We haven’t just revised junior golf, we’ve re-examined,
+                        resized, and redesigned it. Oh, and it’s for adults too.
+                      </p>
+                    </div>
+                    <div className={s.polygon}></div>
+                  </div>
+                </a>
+              </Link>
+
+              <Link
+                href={{
+                  pathname: getCategoryPath(categories[1].path, brand),
+                  query,
+                }}
+              >
+                <a onClick={(e) => handleClick(e, 'categories')}>
+                  <div className={s.banners}>
+                    <div className={s.textWrap}>
+                      <h2>Play</h2>
+                      <p>
+                        Golfway Play is a fast-paced exciting game based on
+                        traditional golf and perfect for learning and enjoying
+                        the game.
+                      </p>
+                    </div>
+                    <div className={s.polygon}></div>
+                  </div>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </>
+      )
+    }
+  }
+
   return (
     <Container>
       <div className={s.searchWrap}>
+        {getBannerBasedOnActiveCategory()}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">
           <div className="col-span-8 lg:col-span-2 order-1 lg:order-none">
             {/* Categories */}
@@ -347,6 +437,14 @@ export default function Search({ categories, brands }: SearchPropsType) {
             </div>
           </div>
         </div>
+      </div>
+      <div className={s.joinTheTeam}>
+        <h2>JOIN THE TEAM.</h2>
+        <p>
+          We’re a vibrant community of players always looking for new ways to
+          play. Sign-up for exclusive product deals and ideas for gameplay.
+        </p>
+        {/* <NewsLetter /> */}
       </div>
     </Container>
   )

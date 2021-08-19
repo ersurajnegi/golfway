@@ -293,6 +293,13 @@
   #brandThirdSection {
     @include pageSectionWidth;
   }
+
+  .fifthSection {
+    p {
+      max-width: 600px;
+      font-weight: 700;
+    }
+  }
   .thirdSection {
     background-color: $grey-0;
     @include center;

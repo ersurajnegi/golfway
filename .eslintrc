@@ -1,5 +1,10 @@
 {
-  "extends": ["next", "prettier"],
+  "extends": ["next", "plugin:prettier/recommended", "eslint:recommended"],
+  "parserOptions": {
+    "ecmasFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
     "react/no-unescaped-entities": "off"
   }

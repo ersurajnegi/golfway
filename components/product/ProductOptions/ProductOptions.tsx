@@ -26,13 +26,23 @@ const colourCode = function (value: string) {
       return 'white'
   }
 }
+const colourCodeText = function (value: string) {
+  switch (value) {
+    case '110':
+      return '#53575a'
+    case '170':
+      return '#53575a'
+    default:
+      return 'white'
+  }
+}
 
 const ProductOptions: React.FC<ProductOptionsProps> = ({
   options,
   selectedOptions,
   setSelectedOptions,
 }) => {
-  console.log(options)
+  console.log('hello : ',  options)
   return (
     <div>
       {options.map((opt) => (
@@ -48,7 +58,8 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
                   active={v.label.toLowerCase() === active}
                   variant={opt.displayName}
                   // className={s.colour}
-                  color={v.hexColors ? v.hexColors[0] : ''}
+                  // color={v.hexColors ? v.hexColors[0] : '#d9d9d6'}
+                  color={colourCodeText(v.label)}
                   label={v.label}
                   bgcolor={colourCode(v.label)}
                   onClick={() => {

@@ -50,10 +50,10 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
         aria-label="Variant Swatch"
         className={swatchClassName}
         {...(label && color && { title: label })}
-        style={bgcolor ? { backgroundColor: bgcolor } : {}}
+        style={bgcolor ? { backgroundColor: bgcolor , color} : {}}
         {...props}
       >
-        {!color ? label : null}
+        {label}
       </Button>
     )
   }

@@ -4,7 +4,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script src="https://checkout-sdk.bigcommerce.com/v1/loader.js"></script>
+        </Head>
         <body className="loading">
           <Main />
           <NextScript />

@@ -15,6 +15,11 @@
 
 .input::placeholder {
   @include fontOne;
+  color: #53575a80;
+  font-size: 15px;
+  @media (max-width: 1750px) {
+    font-size: 15px;
+  }
 }
 
 .input:focus {

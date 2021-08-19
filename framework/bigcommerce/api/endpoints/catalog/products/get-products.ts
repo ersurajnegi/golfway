@@ -47,6 +47,13 @@ const getProducts: ProductsEndpoint['handlers']['getProducts'] = async ({
     url.pathname + url.search
   )
 
+  //-----------------------------------------------------------
+
+  // Mentor inputed the below code to check data before filter
+  // console.log('Befoe API : ', data.length)
+
+  //-----------------------------------------------------------
+
   const ids = data.map((p) => String(p.id))
   const found = ids.length > 0
 
@@ -55,6 +62,13 @@ const getProducts: ProductsEndpoint['handlers']['getProducts'] = async ({
     variables: { first: LIMIT, ids },
     config,
   })
+
+  //-----------------------------------------------------------
+
+  // Mentor inputed the below code to check data after filter
+  // console.log('data length : ', graphqlData.products.length);
+
+  //-----------------------------------------------------------
 
   // Put the products in an object that we can use to get them by id
   const productsById = graphqlData.products.reduce<{

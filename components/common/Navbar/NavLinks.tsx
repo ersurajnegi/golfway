@@ -40,7 +40,7 @@ export default function Navbar() {
           />
         </svg>
       </button>
-
+<div className={s.overflowHidden}>
       <nav
         className={`${s.navMenu} ${navMenuBg}`}
         onClick={() => setNavState(!navState)}
@@ -56,7 +56,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/">
-            <a className={s.donate}>Donate</a>
+            <a className={s.donateMob}>Donate</a>
           </Link>
           <button
             className={`${s.menuButton} ${navButton}`}
@@ -77,6 +77,7 @@ export default function Navbar() {
           </button>
         </ul>
       </nav>
+      </div>
     </>
   )
 }

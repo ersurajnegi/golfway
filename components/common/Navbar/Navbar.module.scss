@@ -25,7 +25,6 @@
   @include boxShadow;
 
   ul {
-    // padding: 0 4rem;
     height: 40px;
     background-color: $green-1;
     width: 100%;
@@ -60,7 +59,7 @@
       }
     }
   }
-  .donate {
+  .donateMob {
     display: none;
     @media (max-width: 700px) {
       display: block;

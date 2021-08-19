@@ -7,7 +7,7 @@ import { Grid, Marquee, Hero } from '@components/ui'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import NewsLetter from '../components/common/Newsletter/NewsLetter'
+import { NewsLetter } from '@components/common'
 import s from '../assets/pages/page.module.scss'
 import { useState, useEffect } from 'react'
 

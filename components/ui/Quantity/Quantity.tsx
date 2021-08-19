@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import s from './Quantity.module.css'
-import { Cross, Plus, Minus } from '@components/icons'
+import { Cross, Plus, Minus, Bin } from '@components/icons'
 import cn from 'classnames'
 export interface QuantityProps {
   value: number
@@ -22,7 +22,7 @@ const Quantity: FC<QuantityProps> = ({
   return (
     <div className="flex flex-row h-9">
       <button className={s.actions} onClick={handleRemove}>
-        <Cross width={20} height={20} />
+        <Bin width={20} height={20} />
       </button>
       <label className="w-full border-accent-2 border ml-2">
         <input

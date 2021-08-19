@@ -11,7 +11,9 @@
   background-color: $green-1;
   color: $white;
   @media (max-width: 700px) {
-    display: none;
+    margin-right: 10px;
+    padding: 2px 8px 5px;
+
   }
 }
 
@@ -21,6 +23,9 @@
 
 .item {
   @apply mr-6 cursor-pointer relative transition ease-in-out duration-100 flex items-center outline-none text-primary;
+  @media (max-width: 700px) {
+    margin-right: 10px;
+  }
   &:hover {
     @apply text-accent-6 transition scale-110 duration-100;
   }
