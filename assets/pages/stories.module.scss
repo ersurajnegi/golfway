@@ -1,0 +1,150 @@
+@use '../../assets' as *;
+.story {
+  .heroContainer {
+    z-index: 1;
+    position: relative;
+    .heroOverlay {
+      @include overlay;
+    }
+
+    .heroTextWrap {
+      @include heroTextWrap;
+      h1 {
+        @include fontHeadingHero;
+        position: absolute;
+        max-width: 56rem;
+        color: $white;
+        text-align: center;
+        @media (max-width: 590px) {
+          max-width: 29rem;
+        }
+      }
+    }
+  }
+
+  .sectionOne,
+  .sectionThree,
+  .sectionFour {
+    @include pageSectionWidth;
+    padding: 4rem 4vw;
+    width: 80%;
+    margin: 0 auto;
+    h2 {
+      @include fontHeadingTwo;
+      margin-bottom: 1rem;
+    }
+    p {
+      @include fontOne;
+      margin: 10px 0;
+    }
+
+    b {
+      font-weight: 700;
+    }
+
+    li {
+      list-style-type: circle;
+      margin-left: 20px;
+    }
+  }
+  .sectionTwo {
+    background-color: $green-1;
+    padding: 4rem;
+
+    .sectionTwoInnerWrap {
+      @include pageSectionWidth;
+      width: 80%;
+      margin: 0 auto;
+
+      h2 {
+        text-align: center;
+        @include fontHeadingTwo;
+        color: $white;
+        font-weight: 100;
+        font-size: 65px;
+        line-height: 60px;
+        @media (max-width: 1750px) {
+          font-size: 55px;
+          line-height: 50px;
+        }
+        @media (max-width: 1150px) {
+          font-size: 45px;
+          line-height: 40px;
+        }
+        @media (max-width: 700px) {
+          font-size: 35px;
+          line-height: 30px;
+        }
+        @media (max-width: 800px) {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        @media (max-width: 590px) {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+
+      .statsWrap {
+        // background-color: blue;
+        // background-color: blue;
+        @include center;
+        justify-content: space-between;
+        @media (max-width: 800px) {
+          flex-direction: column;
+        }
+        .stats {
+          //   background-color: grey;
+          width: 30%;
+          margin: 2rem 0;
+          @include center;
+          flex-direction: column;
+          @media (max-width: 800px) {
+            margin: 0rem;
+            width: 100%;
+          }
+          h3 {
+            @include fontHeadingTwo;
+            text-align: center;
+            color: $white;
+            margin-bottom: 2rem;
+            font-size: 200px;
+            line-height: 200px;
+            @media (max-width: 1750px) {
+              font-size: 160px;
+              line-height: 160px;
+            }
+            @media (max-width: 1150px) {
+              font-size: 120px;
+              line-height: 120px;
+            }
+            @media (max-width: 950px) {
+              font-size: 100px;
+              line-height: 100px;
+            }
+
+            @media (max-width: 620px) {
+              margin: 0;
+            }
+
+            @media (max-width: 590px) {
+              font-size: 100px;
+              line-height: 100px;
+            }
+          }
+          p {
+            min-height: 100px;
+            color: $white;
+            max-width: 260px;
+            @media (max-width: 800px) {
+              margin: 1rem;
+              min-height: auto;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

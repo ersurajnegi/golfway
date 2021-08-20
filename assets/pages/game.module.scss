@@ -1,0 +1,91 @@
+@use '../../assets' as *;
+.gamePageWrap {
+  .heroContainer {
+    z-index: 1;
+    position: relative;
+    .heroOverlay {
+      @include overlay;
+    }
+    .heroTextWrap {
+      @include heroTextWrap;
+      h1 {
+        @include fontHeadingHero;
+        position: absolute;
+        max-width: 70rem;
+        color: $white;
+        text-align: center;
+        @media (max-width: 590px) {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+  .firstSection,
+  .secondSection,
+  .thirdSection,
+  .fourthSection {
+    padding: 4rem;
+    @include pageSectionWidth;
+    width: 80%;
+
+    h2 {
+      @include fontHeadingTwo;
+      margin-bottom: 2rem;
+    }
+    p {
+      @include fontOne;
+    }
+  }
+
+  .firstSection {
+    h2 {
+      text-align: center;
+    }
+  }
+  .secondSection {
+    .textWrap {
+      h2 {
+        @include fontHeadingTwo;
+        margin-bottom: 2rem;
+      }
+      p {
+        @include fontOne;
+      }
+      margin-bottom: 1rem;
+    }
+  }
+  .thirdSection {
+    background-color: $grey-01;
+    ul {
+      display: flex;
+      li {
+        height: 300px;
+        width: 25%;
+        div {
+          height: 100px;
+          width: 100px;
+
+          picture {
+            div {
+              div {
+                img {
+                }
+              }
+            }
+          }
+        }
+      }
+      height: 300px;
+    }
+  }
+  .fourthSection {
+    display: flex;
+    .socialLinks {
+      width: 50%;
+      @include center;
+    }
+    .textWrap {
+      width: 50%;
+    }
+  }
+}

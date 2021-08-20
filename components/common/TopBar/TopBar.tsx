@@ -19,7 +19,6 @@ const TopBar = () => (
           </a>
         </Link> */}
       </div>
-
       <div className={s.socialLinks}>
         <a
           href="https://twitter.com/GolfwayOfficial"
@@ -28,7 +27,6 @@ const TopBar = () => (
         >
           <Image src="/twitter.svg" height="20" width="20" alt="twitter icon" />
         </a>
-
         <a
           href="https://www.facebook.com/golfway.official/"
           target="_blank"
@@ -41,7 +39,6 @@ const TopBar = () => (
             alt="facebook icon"
           />
         </a>
-
         <a
           href="https://www.instagram.com/golfway_official/"
           target="_blank"

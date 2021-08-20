@@ -156,11 +156,22 @@
       font-size: 15px;
       @media (max-width: 1023px) {
         color: $white;
+        &:hover {
+          color: $grey-1;
+        }
       }
     }
 
     .link:nth-child(1) {
       font-weight: 700;
+      @media (max-width: 1023px) {
+        color: $white;
+        &:hover {
+          color: $white;
+          background-color: $green-1;
+          border-radius: 10px;
+        }
+      }
     }
   }
 }
