@@ -164,10 +164,9 @@ export default function Home(
             ))}
           </Marquee>
         </div>
-        <div className={s.fifthSection}>
-          {documentToReactComponents(fifthSection)}
-          <NewsLetter url={url} />
-        </div>
+
+        <NewsLetter url={url} />
+
         {/* 
         <Grid variant="filled">
           {products.slice(0, 7).map((product: any, i: number) => (

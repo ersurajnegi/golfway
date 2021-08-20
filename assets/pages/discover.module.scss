@@ -3,14 +3,16 @@
   @include pageWidth;
   .heroContainer {
     z-index: 1;
-    background-color: $grey-0;
+    background-color: $grey-001;
     @include center;
+    @media (max-width: 700px) {
+      padding: 2rem 0;
+    }
 
     .heroTextWrap {
-      padding: 4rem;
-      width: 50%;
+      width: 40%;
       h1 {
-        @include fontHeadingTwo;
+        @include fontHeadingHero;
         margin-bottom: 2rem;
       }
       p {
@@ -19,30 +21,46 @@
       }
     }
     .heroImage {
-      width: 50%;
+      width: 40%;
     }
   }
 
   .firstSection {
     padding: 4rem 4vw;
     @include center;
+
+    @media (max-width: 700px) {
+      flex-direction: column-reverse;
+    }
     .firstSectionImage {
       width: 50%;
+      margin-right: 2rem;
+      @media (max-width: 700px) {
+        width: 80%;
+        margin-right: 0;
+      }
     }
+
     .textWrap {
       width: 50%;
+      @media (max-width: 700px) {
+        width: 80%;
+      }
       h2 {
-        @include fontHeadingThree;
-        margin-bottom: 1rem;
+        @include fontHeadingTwo;
+        margin-bottom: 2rem;
+        @media (max-width: 700px) {
+          text-align: center;
+        }
       }
       p {
         @include fontOne;
       }
       .sizesWrap {
-        margin-top: 2rem;
+        margin-top: 1rem;
         @include center;
         .sizes {
-          margin: 5px;
+          margin: 0 5px;
           width: 50px;
           height: 50px;
           border-radius: 50%;
@@ -55,6 +73,7 @@
           }
         }
 
+        // Play Sizes
         .size90 {
           background-color: #02e0c5;
         }
@@ -71,6 +90,38 @@
           background-color: #686d9f;
         }
         .size170 {
+          background-color: #d9d9d6;
+          span {
+            color: $grey-1;
+          }
+        }
+
+        // Champion Sizes
+        .size110C {
+          background-color: #02e0c5;
+        }
+        .size120C {
+          background-color: #fbdb65;
+          span {
+            color: $grey-1;
+          }
+        }
+        .size130C {
+          background-color: #ffbf35;
+          span {
+            color: $grey-1;
+          }
+        }
+        .size140C {
+          background-color: #1a658f;
+        }
+        .size150C {
+          background-color: #f96b6b;
+        }
+        .size160C {
+          background-color: #686d9f;
+        }
+        .size170C {
           background-color: #d9d9d6;
           span {
             color: $grey-1;
@@ -101,56 +152,83 @@
   }
 
   .thirdSection {
+    padding: 4rem;
+    @media (max-width: 700px) {
+      padding: 2rem 0 0;
+    }
     h2 {
       text-align: center;
     }
-    p {
-      text-align: center;
-      width: 80%;
-      margin: 0 auto;
+    ol {
+      margin: 4rem 0;
+      display: flex;
+      @media (max-width: 700px) {
+        flex-direction: column;
+      }
+      li {
+        width: 33%;
+        @media (max-width: 700px) {
+          width: 100%;
+        }
+        p {
+          b {
+            @include fontHeadingThree;
+            display: block;
+            font-weight: 100;
+            margin-bottom: 2rem;
+            @media (max-width: 700px) {
+              margin-bottom: 1rem;
+            }
+          }
+          width: 80%;
+          margin: 0 auto;
+          @media (max-width: 700px) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
     }
   }
-
-  // @media (max-width: 620px) {
-  //   flex-direction: column;
-  //   .firstSection {
-  //     width: 80%;
-  //     margin: 0 auto;
-  //     align-items: center;
-  //     h2,
-  //     p {
-  //       text-align: center;
-  //     }
-  //   }
-  //   .firstSectionImage {
-  //     margin: 0 auto;
-  //     width: 80%;
-  //     padding: 4rem 4vw;
-  //     @include center;
-  //     @media (max-width: 590px) {
-  //       padding: 1rem 4vw;
-  //     }
-  //     .imageWrap {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
+  .heroContainerBottom {
+    position: relative;
+    .heroImage {
+    }
+    .heroOverlay {
+      @include overlay;
+    }
+    // home hero text styles
+    .heroTextWrap {
+      @include heroTextWrap;
+      h1 {
+        @include fontHeadingHero;
+        position: absolute;
+        max-width: 32rem;
+        color: $white;
+        text-align: center;
+        @media (max-width: 1165px) {
+          max-width: 28vw;
+        }
+        @media (max-width: 590px) {
+          max-width: 150px;
+        }
+      }
+    }
+  }
+  .joinTheTeam {
+    padding-top: 4rem;
+    @include center;
+    flex-direction: column;
+    @include pageSectionWidth;
+    margin-bottom: 4rem;
+    h2 {
+      @include fontHeadingTwo;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      @include fontOne;
+      max-width: 600px;
+      font-weight: 700;
+    }
+  }
 }
-
-//   .firstSection,
-//   .firstSectionWrap
-//  {
-//     @include pageSectionWidth;
-//   }
-
-//   .thirdSection {
-//     background-color: $grey-0;
-//     @include center;
-//     flex-direction: column;
-//     .link {
-//       @include buttonOne;
-//       background-color: $green-1;
-//       color: $white;
-//       margin: 0 auto;
-//     }
-//   }

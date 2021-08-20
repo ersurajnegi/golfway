@@ -69,37 +69,48 @@ const NewsletterForm = ({
 
   return (
     <>
-      <div className={s.newsLetterWrap}>
-        <div className={s.newsLetterContainer}>
-          <div className={s.inputWrap}>
-            <input
-              onChange={(event: any) => setEmail(event?.target?.value ?? '')}
-              type="email"
-              placeholder="Enter email"
-              className={s.input}
-              onKeyUp={(event) => handleInputKeyEvent(event)}
-            />
+      <div className={s.joinTheTeam}>
+        <h2>JOIN THE TEAM.</h2>
+        <p>
+          We’re a vibrant community of players always looking for new ways to
+          play. Sign-up for exclusive product deals and ideas for gameplay.
+        </p>
+        {/* <NewsLetter /> */}
+
+        <div className={s.newsLetterWrap}>
+          <div className={s.newsLetterContainer}>
+            <div className={s.inputWrap}>
+              <input
+                onChange={(event: any) => setEmail(event?.target?.value ?? '')}
+                type="email"
+                placeholder="Enter email"
+                className={s.input}
+                onKeyUp={(event) => handleInputKeyEvent(event)}
+              />
+            </div>
+            <div className={s.buttonWrap}>
+              <button className={s.button} onClick={handleFormSubmit}>
+                Sign-up
+              </button>
+            </div>
           </div>
-          <div className={s.buttonWrap}>
-            <button className={s.button} onClick={handleFormSubmit}>
-              Sign-up
-            </button>
+          <div className={s.newsLetterInfoContainer}>
+            {status === 'sending' && <div>Sending...</div>}
+            {status === 'error' || error ? (
+              <div
+                className={s.newsLetterError}
+                dangerouslySetInnerHTML={{
+                  __html: error || getMessage(message),
+                }}
+              />
+            ) : null}
+            {status === 'success' && status !== 'error' && !error && (
+              <div
+                className={s.newsLetterValid}
+                dangerouslySetInnerHTML={{ __html: decode(message) }}
+              />
+            )}
           </div>
-        </div>
-        <div className={s.newsLetterInfoContainer}>
-          {status === 'sending' && <div>Sending...</div>}
-          {status === 'error' || error ? (
-            <div
-              className={s.newsLetterError}
-              dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}
-            />
-          ) : null}
-          {status === 'success' && status !== 'error' && !error && (
-            <div
-              className={s.newsLetterValid}
-              dangerouslySetInnerHTML={{ __html: decode(message) }}
-            />
-          )}
         </div>
       </div>
     </>

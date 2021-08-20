@@ -76,28 +76,38 @@ export default function Search({ categories, brands }: SearchPropsType) {
   const getBannerBasedOnActiveCategory = () => {
     if (activeCategory && activeCategory.id == '26') {
       return (
-        <div className={s.banners}>
-          <div className={s.textWrap}>
-            <h2>CHAMPION</h2>
-            <p>
-              We haven’t just revised junior golf, we’ve re-examined, resized,
-              and redesigned it. Oh, and it’s for adults too.
-            </p>
+        <div className={s.heroContainer}>
+          <div className={s.banner}>
+            <div className={s.textWrap}>
+              <h2>CHAMPION</h2>
+              <p>
+                We haven’t just revised junior golf, we’ve re-examined, resized,
+                and redesigned it. Oh, and it’s for adults too.
+              </p>
+              <Link href="/discover-champion">
+                <a className={s.link}>Discover</a>
+              </Link>
+            </div>
+            <div className={s.polygon}></div>
           </div>
-          <div className={s.polygon}></div>
         </div>
       )
     } else if (activeCategory && activeCategory.id == '27') {
       return (
-        <div className={s.banners}>
-          <div className={s.textWrap}>
-            <h2>PLAY</h2>
-            <p>
-              Golfway Play is a fast-paced exciting game based on traditional
-              golf and perfect for learning and enjoying the game.
-            </p>
+        <div className={s.heroContainer}>
+          <div className={s.banner}>
+            <div className={s.textWrap}>
+              <h2>PLAY</h2>
+              <p>
+                Golfway Play is a fast-paced exciting game based on traditional
+                golf and perfect for learning and enjoying the game.
+              </p>
+              <Link href="/discover-play">
+                <a className={s.link}>Discover</a>
+              </Link>
+            </div>
+            <div className={s.polygon}></div>
           </div>
-          <div className={s.polygon}></div>
         </div>
       )
     } else {
@@ -462,12 +472,12 @@ export default function Search({ categories, brands }: SearchPropsType) {
         </div>
       </div>
       <div className={s.joinTheTeam}>
-        <h2>JOIN THE TEAM.</h2>
+        {/* <h2>JOIN THE TEAM.</h2>
         <p>
           We’re a vibrant community of players always looking for new ways to
           play. Sign-up for exclusive product deals and ideas for gameplay.
         </p>
-        {/* <NewsLetter /> */}
+        <NewsLetter /> */}
       </div>
     </Container>
   )

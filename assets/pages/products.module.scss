@@ -2,15 +2,55 @@
 
 .searchWrap {
   box-sizing: border-box;
-  margin: 4rem 2rem;
+  margin: 4rem;
+  @media (max-width: 770px) {
+    margin: 2rem;
+  }
   .heroContainer {
-    margin: 0rem;
+    margin-bottom: 2rem;
     @include center;
     align-items: flex-start;
     flex-direction: column;
+    @media (max-width: 1150px) {
+      margin-bottom: 0;
+    }
     .titleDiv {
       h1 {
         @include fontHeadingTwo;
+      }
+    }
+
+    // Banner For Chammpion & Play
+    .banner {
+      min-height: 400px;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: $green-1;
+      @media (max-width: 1150px) {
+        min-height: 320px;
+      }
+
+      .textWrap {
+        margin: 2rem;
+        h2 {
+          @include fontHeadingTwo;
+          color: $white;
+          margin-bottom: 2rem;
+        }
+        p {
+          @include fontOne;
+          font-weight: 800;
+          color: $white;
+          max-width: 40%;
+          margin-bottom: 2rem;
+        }
+        .link {
+          @include buttonOne;
+          background-color: $white;
+          &:hover {
+            color: $white;
+          }
+        }
       }
     }
 
@@ -21,16 +61,37 @@
       grid-template-columns: 1fr 1fr;
       grid-gap: 2rem;
 
+      @media (max-width: 1023px) {
+        margin: 3rem 0 2rem;
+      }
+      @media (max-width: 770px) {
+        grid-template-columns: 1fr;
+      }
+      // Banner For Shop All
       .banners {
         position: relative;
         background-color: $green-1;
         min-height: 400px;
         display: flex;
+        transition: 200ms;
+        &:hover {
+          background-color: $grey-1;
+        }
+        @media (max-width: 1150px) {
+          min-height: 320px;
+        }
+        @media (max-width: 990px) {
+          min-height: 280px;
+        }
         .textWrap {
           h2 {
             margin: 2rem;
             @include fontHeadingTwo;
             color: $white;
+            @media (max-width: 990px) {
+              font-size: 45px;
+              line-height: 40px;
+            }
           }
           p {
             @include fontOne;
@@ -49,12 +110,12 @@
             position: absolute;
             bottom: 0;
             right: 0;
+            @media (max-width: 990px) {
+              width: 50%;
+            }
           }
           .imagePlay {
-            width: 60%;
-            position: absolute;
             top: 0;
-            right: 0;
           }
           .polygon {
             width: calc(100% + 1px);

@@ -80,7 +80,8 @@ $text: sofia-pro, sans-serif;
   font-size: 10vw;
   line-height: 10vw;
   @media (max-width: 590px) {
-    font-size: 11vw;
+    font-size: 50px;
+    line-height: 50px;
   }
 }
 
@@ -128,8 +129,8 @@ $text: sofia-pro, sans-serif;
   font-style: normal;
   color: $grey-1;
   font-size: 3vw;
-  @media (max-width: 590px) {
-    font-size: 25px;
+  @media (max-width: 700px) {
+    font-size: 20px;
   }
 }
 

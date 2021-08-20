@@ -39,7 +39,7 @@
         color: $white;
         text-align: center;
         @media (max-width: 590px) {
-          max-width: 29rem;
+          max-width: 150px;
         }
       }
       // ids for hero text for each page if required
@@ -300,6 +300,7 @@
       font-weight: 700;
     }
   }
+
   .thirdSection {
     background-color: $grey-0;
     @include center;

@@ -55,12 +55,8 @@ export async function getStaticProps({
   }
 }
 
-export default function Play(
-  {
-    discoverPage,
-
-    url,
-  }: { discoverPage: any; url: any },
+export default function Champion(
+  { discoverPage, url }: { discoverPage: any; url: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const {
@@ -68,12 +64,15 @@ export default function Play(
     heroText,
     heroSummary,
     firstSection,
+    firstSectionImage,
     secondSection,
     thirdSection,
     ProductImage,
     heroImageBottom,
     heroTextBottom,
   } = discoverPage[0].fields
+
+  console.log(discoverPage)
 
   return (
     <>
@@ -97,24 +96,34 @@ export default function Play(
         </div>
 
         <div className={s.firstSection}>
-          <div className={s.firstSectionImage}>Image</div>
+          <div className={s.firstSectionImage}>
+            {' '}
+            <Image
+              src={'https:' + firstSectionImage.fields.file.url}
+              width={firstSectionImage.fields.file.details.image.width}
+              height={firstSectionImage.fields.file.details.image.height}
+              alt={firstSectionImage.fields.title}
+            />
+          </div>
           <div className={s.textWrap}>
             {documentToReactComponents(firstSection)}
             <div className={s.sizesWrap}>
-              <div className={`${s.sizes} ${s.size90}`}>
-                <span>90</span>
-              </div>
-              <div className={`${s.sizes} ${s.size110}`}>
-                <span>110</span>
-              </div>
-              <div className={`${s.sizes} ${s.size130}`}>
-                <span>130</span>
-              </div>
-              <div className={`${s.sizes} ${s.size150}`}>
-                <span>150</span>
-              </div>
-              <div className={`${s.sizes} ${s.size170}`}>
-                <span>170</span>
+              <div className={s.sizesWrap}>
+                <div className={`${s.sizes} ${s.size90}`}>
+                  <span>90</span>
+                </div>
+                <div className={`${s.sizes} ${s.size110}`}>
+                  <span>110</span>
+                </div>
+                <div className={`${s.sizes} ${s.size130}`}>
+                  <span>130</span>
+                </div>
+                <div className={`${s.sizes} ${s.size150}`}>
+                  <span>150</span>
+                </div>
+                <div className={`${s.sizes} ${s.size170}`}>
+                  <span>170</span>
+                </div>
               </div>
             </div>
           </div>
@@ -131,7 +140,7 @@ export default function Play(
           />
           {documentToReactComponents(thirdSection)}
         </div>
-        <div className={s.heroContainer}>
+        <div className={s.heroContainerBottom}>
           <div className={s.heroImage}>
             <Image
               priority={true}
@@ -149,17 +158,10 @@ export default function Play(
           </div>
         </div>
 
-        <div className={s.newsSection}>
-          <h2>JOIN THE TEAM.</h2>
-          <p>
-            We’re a vibrant community of players always looking for new ways to
-            play. Sign-up for exclusive product deals and ideas for gameplay.
-          </p>
-          <NewsLetter url={url} />
-        </div>
+        <NewsLetter url={url} />
       </div>
     </>
   )
 }
 
-Play.Layout = Layout
+Champion.Layout = Layout
