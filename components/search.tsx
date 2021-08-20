@@ -2,6 +2,7 @@ import cn from 'classnames'
 import s from '../assets/pages/products.module.scss'
 import type { SearchPropsType } from '@lib/search-props'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
@@ -70,14 +71,14 @@ export default function Search({ categories, brands }: SearchPropsType) {
     setActiveFilter(filter)
   }
 
-  console.log('checking categories', categories)
+  // console.log('checking categories', categories)
 
   const getBannerBasedOnActiveCategory = () => {
     if (activeCategory && activeCategory.id == '26') {
       return (
         <div className={s.banners}>
           <div className={s.textWrap}>
-            <h2>Champion</h2>
+            <h2>CHAMPION</h2>
             <p>
               We haven’t just revised junior golf, we’ve re-examined, resized,
               and redesigned it. Oh, and it’s for adults too.
@@ -90,7 +91,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
       return (
         <div className={s.banners}>
           <div className={s.textWrap}>
-            <h2>Play</h2>
+            <h2>PLAY</h2>
             <p>
               Golfway Play is a fast-paced exciting game based on traditional
               golf and perfect for learning and enjoying the game.
@@ -116,13 +117,24 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <a onClick={(e) => handleClick(e, 'categories')}>
                   <div className={s.banners}>
                     <div className={s.textWrap}>
-                      <h2>Champion</h2>
+                      <h2>CHAMPION</h2>
                       <p>
                         We haven’t just revised junior golf, we’ve re-examined,
                         resized, and redesigned it. Oh, and it’s for adults too.
                       </p>
                     </div>
-                    <div className={s.polygon}></div>
+                    <div className={s.imageWrap}>
+                      <div className={s.polygon}></div>
+                      <div className={s.image}>
+                        <Image
+                          layout="responsive"
+                          src="/Driver.png"
+                          width={100}
+                          height={100}
+                          alt="Golway Champion Driver"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </a>
               </Link>
@@ -136,14 +148,25 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <a onClick={(e) => handleClick(e, 'categories')}>
                   <div className={s.banners}>
                     <div className={s.textWrap}>
-                      <h2>Play</h2>
+                      <h2>PLAY</h2>
                       <p>
                         Golfway Play is a fast-paced exciting game based on
                         traditional golf and perfect for learning and enjoying
                         the game.
                       </p>
                     </div>
-                    <div className={s.polygon}></div>
+                    <div className={s.imageWrap}>
+                      <div className={s.polygon}></div>
+                      <div className={`${s.image} ${s.imagePlay}`}>
+                        <Image
+                          layout="responsive"
+                          src="/Putter.png"
+                          width={100}
+                          height={100}
+                          alt="Golway Champion Driver"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </a>
               </Link>
