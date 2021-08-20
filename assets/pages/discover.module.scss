@@ -8,12 +8,22 @@
     @media (max-width: 700px) {
       padding: 2rem 0;
     }
+    @media (max-width: 450px) {
+      flex-direction: column-reverse;
+    }
 
     .heroTextWrap {
       width: 40%;
+      @media (max-width: 450px) {
+        width: 80%;
+        margin-top: 2rem;
+      }
       h1 {
         @include fontHeadingHero;
         margin-bottom: 2rem;
+        @media (max-width: 450px) {
+          text-align: center;
+        }
       }
       p {
         @include fontOne;
@@ -31,6 +41,7 @@
 
     @media (max-width: 700px) {
       flex-direction: column-reverse;
+      padding: 4rem 0 4rem;
     }
     .firstSectionImage {
       width: 50%;
@@ -58,6 +69,9 @@
       }
       .sizesWrap {
         margin-top: 1rem;
+        @media (max-width: 390px) {
+          margin-bottom: 0.5rem;
+        }
         @include center;
         .sizes {
           margin: 0 5px;
@@ -65,11 +79,24 @@
           height: 50px;
           border-radius: 50%;
           @include center;
+          @media (max-width: 370px) {
+            width: 35px;
+            height: 35px;
+            margin: 0 2px;
+          }
 
           span {
             @include fontOne;
             color: $white;
             font-weight: 800;
+          }
+        }
+
+        .sizesC {
+          @media (max-width: 700px) {
+            width: 35px;
+            height: 35px;
+            margin: 0 2px;
           }
         }
 
@@ -134,6 +161,9 @@
   .secondSection {
     background-color: $green-1;
     padding: 4rem;
+    @media (max-width: 700px) {
+      padding: 4rem 0 4rem;
+    }
     // @include pageSectionWidth;
     @include center;
     flex-direction: column;
@@ -148,13 +178,18 @@
       @include fontOne;
       color: $white;
       max-width: 1000px;
+      @media (max-width: 700px) {
+        width: 80%;
+      }
     }
   }
 
   .thirdSection {
     padding: 4rem;
     @media (max-width: 700px) {
-      padding: 2rem 0 0;
+      padding: 4rem 0 0rem;
+      width: 80%;
+      margin: 0 auto;
     }
     h2 {
       text-align: center;
@@ -184,6 +219,7 @@
           margin: 0 auto;
           @media (max-width: 700px) {
             margin-bottom: 1rem;
+            width: 100%;
           }
         }
       }

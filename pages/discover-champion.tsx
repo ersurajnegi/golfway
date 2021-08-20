@@ -106,25 +106,25 @@ export default function Champion(
           <div className={s.textWrap}>
             {documentToReactComponents(firstSection)}
             <div className={s.sizesWrap}>
-              <div className={`${s.sizes} ${s.size110C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size110C}`}>
                 <span>110</span>
               </div>
-              <div className={`${s.sizes} ${s.size120C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size120C}`}>
                 <span>120</span>
               </div>
-              <div className={`${s.sizes} ${s.size130C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size130C}`}>
                 <span>130</span>
               </div>
-              <div className={`${s.sizes} ${s.size140C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size140C}`}>
                 <span>140</span>
               </div>
-              <div className={`${s.sizes} ${s.size150C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size150C}`}>
                 <span>150</span>
               </div>
-              <div className={`${s.sizes} ${s.size160C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size160C}`}>
                 <span>160</span>
               </div>
-              <div className={`${s.sizes} ${s.size170C}`}>
+              <div className={`${s.sizes} ${s.sizesC} ${s.size170C}`}>
                 <span>170</span>
               </div>
             </div>
@@ -134,12 +134,14 @@ export default function Champion(
           {documentToReactComponents(secondSection)}
         </div>
         <div className={s.thirdSection}>
-          <Image
-            src={'https:' + ProductImage.fields.file.url}
-            width={ProductImage.fields.file.details.image.width}
-            height={ProductImage.fields.file.details.image.height}
-            alt={ProductImage.fields.title}
-          />
+          <div className={s.productImage}>
+            <Image
+              src={'https:' + ProductImage.fields.file.url}
+              width={ProductImage.fields.file.details.image.width}
+              height={ProductImage.fields.file.details.image.height}
+              alt={ProductImage.fields.title}
+            />
+          </div>
           {documentToReactComponents(thirdSection)}
         </div>
         <div className={s.heroContainerBottom}>
