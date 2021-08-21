@@ -1,7 +1,7 @@
 @use '../../../assets' as *;
 .control {
   z-index: 30;
-  z-index: 10000;
+  z-index: 1;
   // border: 1px solid $white;
   color: $white;
   @include center;

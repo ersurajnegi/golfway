@@ -4,6 +4,8 @@ import s from './Navbar.module.scss'
 import { useRouter } from 'next/router'
 
 export default function Navbar() {
+  const router = useRouter()
+
   const [navState, setNavState] = useState(false)
   const navButton = navState ? s.opened : ' '
   const navMenuBg = navState ? s.navShow : s.navHide
@@ -19,7 +21,9 @@ export default function Navbar() {
     { link: '/blogs', text: 'Blogs', key: 70 },
   ]
 
-  const router = useRouter()
+  console.log("state =", navState)
+
+  
   return (
     <>
       <button

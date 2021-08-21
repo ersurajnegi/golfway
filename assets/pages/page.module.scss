@@ -56,6 +56,10 @@
   .fourthSection,
   .fifthSection {
     padding: 4rem;
+    @media (max-width: 700px) {
+      flex-direction: column-reverse;
+      padding: 4rem 0 4rem;
+    }
     h2 {
       @include fontHeadingTwo;
       margin-bottom: 1rem;

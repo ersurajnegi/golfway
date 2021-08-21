@@ -118,38 +118,39 @@
 }
 
 .navHide {
-  transform: translateX(0);
-  -webkit-transform: translatX(0);
+  transform: translateX(-110%);
+  -webkit-transform: translatX(-110%);
+   opacity: 0;
 
   @media (max-width: 700px) {
-    opacity: 0;
-    animation-name: menu-hide;
-    animation-fill-mode: forwards;
-    animation-duration: 500ms;
+   
+    // animation-name: menu-hide;
+    // animation-fill-mode: forwards;
+    // animation-duration: 500ms;
   }
-  @keyframes menu-hide {
-    0% {
-      transform: translateX(0);
-      -webkit-transform: translatX(0);
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-      transform: translateX(0);
-      -webkit-transform: translatX(0);
-    }
+  // @keyframes menu-hide {
+  //   0% {
+  //     transform: translateX(0);
+  //     -webkit-transform: translatX(0);
+  //     opacity: 1;
+  //   }
+  //   50% {
+  //     opacity: 0;
+  //     transform: translateX(0);
+  //     -webkit-transform: translatX(0);
+  //   }
 
-    100% {
-      transform: translateX(-110%);
-      -webkit-transform: translatX(-110%);
-    }
-  }
+  //   100% {
+  //     transform: translateX(-110%);
+  //     -webkit-transform: translatX(-110%);
+  //   }
+  // }
 }
 
 .navShowLinks {
   transform: translateX(0);
   -webkit-transform: translatX(0);
-  transition: 500ms;
+  // transition: 500ms;
   opacity: 1;
 }
 
@@ -161,7 +162,7 @@
     opacity: 0;
     transform: translateX(-110%);
     -webkit-transform: translatX(-110%);
-    transition: 500ms;
+    // transition: 500ms;
   }
 }
 
