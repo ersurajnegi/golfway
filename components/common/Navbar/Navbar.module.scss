@@ -118,39 +118,16 @@
 }
 
 .navHide {
-  transform: translateX(-110%);
-  -webkit-transform: translatX(-110%);
-   opacity: 0;
-
   @media (max-width: 700px) {
-   
-    // animation-name: menu-hide;
-    // animation-fill-mode: forwards;
-    // animation-duration: 500ms;
+    transform: translateX(-110%);
+    -webkit-transform: translatX(-110%);
+    opacity: 0;
   }
-  // @keyframes menu-hide {
-  //   0% {
-  //     transform: translateX(0);
-  //     -webkit-transform: translatX(0);
-  //     opacity: 1;
-  //   }
-  //   50% {
-  //     opacity: 0;
-  //     transform: translateX(0);
-  //     -webkit-transform: translatX(0);
-  //   }
-
-  //   100% {
-  //     transform: translateX(-110%);
-  //     -webkit-transform: translatX(-110%);
-  //   }
-  // }
 }
 
 .navShowLinks {
   transform: translateX(0);
   -webkit-transform: translatX(0);
-  // transition: 500ms;
   opacity: 1;
 }
 
@@ -162,7 +139,6 @@
     opacity: 0;
     transform: translateX(-110%);
     -webkit-transform: translatX(-110%);
-    // transition: 500ms;
   }
 }
 
