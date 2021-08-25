@@ -1,0 +1,12 @@
+@use '../../assets' as *;
+
+.pageWrap {
+  @include pageSectionWidth;
+  .checkout {
+    @include center;
+    padding: 4rem;
+    h1 {
+      @include fontHeadingHero;
+    }
+  }
+}

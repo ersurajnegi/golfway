@@ -35,8 +35,6 @@ export async function getStaticProps({
     accessToken: `${process.env.CONTENTFUL_ACCESS_KEY}`,
   })
 
-  console.log(process.env)
-
   const res = await client.getEntries({ content_type: 'home' })
 
   return {
@@ -70,7 +68,6 @@ export default function Home(
     thirdSection,
     ProductImage,
     fourthSection,
-    fifthSection,
   } = homePage[0].fields
 
   const [mobile, setMobile] = useState(false)
@@ -79,6 +76,8 @@ export default function Home(
     let width = window.innerWidth || screen.width
     setMobile(width >= 620 ? false : true)
   }, [])
+
+  // console.log('home page chcecking products: ', products)
 
   return (
     <>
@@ -111,7 +110,7 @@ export default function Home(
 
           <div className={s.heroOverlay}></div>
           <div className={s.heroTextWrap}>
-            <h1>{heroText}</h1>
+            <h1 id={s.homeHeroText}>{heroText}</h1>
           </div>
         </div>
         <div className={s.firstSection}>
@@ -156,6 +155,12 @@ export default function Home(
             alt={ProductImage.fields.title}
           />
         </div>
+
+        <div className={s.testSection}>
+          {/* {products.map(() => (
+
+          ))} */}
+        </div>
         <div className={s.fourthSection}>
           {documentToReactComponents(fourthSection)}
           <Marquee>
@@ -166,43 +171,6 @@ export default function Home(
         </div>
 
         <NewsLetter url={url} />
-
-        {/* 
-        <Grid variant="filled">
-          {products.slice(0, 7).map((product: any, i: number) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              imgProps={{
-                width: i === 0 ? 1080 : 540,
-                height: i === 0 ? 1080 : 540,
-              }}
-            />
-          ))}
-        </Grid> */}
-        {/*
-      <Marquee variant="secondary">
-        {products.slice(0, 13).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>
-      <Hero
-        headline=" Dessert dragée halvah croissant."
-        description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
-      />
-      <Grid layout="B" variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
-        ))}
-      </Grid>
-      */}
       </div>
     </>
   )

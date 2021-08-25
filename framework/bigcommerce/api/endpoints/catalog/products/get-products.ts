@@ -7,7 +7,7 @@ const SORT: { [key: string]: string | undefined } = {
   price: 'price',
 }
 
-const LIMIT = 12
+const LIMIT = 50
 
 // Return current cart info
 const getProducts: ProductsEndpoint['handlers']['getProducts'] = async ({
@@ -50,7 +50,7 @@ const getProducts: ProductsEndpoint['handlers']['getProducts'] = async ({
   //-----------------------------------------------------------
 
   // Mentor inputed the below code to check data before filter
-  // console.log('Befoe API : ', data.length)
+  // console.log('Before API : ', data.length)
 
   //-----------------------------------------------------------
 

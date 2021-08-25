@@ -1,5 +1,6 @@
 .root {
-  @apply fixed inset-0 h-full z-50 box-border;
+  @apply fixed inset-0 h-full box-border;
+  z-index: 1000;
 }
 
 .sidebar {

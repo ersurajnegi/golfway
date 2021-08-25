@@ -1,0 +1,185 @@
+@use '../../assets' as *;
+.pageWrap {
+  @include pageWidth;
+  .heroContainer {
+    z-index: 1;
+    position: relative;
+
+    .heroTextWrap {
+      z-index: 1;
+      @include heroTextWrap;
+      h1 {
+        @include fontHeadingHero;
+        position: absolute;
+        max-width: 62rem;
+        color: $white;
+        text-align: center;
+        @media (max-width: 590px) {
+          max-width: 150px;
+        }
+      }
+    }
+    .heroOverlay {
+      @include overlay;
+    }
+  }
+
+  .firstSection {
+    padding: 4rem 4vw;
+    @include center;
+
+    @media (max-width: 700px) {
+      flex-direction: column-reverse;
+      padding: 4rem 0 4rem;
+    }
+    .firstSectionImage {
+      width: 50%;
+      margin-right: 2rem;
+      @media (max-width: 700px) {
+        width: 80%;
+        margin-right: 0;
+      }
+    }
+
+    .textWrap {
+      width: 50%;
+      @media (max-width: 700px) {
+        width: 80%;
+      }
+      h2 {
+        @include fontHeadingTwo;
+        margin-bottom: 2rem;
+        @media (max-width: 700px) {
+          text-align: center;
+        }
+      }
+      p {
+        @include fontOne;
+      }
+    }
+  }
+
+  .findYourClub {
+    background-color: $grey-001;
+    padding: 4rem 4vw;
+    .title {
+      h2 {
+        @include fontHeadingTwo;
+        margin-bottom: 2rem;
+      }
+    }
+    .filterWrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      .filters {
+        p {
+          @include fontOne;
+          font-weight: 800;
+          margin-bottom: 1rem;
+        }
+        .inputWrap {
+          span {
+            @include fontOne;
+            margin-left: 10px;
+          }
+        }
+        .playSizesWrap {
+          display: flex;
+          .sizes {
+            margin: 0 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            @include center;
+            @media (max-width: 370px) {
+              width: 35px;
+              height: 35px;
+              margin: 0 2px;
+            }
+
+            span {
+              @include fontOne;
+              color: $white;
+              font-weight: 800;
+            }
+          }
+          // Play Sizes
+          .size90 {
+            background-color: #02e0c5;
+          }
+          .size110 {
+            background-color: #fbdb65;
+            span {
+              color: $grey-1;
+            }
+          }
+          .size130 {
+            background-color: #1a658f;
+          }
+          .size150 {
+            background-color: #686d9f;
+          }
+          .size170 {
+            background-color: #d9d9d6;
+            span {
+              color: $grey-1;
+            }
+          }
+        }
+        .championSizesWrap {
+          display: flex;
+
+          .sizes {
+            margin: 0 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            @include center;
+            @media (max-width: 370px) {
+              width: 35px;
+              height: 35px;
+              margin: 0 2px;
+            }
+
+            span {
+              @include fontOne;
+              color: $white;
+              font-weight: 800;
+            }
+          }
+          // Champion Sizes
+          .size110C {
+            background-color: #02e0c5;
+          }
+          .size120C {
+            background-color: #fbdb65;
+            span {
+              color: $grey-1;
+            }
+          }
+          .size130C {
+            background-color: #ffbf35;
+            span {
+              color: $grey-1;
+            }
+          }
+          .size140C {
+            background-color: #1a658f;
+          }
+          .size150C {
+            background-color: #f96b6b;
+          }
+          .size160C {
+            background-color: #686d9f;
+          }
+          .size170C {
+            background-color: #d9d9d6;
+            span {
+              color: $grey-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ import { Grid, Marquee, Hero } from '@components/ui'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import s from '../assets/pages/page.module.scss'
+import s from '../assets/pages/checkout.module.scss'
 
 export async function getStaticProps({
   preview,
@@ -47,7 +47,12 @@ export async function getStaticProps({
   }
 }
 
-export default function Games(
+// const checkout = embedCheckout({
+//   containerId: 'foo-bar-checkout',
+//   url: 'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=1cb89bf4-1f4b-47ad-b4c8-d4776cfcca61&token=fd94dcf5cee9067a069ed45af168397aa16e58ccb74b26e16966058d0995a22e',
+// })
+
+export default function Checkout(
   { home, products }: { products: any; home: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -55,28 +60,12 @@ export default function Games(
 
   return (
     <div className={s.pageWrap}>
-      <div className={s.heroContainer}>
-        <Image
-          priority={true}
-          layout="responsive"
-          src={'https:' + heroImage.fields.file.url}
-          width={heroImage.fields.file.details.image.width}
-          height={heroImage.fields.file.details.image.height}
-          alt={heroImage.fields.title}
-        />
-        <div className={s.heroOverlay}></div>
-        <div className={s.heroTextWrap}>
-          <h1 id={s.gamesHeroText}>{heroText}</h1>
-        </div>
-      </div>
-      <div className={s.firstSection}>
-        {documentToReactComponents(firstSection)}
-        {/* <Link href="">
-            <a className={s.link}>Start Now</a>
-          </Link> */}
+      <div className={s.checkout}>
+        <h1>Temporary Checkout</h1>
+        <div id="foo-bar-checkout"></div>
       </div>
     </div>
   )
 }
 
-Games.Layout = Layout
+Checkout.Layout = Layout

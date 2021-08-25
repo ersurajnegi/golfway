@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import s from './Navbar.module.scss'
 import { useRouter } from 'next/router'
+import { ChevronUp } from '@components/icons'
 
 export default function Navbar() {
   const router = useRouter()
@@ -11,19 +12,13 @@ export default function Navbar() {
   const navMenuBg = navState ? s.navShow : s.navHide
   const navMenuLinks = navState ? s.navShowLinks : s.navHideLinks
 
-  const navigation = [
-    { link: '/', text: 'Home', key: 10 },
-    { link: '/games', text: 'Games', key: 20 },
-    { link: '/brand', text: 'Brand', key: 30 },
-    { link: '/search', text: 'Products', key: 40 },
-    { link: '/stories', text: 'Stories', key: 50 },
-    { link: '/recycle', text: 'Recycle', key: 60 },
-    { link: '/blogs', text: 'Blogs', key: 70 },
-  ]
+  const [dropDown, setDropDown] = useState(false)
+  const chevron = dropDown ? s.chevOpen : s.chev
 
-  console.log("state =", navState)
+  const handleHover = () => {
+    setDropDown(!dropDown)
+  }
 
-  
   return (
     <>
       <button
@@ -44,22 +39,87 @@ export default function Navbar() {
         </svg>
       </button>
       <div className={s.overflowHidden}>
-        <nav
-          className={`${s.navMenu} ${navMenuBg}`}
-          onClick={() => setNavState(!navState)}
-        >
+        <nav className={`${s.navMenu} ${navMenuBg}`}>
           <ul className={navMenuLinks}>
-            {navigation.map((nav) => (
-              <Link key={nav.key} href={nav.link}>
-                <a
-                  className={`${
-                    router.pathname == nav.link ? s.active : s.link
-                  }`}
-                >
-                  {nav.text}
-                </a>
-              </Link>
-            ))}
+            <Link href="/">
+              <a className={`${router.pathname == '/' ? s.active : s.link}`}>
+                Home
+              </a>
+            </Link>
+            <Link href="/games">
+              <a
+                className={`${router.pathname == '/games' ? s.active : s.link}`}
+              >
+                Games
+              </a>
+            </Link>
+            <Link href="/brand">
+              <a
+                className={`${router.pathname == '/brand' ? s.active : s.link}`}
+              >
+                Brand
+              </a>
+            </Link>
+            <Link href="/search">
+              <a
+                className={`${
+                  router.pathname == '/search' ? s.active : s.link
+                }`}
+              >
+                Products
+              </a>
+            </Link>
+            <Link href="/stories">
+              <a
+                className={`${
+                  router.pathname == '/stories' ? s.active : s.link
+                }`}
+              >
+                Stories
+              </a>
+            </Link>
+            {/* <Link href="/">
+              <a className={`${router.pathname == '/' ? s.active : s.link}`}>
+                Discover
+              </a>
+            </Link> */}
+            <div onMouseEnter={handleHover} className={s.discoverDropDown}>
+              <p className={s.drop}>Discover</p>
+              {dropDown ? (
+                <div onMouseLeave={handleHover} className={s.dropDownLinksWrap}>
+                  <Link href="/discover-play">
+                    <a className={s.link}>Play</a>
+                  </Link>
+                  <Link href="/discover-champion">
+                    <a className={s.link}>Champion</a>
+                  </Link>
+                </div>
+              ) : null}
+            </div>
+            <div onClick={handleHover} className={s.discoverDropDownMob}>
+              <div className={s.dropWrap}>
+                <p className={s.drop}>Discover</p>
+                <ChevronUp className={chevron} onClick={handleHover} />
+              </div>
+              {dropDown ? (
+                <div className={s.dropDownLinksWrapMob}>
+                  <Link href="/discover-play">
+                    <a className={s.link}>Play</a>
+                  </Link>
+                  <Link href="/discover-champion">
+                    <a className={s.link}>Champion</a>
+                  </Link>
+                </div>
+              ) : null}
+            </div>
+
+            <Link href="/blogs">
+              <a
+                className={`${router.pathname == '/blogs' ? s.active : s.link}`}
+              >
+                Blogs
+              </a>
+            </Link>
             <Link href="/">
               <a className={s.donateMob}>Donate</a>
             </Link>

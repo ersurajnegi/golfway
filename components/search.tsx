@@ -58,11 +58,11 @@ export default function Search({ categories, brands }: SearchPropsType) {
   })
 
   const handleClick = (event: any, filter: string) => {
-    console.log(
-      `Filter value ${filter} : , activeFilter : ${activeFilter}, activeCategory: ${JSON.stringify(
-        activeCategory
-      )}`
-    )
+    // console.log(
+    //   `Filter value ${filter} : , activeFilter : ${activeFilter}, activeCategory: ${JSON.stringify(
+    //     activeCategory
+    //   )}`
+    // )
     if (filter !== activeFilter) {
       setToggleFilter(true)
     } else {

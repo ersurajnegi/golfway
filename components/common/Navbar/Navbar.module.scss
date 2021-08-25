@@ -1,11 +1,11 @@
 @use '../../../assets/' as *;
 
 .root {
+  position: relative;
   z-index: 1000;
 }
-
 .nav {
-  z-index: 1;
+  z-index: 10;
   display: flex;
   justify-content: space-around;
   padding: 30px;
@@ -14,15 +14,13 @@
     padding: 1rem;
   }
 }
-
 .mobNavSearch {
   display: none;
 }
-
 .navMenu {
   z-index: 100;
   @include center;
-  @include boxShadow;
+  box-shadow: 7px 7px 18px 1px #00000050;
 
   ul {
     height: 40px;
@@ -37,6 +35,15 @@
     .link {
       color: $white;
       @include navFont;
+      cursor: pointer;
+      &:hover {
+        color: $white-opacity;
+      }
+    }
+    .drop {
+      color: $white;
+      @include navFont;
+      cursor: pointer;
     }
     .active {
       color: $white-opacity;
@@ -73,30 +80,32 @@
   }
 
   @media (max-width: 700px) {
-    position: absolute;
+    position: fixed;
     flex-direction: column;
-    top: 41px;
+    top: 0;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
     padding-bottom: 3px;
     width: 100%;
     padding: 0;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
     background-color: #00000040;
-    backdrop-filter: blur(0.8px);
-    -webkit-backdrop-filter: blur(0.8px);
-    cursor: pointer;
+    // backdrop-filter: blur(0.8px);
+    // -webkit-backdrop-filter: blur(0.8px);
+    // cursor: pointer;
 
     ul {
       position: relative;
-      min-height: 370px;
+      min-height: 390px;
       width: 50%;
       @include center;
       flex-direction: column;
       @include boxShadow;
-      min-width: 200px;
+      min-width: 230px;
       .active,
       .link {
+        cursor: pointer;
         margin: 5px;
       }
 
@@ -105,6 +114,73 @@
         top: 10px;
         right: 10px;
         display: block;
+      }
+    }
+  }
+  .discoverDropDown {
+    position: relative;
+    height: 100%;
+    @include center;
+    @media (max-width: 700px) {
+      display: none;
+    }
+    .dropDownLinksWrap {
+      z-index: 10;
+      transform: rotate(0deg);
+      background-color: $green-1;
+      position: absolute;
+      padding: 10px;
+      top: 40px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 7px 7px 15px 1px #00000035;
+      .link:nth-child(1) {
+        margin-top: 0;
+      }
+      .link {
+        margin-top: 10px;
+        color: $white;
+        @include navFont;
+        cursor: pointer;
+        &:hover {
+          color: $white-opacity;
+        }
+      }
+    }
+  }
+}
+
+.discoverDropDownMob {
+  display: none;
+  @media (max-width: 700px) {
+    display: block;
+
+    .dropDownLinksWrapMob {
+      @include center;
+      flex-direction: column;
+    }
+    .dropWrap {
+      display: flex;
+      @include center;
+      position: relative;
+      .drop {
+        margin: 5px;
+        p {
+          text-align: center;
+        }
+      }
+      .chevOpen,
+      .chev {
+        top: 5px;
+        right: -30px;
+        position: absolute;
+        width: 20px;
+        cursor: pointer;
+        stroke: $white;
+        transition: 200ms;
+      }
+      .chevOpen {
+        transform: rotate(180deg);
       }
     }
   }
@@ -144,11 +220,11 @@
 
 .menu {
   position: absolute;
-  top: 65px;
+  top: 26px;
   right: 13px;
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  // cursor: pointer;
   display: none;
   padding: 0px;
 

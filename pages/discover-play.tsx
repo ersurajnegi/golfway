@@ -108,22 +108,20 @@ export default function Champion(
           <div className={s.textWrap}>
             {documentToReactComponents(firstSection)}
             <div className={s.sizesWrap}>
-              <div className={s.sizesWrap}>
-                <div className={`${s.sizes} ${s.size90}`}>
-                  <span>90</span>
-                </div>
-                <div className={`${s.sizes} ${s.size110}`}>
-                  <span>110</span>
-                </div>
-                <div className={`${s.sizes} ${s.size130}`}>
-                  <span>130</span>
-                </div>
-                <div className={`${s.sizes} ${s.size150}`}>
-                  <span>150</span>
-                </div>
-                <div className={`${s.sizes} ${s.size170}`}>
-                  <span>170</span>
-                </div>
+              <div className={`${s.sizes} ${s.size90}`}>
+                <span>90</span>
+              </div>
+              <div className={`${s.sizes} ${s.size110}`}>
+                <span>110</span>
+              </div>
+              <div className={`${s.sizes} ${s.size130}`}>
+                <span>130</span>
+              </div>
+              <div className={`${s.sizes} ${s.size150}`}>
+                <span>150</span>
+              </div>
+              <div className={`${s.sizes} ${s.size170}`}>
+                <span>170</span>
               </div>
             </div>
           </div>
