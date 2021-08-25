@@ -15,7 +15,7 @@
       height: 12vw;
       overflow: hidden;
       .overlay {
-        @include overlay;
+        // @include overlay;
       }
       @media (max-width: 1410px) {
         height: 10vw;

@@ -13,8 +13,8 @@ module.exports = withCommerceConfig({
     },
     commerce,
     i18n: {
-        locales: ['en-US', 'es'],
-        defaultLocale: 'en-US',
+        locales: ['en-GB', 'es', 'fr'],
+        defaultLocale: 'en-GB',
     },
     eslint: {
         // Warning: Dangerously allow production builds to successfully complete even if

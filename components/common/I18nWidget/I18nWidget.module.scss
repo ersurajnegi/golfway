@@ -1,0 +1,68 @@
+@use '../../../assets' as *;
+.root {
+  background-color: red;
+  position: relative;
+  .buttonWrap {
+    .button {
+      display: flex;
+      .chevWrap {
+        .chevOpen,
+        .chev {
+          stroke: $white;
+          top: 0px;
+          right: -30px;
+          position: absolute;
+          width: 20px;
+          cursor: pointer;
+          transition: 200ms;
+        }
+        .chevOpen {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .button:hover {
+    }
+
+    .button:focus {
+    }
+  }
+}
+
+.dropDownWrap {
+  position: absolute;
+  z-index: 100;
+  .dropDownMenu {
+    // position: ;
+    // @screen lg {
+    // }
+  }
+  ul {
+    background-color: $white;
+    padding: 10px;
+    @include boxShadow;
+    li {
+      .item {
+        @include fontOne;
+      }
+    }
+  }
+}
+
+.closeButton {
+}
+
+.item {
+  text-transform: capitalize;
+}
+
+.item:hover {
+}
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.icon.active {
+  transform: rotate(180deg);
+}

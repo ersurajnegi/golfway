@@ -47,8 +47,8 @@ export async function getStaticProps({
   }
 }
 
-// const checkout = embedCheckout({
-//   containerId: 'foo-bar-checkout',
+// embedCheckout({
+//   containerId: 'golfway-checkout',
 //   url: 'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=1cb89bf4-1f4b-47ad-b4c8-d4776cfcca61&token=fd94dcf5cee9067a069ed45af168397aa16e58ccb74b26e16966058d0995a22e',
 // })
 
@@ -58,11 +58,19 @@ export default function Checkout(
 ) {
   const { heroImage, heroText, firstSection } = home[0].fields
 
+  const testCheckout = async () => {
+    const module = await (window as any).checkoutKitLoader.load('checkout-sdk')
+    const service = module.embedCheckout({
+      containerId: 'golfway-checkout',
+      url: 'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=1cb89bf4-1f4b-47ad-b4c8-d4776cfcca61&token=b4dfca657695931004dfbaf8b666c402a045fd1587fc98d7a8868f6f51a5ce77',
+    })
+  }
   return (
     <div className={s.pageWrap}>
       <div className={s.checkout}>
         <h1>Temporary Checkout</h1>
-        <div id="foo-bar-checkout"></div>
+        <div id="golfway-checkout"></div>
+        <button onClick={testCheckout}> Test checkout</button>
       </div>
     </div>
   )
