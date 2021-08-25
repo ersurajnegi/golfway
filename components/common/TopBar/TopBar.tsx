@@ -1,12 +1,10 @@
 import s from './TopBar.module.scss'
 import Image from 'next/image'
-import { I18nWidget } from '@components/common'
+// import { I18nWidget } from '@components/common'
 
 const TopBar = () => (
   <div className={s.topbar}>
-    <div className={s.currency}>
-      <I18nWidget />
-    </div>
+    <div className={s.currency}>{/* <I18nWidget /> */}</div>
     <div className={s.linksWrap}>
       <div className={s.login}>
         {/* trade login to be added later */}

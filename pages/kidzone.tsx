@@ -37,7 +37,7 @@ export default function KidZone(
     <div>
       <h1>Recycle</h1>
 
-      <p>{products[0].name}</p>
+      {/* <p>{products[0].name}</p> */}
     </div>
   )
 }
