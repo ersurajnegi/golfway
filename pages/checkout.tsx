@@ -60,18 +60,22 @@ export default function Checkout(
 
   const testCheckout = async () => {
     const module = await (window as any).checkoutKitLoader.load('checkout-sdk')
+    const url =
+      (window as any).checkoutUrl ||
+      'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=8a8f2fdc-d673-4694-96a0-1abf6b8d1cb6&token=533fed504d932f42d9303dc4cdab499dd84a0286ad6f76f40ef3dee9c6a16a07'
     const service = module.embedCheckout({
       containerId: 'golfway-checkout',
-      url: 'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=1cb89bf4-1f4b-47ad-b4c8-d4776cfcca61&token=b4dfca657695931004dfbaf8b666c402a045fd1587fc98d7a8868f6f51a5ce77',
+      url,
     })
   }
   return (
     <div className={s.pageWrap}>
       <div className={s.checkout}>
         <h1>Temporary Checkout</h1>
-        <div id="golfway-checkout"></div>
+
         <button onClick={testCheckout}> Test checkout</button>
       </div>
+      <div id="golfway-checkout"></div>
     </div>
   )
 }
