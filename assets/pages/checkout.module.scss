@@ -10,18 +10,25 @@
     }
   }
 }
-iframe {
-  #checkout-app {
-    .is-embedded {
-      .layout {
-        .stepHeader-counter {
-          background-color: #04af9a;
-        }
-
-        .stepHeader-title {
-          font-family: $text;
-        }
-      }
-    }
-  }
+// green button bottom of sidebar - proceed to checkout
+.checkoutButtonText {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
+
+// iframe {
+//   #checkout-app {
+//     .is-embedded {
+//       .layout {
+//         .stepHeader-counter {
+//           background-color: #04af9a;
+//         }
+
+//         .stepHeader-title {
+//           font-family: $text;
+//         }
+//       }
+//     }
+//   }
+// }

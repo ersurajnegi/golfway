@@ -22,9 +22,9 @@
   }
   .firstSection,
   .secondSection,
-  .thirdSection,
+  .innerThirdSection,
   .fourthSection {
-    padding: 4rem;
+    @include paddingSection;
     @include pageSectionWidth;
     width: 80%;
 
@@ -34,12 +34,18 @@
     }
     p {
       @include fontOne;
+      width: 80%;
+      @include paraCenterMargin;
+      @media (max-width: 550px) {
+        width: 100%;
+        text-align: left;
+      }
     }
   }
-
-  .firstSection {
-    h2 {
-      text-align: center;
+  .innerThirdSection {
+    @media (max-width: 880px) {
+      width: 100%;
+      padding-bottom: 2rem;
     }
   }
   .secondSection {
@@ -55,37 +61,47 @@
     }
   }
   .thirdSection {
-    background-color: $grey-01;
+    background-color: $grey-001;
+    padding: 0;
+    width: 100%;
     ul {
       display: flex;
-      li {
-        height: 300px;
-        width: 25%;
-        div {
-          height: 100px;
-          width: 100px;
+      flex-wrap: wrap;
+      justify-content: center;
 
-          picture {
-            div {
-              div {
-                img {
-                }
-              }
-            }
-          }
+      li {
+        margin: 10px;
+        flex: 0 0 20%;
+        @media (max-width: 880px) {
+          flex: 0 0 40%;
+        }
+        p {
+          text-align: center;
+          @include fontOne;
+          font-weight: 800;
         }
       }
-      height: 300px;
     }
   }
   .fourthSection {
     display: flex;
+    @media (max-width: 880px) {
+      flex-direction: column-reverse;
+    }
     .socialLinks {
       width: 50%;
       @include center;
+      @media (max-width: 880px) {
+        width: 100%;
+      }
     }
     .textWrap {
       width: 50%;
+      margin-left: 2rem;
+      @media (max-width: 880px) {
+        width: 100%;
+        margin: 0 0 2rem;
+      }
     }
   }
 }

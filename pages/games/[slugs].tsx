@@ -71,7 +71,7 @@ const optionTwo = {
         <div>
           <picture>
             <Image
-              layout="intrinsic"
+              layout="responsive"
               src={'https:' + file.url}
               height={file.details.image.height}
               width={file.details.image.width}
@@ -131,7 +131,9 @@ export default function Game({ game }: { game: any }) {
         </div>
       </div>
       <div className={s.thirdSection}>
-        {documentToReactComponents(thirdSection, optionTwo)}
+        <div className={s.innerThirdSection}>
+          {documentToReactComponents(thirdSection, optionTwo)}
+        </div>
       </div>
       <div className={s.fourthSection}>
         <div className={s.socialLinks}>
@@ -173,7 +175,13 @@ export default function Game({ game }: { game: any }) {
           </a>
         </div>
         <div className={s.textWrap}>
-          {documentToReactComponents(fourthSection, option)}
+          <h2>SHOW US YOUR GAME</h2>
+          <p>
+            We’d love to see how you’ve setup your own game and playing with
+            Golfway. Remember to tag and follow us on social media and you could
+            even get the chance to win prizes!
+          </p>
+          <p>#HereToPlay</p>
         </div>
       </div>
     </div>

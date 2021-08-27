@@ -59,10 +59,9 @@
   .thirdSection,
   .fourthSection,
   .fifthSection {
-    padding: 4rem;
+    @include paddingSection;
     @media (max-width: 700px) {
       flex-direction: column-reverse;
-      padding: 4rem 0 4rem;
     }
     h2 {
       @include fontHeadingTwo;
@@ -70,6 +69,7 @@
     }
     p {
       @include fontOne;
+      width: 80%;
     }
   }
   .firstSection {
@@ -133,6 +133,7 @@
         @include fontHeadingTwo;
         margin-bottom: 1rem;
         color: $white;
+        text-align: left;
       }
       p {
         @include fontOne;
@@ -238,9 +239,9 @@
       text-align: center;
     }
     p {
-      text-align: center;
+      @include paraCenterMargin;
       width: 80%;
-      margin: 0 auto;
+
       // font-size: 30px;
     }
   }

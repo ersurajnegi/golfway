@@ -30,8 +30,8 @@ export default function getAllPagesOperation({
     preview?: boolean
   } = {}): Promise<T['data']> {
     const cfg = commerce.getConfig(config)
-    // RecursivePartial forces the method to check for every prop in the data, which is
-    // required in case there's a custom `url`
+    /* RecursivePartial forces the method to check for every prop in the data, which is
+     required in case there's a custom `url`*/
     const { data } = await cfg.storeApiFetch<
       RecursivePartial<{ data: Page[] }>
     >('/v3/content/pages')

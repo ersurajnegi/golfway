@@ -1,15 +1,18 @@
 import commerce from '@lib/api/commerce'
-import { Layout } from '@components/common'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { Layout, NewsLetter } from '@components/common'
 import { ProductCard } from '@components/product'
-import { Grid, Marquee, Hero } from '@components/ui'
+import { Marquee } from '@components/ui'
+
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { NewsLetter } from '@components/common'
-import s from '../assets/pages/page.module.scss'
+
 import { useState, useEffect } from 'react'
+import s from '../assets/pages/page.module.scss'
 
 export async function getStaticProps({
   preview,
@@ -21,14 +24,11 @@ export async function getStaticProps({
     variables: { first: 20 },
     config,
     preview,
-    // Saleor provider only
-    ...({ featured: true } as any),
   })
-  const pagesPromise = commerce.getAllPages({ config, preview })
+
   const siteInfoPromise = commerce.getSiteInfo({ config, preview })
   const { products } = await productsPromise
-  const { pages } = await pagesPromise
-  const { categories, brands } = await siteInfoPromise
+  const { categories } = await siteInfoPromise
 
   const client = createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -41,8 +41,6 @@ export async function getStaticProps({
     props: {
       products,
       categories,
-      brands,
-      pages,
       homePage: res.items,
       url: process.env.MAILCHIMP_URL,
     },
@@ -76,8 +74,6 @@ export default function Home(
     let width = window.innerWidth || screen.width
     setMobile(width >= 620 ? false : true)
   }, [])
-
-  // console.log('home page chcecking products: ', products)
 
   return (
     <>
@@ -154,12 +150,6 @@ export default function Home(
             height={ProductImage.fields.file.details.image.height}
             alt={ProductImage.fields.title}
           />
-        </div>
-
-        <div className={s.testSection}>
-          {/* {products.map(() => (
-
-          ))} */}
         </div>
         <div className={s.fourthSection}>
           {documentToReactComponents(fourthSection)}

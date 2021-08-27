@@ -29,6 +29,7 @@ const Marquee: FC<MarqueeProps> = ({
       gradientWidth={50}
       gradient={true}
       className={rootClassName}
+      speed={50}
     >
       {Children.map(children, (child) => ({
         ...child,

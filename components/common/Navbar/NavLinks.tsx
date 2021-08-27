@@ -78,15 +78,14 @@ export default function Navbar() {
                 Stories
               </a>
             </Link>
-            {/* <Link href="/">
-              <a className={`${router.pathname == '/' ? s.active : s.link}`}>
-                Discover
-              </a>
-            </Link> */}
-            <div onMouseEnter={handleHover} className={s.discoverDropDown}>
+            <div
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
+              className={s.discoverDropDown}
+            >
               <p className={s.drop}>Discover</p>
               {dropDown ? (
-                <div onMouseLeave={handleHover} className={s.dropDownLinksWrap}>
+                <div className={s.dropDownLinksWrap}>
                   <Link href="/discover-play">
                     <a className={s.link}>Play</a>
                   </Link>

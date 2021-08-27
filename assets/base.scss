@@ -12,7 +12,7 @@ $black: #000000;
 $grey-1: #53575a;
 $grey-0: #d9d9d6;
 $grey-01: #bdbdbd;
-$grey-001: #ececec;
+$grey-001: #e2e2e2;
 
 $grey-background-1: #a0a0a01f;
 $grey-overlay-1: #a0a0a06e;
@@ -53,6 +53,21 @@ $text: sofia-pro, sans-serif;
   width: 100%;
   height: 100%;
   @include center;
+}
+
+@mixin paraCenterMargin {
+  text-align: center;
+  margin: 0px auto 20px;
+}
+
+@mixin paddingSection {
+  padding: 4rem;
+  @media (max-width: 700px) {
+    padding: 4rem 0 4rem;
+  }
+  @media (max-width: 550px) {
+    padding: 2rem 0 2rem;
+  }
 }
 
 /* Overlay */
@@ -104,6 +119,7 @@ $text: sofia-pro, sans-serif;
   color: $grey-1;
   font-size: 95px;
   line-height: 90px;
+  text-align: center;
   @media (max-width: 1750px) {
     font-size: 85px;
     line-height: 80px;

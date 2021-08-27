@@ -42,16 +42,6 @@
     grid-template-columns: 1fr;
     margin: 2rem 1rem 4rem;
   }
-  // @media(max-width: 950px) {
-  //     margin: 4vw;
-  //     grid-template-columns: 45vw 45vw;
-  //     grid-gap: 2vw;
-  // }
-  // @media(max-width: 650px) {
-  //     margin: 5vw;
-  //     grid-template-columns: 90vw;
-  //     grid-gap: 2vw;
-  // }
 }
 
 /* Individual Blog Posts Styles = blogs/[slugs] */
@@ -84,7 +74,8 @@
     }
     p {
       @include fontOne;
-      margin: 1vw 0;
+      @include paraCenterMargin;
+      text-align: left;
       color: $grey-1;
       b {
         font-weight: 700;
