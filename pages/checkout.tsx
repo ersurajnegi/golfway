@@ -1,12 +1,7 @@
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ProductCard } from '@components/product'
-import { Grid, Marquee, Hero } from '@components/ui'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import s from '../assets/pages/checkout.module.scss'
 import { useEffect } from 'react'
 
