@@ -179,7 +179,7 @@ export default function Game({ game }: { game: any }) {
           <p>
             We’d love to see how you’ve setup your own game and playing with
             Golfway. Remember to tag and follow us on social media and you could
-            even get the chance to win prizes!
+            even get the chance to win prizes.
           </p>
           <p>#HereToPlay</p>
         </div>
