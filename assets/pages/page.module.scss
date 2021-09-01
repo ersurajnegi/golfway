@@ -46,6 +46,9 @@
       // ids for hero text for each page if required
       #homeHeroText {
         max-width: 28vw;
+        @media (max-width: 450px) {
+          max-width: 40vw;
+        }
       }
       #brandHeroText {
         max-width: 60vw;

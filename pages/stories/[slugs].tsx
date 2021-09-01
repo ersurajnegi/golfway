@@ -78,7 +78,7 @@ export default function Story({ story }: { story: any }) {
   } = story.fields
   const heading = title.toUpperCase()
 
-  console.log(story)
+  // TODO - animate stats
 
   return (
     <div className={s.story}>
