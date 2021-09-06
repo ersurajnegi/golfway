@@ -3,10 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import s from './StoryCard.module.scss'
 
-import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import { createClient } from 'contentful'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-
 export default function StoryCard({ story }: { story: any }) {
   const { title, thumbnail, publishedDate, slugs } = story.fields
   return (

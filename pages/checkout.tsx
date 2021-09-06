@@ -4,7 +4,10 @@ import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import s from '../assets/pages/checkout.module.scss'
 import { useEffect } from 'react'
-
+import axios from 'axios'
+//import { embedCheckout } from '@bigcommerce/checkout-sdk';
+// import useCart from '@bigcommerce/storefront-data-hooks/cart/use-cart'
+import useCart from '@framework/cart/use-cart'
 export async function getStaticProps({
   preview,
   locale,
@@ -47,22 +50,46 @@ export default function Checkout(
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { heroImage, heroText, firstSection } = home[0].fields
-
+  const { data } = useCart()
+  debugger
   useEffect(() => {
     const testCheckout = async () => {
-      const module = await (window as any).checkoutKitLoader.load(
-        'checkout-sdk'
-      )
-      const url =
-        (window as any).checkoutUrl ||
-        'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=8a8f2fdc-d673-4694-96a0-1abf6b8d1cb6&token=533fed504d932f42d9303dc4cdab499dd84a0286ad6f76f40ef3dee9c6a16a07'
-      const service = module.embedCheckout({
-        containerId: 'golfway-checkout',
-        url,
+      debugger
+      const resp = axios.get('/api/checkout').then((data) => {
+        //const url = data.data.embedded_checkout_url
+        console.log('Got Url : ', data)
+        // try {
+        //     await embedCheckout({
+        //       container:'golfway-checkout',
+        //         url,
+        //         onError: (err:any) => console.error(err),
+        //         onFrameError: (err:any) => console.error(err),
+        //     });
+        //     //setCheckoutLoaded(true);
+        // } catch (err) {
+        //     console.error(err);
+        // }
+        // const module = await (window as any).checkoutKitLoader.load(
+        //   'checkout-sdk'
+        // )
+        // console.log('Loading the Embedded checkout')
+        // // const url =
+        // //   (window as any).checkoutUrl ||
+        // //   'https://masters-golf-company-store-2.mybigcommerce.com/cart.php?embedded=1&action=loadInCheckout&id=8a8f2fdc-d673-4694-96a0-1abf6b8d1cb6&token=533fed504d932f42d9303dc4cdab499dd84a0286ad6f76f40ef3dee9c6a16a07'
+        // try{
+
+        //   const service = module.embedCheckout({
+        //     containerId: 'golfway-checkout',
+        //     url,
+        //   })
+        // }
+        // catch(error){
+        //   console.log('error loading the checkout' , error);
+        // }
       })
     }
     testCheckout()
-  }, [])
+  }, [data])
   return (
     <div className={s.pageWrap}>
       <div className={s.checkout}>

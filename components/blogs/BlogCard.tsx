@@ -5,7 +5,12 @@ import s from './blogcard.module.scss'
 
 export default function BlogCard({ blog }: { blog: any }) {
   const { title, thumbnail, publishedDate, slugs } = blog.fields
-  const date = publishedDate.slice(0, -12).split('-').join(' ')
+
+  // format publish date
+  const slice = publishedDate.slice(0, -12)
+  const split = slice.split('-')
+  const reverse = split.reverse()
+  const formattedDate = reverse.join(' ')
 
   return (
     <div className={s.blogCard}>
@@ -26,7 +31,7 @@ export default function BlogCard({ blog }: { blog: any }) {
               <h4>{title}</h4>
             </div>
             <div className={s.info}>
-              <p>{date}</p>
+              <p>{formattedDate}</p>
             </div>
           </div>
           <div className={s.link}>

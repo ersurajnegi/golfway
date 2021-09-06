@@ -19,7 +19,7 @@ export async function getStaticProps() {
 }
 
 export default function Blogs({ blogs }: { blogs: any }) {
-  console.log(blogs)
+  // console.log(blogs)
   return (
     <div className={s.blogs}>
       <div className={s.blogsWelcome}>

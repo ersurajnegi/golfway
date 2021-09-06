@@ -1,7 +1,7 @@
 import { Layout } from '@components/common'
 import Image from 'next/image'
 import Link from 'next/link'
-import { StoryCards } from '@components/story'
+// import Story from '@components/stories/Story'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -24,7 +24,7 @@ export async function getStaticProps({}: GetStaticPropsContext) {
 }
 
 export default function Stories(
-  { storiesPage, story }: { storiesPage: any; story: any },
+  { storiesPage }: { storiesPage: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const {
@@ -36,6 +36,8 @@ export default function Stories(
     thirdSection,
     ProductImage,
   } = storiesPage[0].fields
+
+  console.log(storiesPage)
 
   return (
     <>
@@ -74,7 +76,7 @@ export default function Stories(
         <div id={s.storiesSecondSection} className={s.secondSection}>
           {documentToReactComponents(secondSection)}
         </div>
-        {/* <StoryCards /> */}
+        {/* <Story /> */}
 
         <div className={s.thirdSection}>
           {documentToReactComponents(thirdSection)}
