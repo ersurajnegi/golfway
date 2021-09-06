@@ -21,10 +21,12 @@
     "node": ">=14.x"
   },
   "dependencies": {
+    "@bigcommerce/storefront-data-hooks": "^1.5.4",
     "@contentful/rich-text-react-renderer": "^15.1.0",
     "@react-spring/web": "^9.2.1",
     "@vercel/fetch": "^6.1.0",
     "autoprefixer": "^10.2.6",
+    "axios": "^0.21.3",
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.3.1",
     "contentful": "^8.4.2",

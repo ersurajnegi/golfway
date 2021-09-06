@@ -8,6 +8,7 @@ export default function Navbar() {
   const router = useRouter()
 
   const [navState, setNavState] = useState(false)
+
   const navButton = navState ? s.opened : ' '
   const navMenuBg = navState ? s.navShow : s.navHide
   const navMenuLinks = navState ? s.navShowLinks : s.navHideLinks
