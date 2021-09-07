@@ -1,42 +1,46 @@
-import { createClient } from 'contentful'
-import { Layout } from '@components/common'
-import s from '../assets/pages/blogs.module.scss'
+import GameCard from './gameCard'
 
-export async function getStaticProps() {
-  const client = createClient({
-    space: `${process.env.CONTENTFUL_SPACE_ID}`,
-    accessToken: `${process.env.CONTENTFUL_ACCESS_KEY}`,
-  })
-
-  const res = await client.getEntries({ content_type: 'game' })
-
-  return {
-    props: {
-      game: res.items,
-    },
-  }
-}
+import s from './gamesGrid.module.scss'
 
 export default function GamesGrid({ game }: { game: any }) {
-  console.log(game)
+  const handleChange = (event: any) => {
+    console.log('handlechange: ', event.target.value)
+  }
+
+  const family = game.indexOf('family')
+
+  console.log(family)
+
+  // Create a filter that removes unselected games
+
   return (
     <div className={s.game}>
-      <div className={s.gameWelcome}>
-        <h1>The Golfway Blog</h1>
-        <h2>
-          Here you will find all the latest news about Golfway activities and
-          products. You'll also find helpful artciles about fitness, nutrition
-          and all things golf related.
-        </h2>
+      <div className={s.gameFilter}>
+        <h3>Filter Games</h3>
+        <form onChange={handleChange}>
+          <div className={s.preference}>
+            <input type="checkbox" name="family" />
+            <label htmlFor="family games">Family games</label>
+          </div>
+          <div className={s.preference}>
+            <input type="checkbox" name="urban" />
+            <label htmlFor="urban games">Urban games</label>
+          </div>
+          <div className={s.preference}>
+            <input type="checkbox" name="indoor" />
+            <label htmlFor="indoor games">Indoor games</label>
+          </div>
+          <div className={s.preference}>
+            <input type="checkbox" name="outdoor" />
+            <label htmlFor="outdoor games">Outdoor games</label>
+          </div>
+        </form>
       </div>
-
-      <div className={s.gameGridWrap}>
-        {/* {blogs.map((blog: any) => (
-          // <BlogCard key={blog.sys.id} blog={blog} />
-        ))} */}
+      <div className={s.gameWrap}>
+        {game.map((g: any) => {
+          return <GameCard key={g.sys.id} g={g} />
+        })}
       </div>
     </div>
   )
 }
-
-GamesGrid.Layout = Layout

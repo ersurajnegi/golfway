@@ -55,9 +55,9 @@ const UserNav: FC<Props> = ({ className }) => {
             </Link>
           </li>
         )} */}
-        <li className={s.donate}>
+        {/* <li className={s.donate}>
           <a href="/">Donate</a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   )

@@ -124,7 +124,6 @@ export default function Game({ game }: { game: any }) {
           alt={heroText}
         />
       </div>
-
       <div className={s.secondSection}>
         <div className={s.textWrap}>
           {documentToReactComponents(secondSection, option)}

@@ -86,9 +86,9 @@ export default function Stories(
             height={ProductImage.fields.file.details.image.height}
             alt={ProductImage.fields.title}
           />
-          <Link href="/">
+          {/* <Link href="/">
             <a className={s.link}>Donate Clubs</a>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>

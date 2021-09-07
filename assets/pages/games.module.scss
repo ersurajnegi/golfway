@@ -1,0 +1,46 @@
+@use '../../assets' as *;
+.pageWrap {
+  z-index: 0;
+  @include pageWidth;
+  .heroContainer {
+    z-index: 1;
+    position: relative;
+
+    .heroOverlay {
+      @include overlay;
+    }
+    .heroTextWrap {
+      @include heroTextWrap;
+      h1 {
+        @include fontHeadingHero;
+        position: absolute;
+        color: $white;
+        text-align: center;
+        @media (max-width: 590px) {
+          max-width: 150px;
+        }
+      }
+
+      #gamesHeroText {
+        max-width: 35vw;
+      }
+    }
+  }
+  .firstSection {
+    @include pageSectionWidth;
+    @include paddingSection;
+    @include center;
+    flex-direction: column;
+
+    h2 {
+      @include fontHeadingTwo;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    p {
+      @include fontOne;
+      width: 80%;
+      @include paraCenterMargin;
+    }
+  }
+}
