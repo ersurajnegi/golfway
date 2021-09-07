@@ -78,7 +78,16 @@ export default function Search({ categories, brands }: SearchPropsType) {
       return (
         <div className={s.heroContainer}>
           <div className={s.banner}>
-            <div className={s.textWrap}>
+            <div className={s.imageWraper}>
+              <Image
+                layout="responsive"
+                src="/golfman.jpg"
+                width={2257}
+                height={950}
+                alt="man playing golf on a beach with dog"
+              />
+            </div>
+            <div className={s.textWrapInd}>
               <h2>CHAMPION</h2>
               <p>
                 We haven’t just revised junior golf, we’ve re-examined, resized,
@@ -88,7 +97,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <a className={s.link}>Discover</a>
               </Link>
             </div>
-            <div className={s.polygon}></div>
           </div>
         </div>
       )
@@ -106,7 +114,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <a className={s.link}>Discover</a>
               </Link>
             </div>
-            <div className={s.polygon}></div>
           </div>
         </div>
       )

@@ -57,7 +57,7 @@ const checkout: CheckoutEndpoint['handlers']['checkout'] = async ({
     //console.log('data in seerver : ', JSON.stringify(data))
     res.setHeader('Content-Type', 'application/json');
     //res.status(200).json({data});
-    res.status(200).json({ data:{name:10} })
+    // res.status(200).json({ data:{name:10} })
   }
 
   // // TODO: make the embedded checkout work too!
