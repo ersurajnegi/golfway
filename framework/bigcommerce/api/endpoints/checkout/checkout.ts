@@ -1,9 +1,10 @@
+/* eslint-disable prettier/prettier */
 import type { CheckoutEndpoint } from '.'
 import getCustomerId from '../../utils/get-customer-id'
 import jwt from 'jsonwebtoken'
 import { uuid } from 'uuidv4'
 
-const fullCheckout = true
+const fullCheckout = false
 
 const checkout: CheckoutEndpoint['handlers']['checkout'] = async ({
   req,
@@ -32,6 +33,10 @@ const checkout: CheckoutEndpoint['handlers']['checkout'] = async ({
       res.redirect(data.checkout_url)
       return
     }
+    console.log('negi', JSON.stringify(data))
+    res.setHeader('Content-Type', 'application/json')
+    res.status(200).json(data);
+    return
   } else {
     const dateCreated = Math.round(new Date().getTime() / 1000)
     const payload = {
