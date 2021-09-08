@@ -1,0 +1,31 @@
+@use '../../assets' as *;
+
+.gameFilter {
+  background-color: $grey-001;
+  padding: 4rem;
+  h3 {
+    @include fontHeadingThree;
+  }
+  form {
+    display: flex;
+    .preference {
+      margin: 1rem;
+      padding: 1rem 1rem 1rem 0;
+      border-bottom: 1px solid $grey-1;
+      // input[type='checkbox'] {
+      //   border: 1px solid red;
+      //   width: 100px;
+      // }
+      label {
+        @include fontOne;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+.gameWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4rem;
+}

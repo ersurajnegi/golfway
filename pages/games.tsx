@@ -1,55 +1,35 @@
-import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
+import { GamesGrid } from '@components/games'
 import Image from 'next/image'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import s from '../assets/pages/page.module.scss'
+import s from '../assets/pages/games.module.scss'
 
-export async function getStaticProps({
-  preview,
-  locale,
-  locales,
-}: GetStaticPropsContext) {
-  const config = { locale, locales }
-  const productsPromise = commerce.getAllProducts({
-    variables: { first: 6 },
-    config,
-    preview,
-    // Saleor provider only
-    ...({ featured: true } as any),
-  })
-  const pagesPromise = commerce.getAllPages({ config, preview })
-  const siteInfoPromise = commerce.getSiteInfo({ config, preview })
-  const { products } = await productsPromise
-  const { pages } = await pagesPromise
-  const { categories, brands } = await siteInfoPromise
-
+export async function getStaticProps() {
   const client = createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     accessToken: `${process.env.CONTENTFUL_ACCESS_KEY}`,
   })
 
   const res = await client.getEntries({ content_type: 'games' })
+  const resp = await client.getEntries({ content_type: 'game' })
 
   return {
     props: {
-      products,
-      categories,
-      brands,
-      pages,
       home: res.items,
+      game: resp.items,
     },
     revalidate: 60,
   }
 }
 
 export default function Games(
-  { home, pages, products }: { pages: any; products: any; home: any },
+  { home, game }: { game: any; home: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { heroImage, heroText, firstSection } = home[0].fields
-  console.log(pages[3])
+
   return (
     <div className={s.pageWrap}>
       <div className={s.heroContainer}>
@@ -69,6 +49,7 @@ export default function Games(
       <div className={s.firstSection}>
         {documentToReactComponents(firstSection)}
       </div>
+      <GamesGrid game={game} />
     </div>
   )
 }

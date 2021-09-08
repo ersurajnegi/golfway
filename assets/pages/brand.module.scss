@@ -1,26 +1,16 @@
 @use '../../assets' as *;
-.pageWrap {
+.brandPageWrap {
   z-index: 0;
   @include pageWidth;
+
+  // -----------------
+  // HERO SECTION
+  // -----------------
+
   .heroContainer {
     z-index: 1;
     position: relative;
 
-    .videoWrap {
-      height: 75vh;
-      min-height: 600px;
-      @media (max-width: 620px) {
-        display: none;
-      }
-      .video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        @media (max-width: 620px) {
-          display: none;
-        }
-      }
-    }
     .heroImage {
       display: none;
       @media (max-width: 620px) {
@@ -30,36 +20,36 @@
     .heroOverlay {
       @include overlay;
     }
-    // home hero text styles
+
     .heroTextWrap {
       @include heroTextWrap;
       h1 {
         @include fontHeadingHero;
         position: absolute;
-
         color: $white;
         text-align: center;
+        max-width: 60vw;
         @media (max-width: 590px) {
           max-width: 150px;
         }
       }
-      // ids for hero text for each page if required
-      #homeHeroText {
-        max-width: 28vw;
-        @media (max-width: 450px) {
-          max-width: 40vw;
-        }
-      }
-
-      #gamesHeroText {
-        max-width: 35vw;
-      }
     }
   }
+
+  // -----------------
+  // GlOBAL STYLES SECTION
+  // -----------------
+
+  .heroTwo,
+  .firstSection,
+  .firstSectionWrap,
+  #brandThirdSection {
+    @include pageSectionWidth;
+  }
+
   .firstSection,
   .thirdSection,
-  .fourthSection,
-  .fifthSection {
+  .fourthSection {
     @include paddingSection;
     @media (max-width: 700px) {
       flex-direction: column-reverse;
@@ -83,53 +73,15 @@
       color: $white;
     }
   }
+
   .secondSection {
     position: relative;
-    .secondSectionBackground {
-      @media (max-width: 590px) {
-        display: none;
-      }
-    }
 
-    .secondSectionText {
+    #brandSecondSectionText {
       max-width: 600px;
       top: calc(50% - 165px);
       right: 12%;
       position: absolute;
-      @media (max-width: 1750px) {
-        top: calc(50% - 136px);
-      }
-
-      @media (max-width: 1450px) {
-        max-width: 470px;
-        top: calc(50% - 150px);
-      }
-
-      @media (max-width: 1150px) {
-        top: calc(50% - 99px);
-        right: 8%;
-      }
-
-      @media (max-width: 800px) {
-        max-width: 360px;
-        top: calc(50% - 96px);
-      }
-
-      @media (max-width: 590px) {
-        position: relative;
-        top: 0;
-        right: 0%;
-        @include center;
-        flex-direction: column;
-        background-color: $green-1;
-        position: relative;
-        padding: 4rem 0;
-        max-width: 100%;
-        p {
-          width: 80%;
-        }
-      }
-
       h2 {
         @include fontHeadingTwo;
         margin-bottom: 1rem;
@@ -158,35 +110,44 @@
           margin-top: 1rem;
         }
       }
-    }
-  }
-
-  #storiesSecondSection {
-    background-color: $green-1;
-    padding: 4rem 4vw 4.5rem;
-
-    h3,
-    h2 {
-      @include fontHeadingTwo;
-      text-align: center;
-      margin: 1rem;
-      color: $white;
-    }
-
-    h3 {
-      margin-top: 0;
-      font-size: 50px;
-      font-weight: 300;
-      margin-bottom: 1rem;
       @media (max-width: 1750px) {
-        font-size: 40px;
+        top: calc(50% - 136px);
+      }
+
+      @media (max-width: 1450px) {
+        max-width: 520px;
+        top: calc(50% - 160px);
       }
 
       @media (max-width: 1150px) {
-        font-size: 35px;
+        top: calc(50% - 99px);
+        right: 8%;
       }
-      @media (max-width: 590px) {
-        font-size: 25px;
+
+      @media (max-width: 800px) {
+        max-width: 420px;
+        top: calc(50% - 116px);
+      }
+
+      @media (max-width: 700px) {
+        position: relative;
+        top: 0;
+        right: 0%;
+        @include center;
+        flex-direction: column;
+        background-color: $green-1;
+        position: relative;
+        padding: 4rem 0;
+        max-width: 100%;
+        p {
+          width: 80%;
+        }
+      }
+    }
+
+    #brandSecondSectionBackground {
+      @media (max-width: 700px) {
+        display: none;
       }
     }
   }
@@ -197,17 +158,13 @@
     h2 {
       text-align: center;
     }
+
     p {
       @include paraCenterMargin;
       width: 80%;
-
-      // font-size: 30px;
     }
   }
 
-  // Alternative layout for first section
-  // Used on the following pages
-  // * Brand Page
   .firstSectionWrap {
     display: flex;
     .firstSection {
@@ -220,7 +177,7 @@
       }
     }
     .firstSectionImage {
-      padding: 4rem;
+      padding: 4.333333rem;
       width: 50%;
       padding-left: 0;
       @include center;
@@ -254,22 +211,9 @@
       }
     }
   }
-  .heroTwo,
-  .firstSection,
-  .fifthSection,
-  .firstSectionWrap {
-    @include pageSectionWidth;
-  }
 
-  .fifthSection {
-    p {
-      max-width: 600px;
-      font-weight: 700;
-    }
-  }
-
-  .thirdSection {
-    background-color: $grey-0;
+  #brandThirdSection {
+    background-color: $white;
     @include center;
     flex-direction: column;
     .link {
@@ -281,12 +225,21 @@
   }
 
   .fourthSection {
-    margin: 0;
     h2 {
       margin-bottom: 4rem;
     }
-    @media (max-width: 900px) {
-      padding: 4rem 1rem;
+  }
+  #brandFourthSection {
+    background-color: $grey-0;
+    .logoWrap {
+      width: 90%;
+      margin: 0 auto;
+      padding: 4rem 0;
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 2fr;
+      .logo {
+        width: 80%;
+      }
     }
   }
 }

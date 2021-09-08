@@ -1,1 +1,1 @@
-export { default as gamesGrid } from './gamesGrid'
+export { default as GamesGrid } from './gamesGrid'

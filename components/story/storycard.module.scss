@@ -1,0 +1,10 @@
+@use '../../assets' as *;
+.storyCardWrap {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.storyCard {
+  display: flex;
+}

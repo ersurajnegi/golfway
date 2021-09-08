@@ -97,11 +97,13 @@
 
     ul {
       margin-top: 41px;
+      padding: 4rem 0;
       position: relative;
-      min-height: 390px;
+      height: auto;
       width: 50%;
       @include center;
       flex-direction: column;
+      justify-content: flex-start;
       @include boxShadow;
       min-width: 230px;
       .active,
@@ -159,6 +161,17 @@
     .dropDownLinksWrapMob {
       @include center;
       flex-direction: column;
+      background-color: $white;
+      padding: 0 5px;
+      .link {
+        background-color: $green-1;
+        padding: 0 10px 3px;
+        width: 100%;
+        text-align: center;
+      }
+      .link:nth-child(2) {
+        margin-top: 0;
+      }
     }
     .dropWrap {
       display: flex;

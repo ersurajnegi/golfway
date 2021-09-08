@@ -1,11 +1,10 @@
-import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import s from '../assets/pages/page.module.scss'
+import s from '../assets/pages/brand.module.scss'
 
 export async function getStaticProps({
   preview,
@@ -13,18 +12,6 @@ export async function getStaticProps({
   locales,
 }: GetStaticPropsContext) {
   const config = { locale, locales }
-  const productsPromise = commerce.getAllProducts({
-    variables: { first: 6 },
-    config,
-    preview,
-    // Saleor provider only
-    ...({ featured: true } as any),
-  })
-  const pagesPromise = commerce.getAllPages({ config, preview })
-  const siteInfoPromise = commerce.getSiteInfo({ config, preview })
-  const { products } = await productsPromise
-  const { pages } = await pagesPromise
-  const { categories, brands } = await siteInfoPromise
 
   const client = createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -35,10 +22,6 @@ export async function getStaticProps({
 
   return {
     props: {
-      products,
-      categories,
-      brands,
-      pages,
       brandPage: res.items,
     },
     revalidate: 60,
@@ -46,7 +29,7 @@ export async function getStaticProps({
 }
 
 export default function Brand(
-  { brandPage, products }: { products: any; brandPage: any },
+  { brandPage }: { products: any; brandPage: any },
   {}: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const {
@@ -66,7 +49,7 @@ export default function Brand(
 
   return (
     <>
-      <div className={s.pageWrap}>
+      <div className={s.brandPageWrap}>
         <div className={s.heroContainer}>
           <Image
             priority={true}
@@ -78,7 +61,7 @@ export default function Brand(
           />
           <div className={s.heroOverlay}></div>
           <div className={s.heroTextWrap}>
-            <h1 id={s.brandHeroText}>{heroText}</h1>
+            <h1>{heroText}</h1>
           </div>
         </div>
         <div className={s.firstSectionWrap}>
@@ -102,10 +85,7 @@ export default function Brand(
         </div>
 
         <div className={s.secondSection}>
-          <div
-            id={s.brandSecondSectionBackground}
-            className={s.secondSectionBackground}
-          >
+          <div id={s.brandSecondSectionBackground}>
             <Image
               layout="responsive"
               src={'https:' + secondSectionBackground.fields.file.url}
@@ -114,7 +94,7 @@ export default function Brand(
               alt={secondSectionBackground.fields.title}
             />
           </div>
-          <div id={s.brandSecondSectionText} className={s.secondSectionText}>
+          <div id={s.brandSecondSectionText}>
             {documentToReactComponents(secondSection)}
             <Link href="/brand">
               <a className={s.link}>Discover</a>

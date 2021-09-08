@@ -58,11 +58,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
   })
 
   const handleClick = (event: any, filter: string) => {
-    // console.log(
-    //   `Filter value ${filter} : , activeFilter : ${activeFilter}, activeCategory: ${JSON.stringify(
-    //     activeCategory
-    //   )}`
-    // )
     if (filter !== activeFilter) {
       setToggleFilter(true)
     } else {
@@ -78,7 +73,16 @@ export default function Search({ categories, brands }: SearchPropsType) {
       return (
         <div className={s.heroContainer}>
           <div className={s.banner}>
-            <div className={s.textWrap}>
+            <div className={s.imageWraper}>
+              <Image
+                layout="responsive"
+                src="/golfboy.jpg"
+                width={2257}
+                height={950}
+                alt="man playing golf on a beach with dog"
+              />
+            </div>
+            <div className={s.textWrapInd}>
               <h2>CHAMPION</h2>
               <p>
                 We haven’t just revised junior golf, we’ve re-examined, resized,
@@ -88,7 +92,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <a className={s.link}>Discover</a>
               </Link>
             </div>
-            <div className={s.polygon}></div>
           </div>
         </div>
       )
@@ -96,7 +99,16 @@ export default function Search({ categories, brands }: SearchPropsType) {
       return (
         <div className={s.heroContainer}>
           <div className={s.banner}>
-            <div className={s.textWrap}>
+            <div className={s.imageWraper}>
+              <Image
+                layout="responsive"
+                src="/golfman.jpg"
+                width={2257}
+                height={950}
+                alt="man playing golf on a beach with dog"
+              />
+            </div>
+            <div className={s.textWrapInd}>
               <h2>PLAY</h2>
               <p>
                 Golfway Play is a fast-paced exciting game based on traditional
@@ -106,7 +118,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <a className={s.link}>Discover</a>
               </Link>
             </div>
-            <div className={s.polygon}></div>
           </div>
         </div>
       )
@@ -296,9 +307,9 @@ export default function Search({ categories, brands }: SearchPropsType) {
             </div>
           </div>
           {/* Products */}
-          <div className="col-span-8 order-3 lg:order-none m-8">
+          <div className="col-span-8 order-3 lg:order-none m-1 sm:m-8 lg:m-8">
             {(q || activeCategory || activeBrand) && (
-              <div className="mb-12 transition ease-in duration-75">
+              <div className="mb-4 transition ease-in duration-75 sm:m-12 lg:m-12">
                 {data ? (
                   <>
                     <span
@@ -343,8 +354,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
               </div>
             )}
             {data ? (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {console.log(data.products)}
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {/* // <div className={s.products}> */}
                 {data.products.map((product: Product) => (
                   <ProductCard
                     variant="simple"
@@ -359,7 +370,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {/* <div className=""> */}
                 {rangeMap(12, (i) => (
                   <Skeleton key={i}>
                     <div className="w-60 h-60" />

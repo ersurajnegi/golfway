@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import s from './Marquee.module.css'
+import s from './Marquee.module.scss'
 import { FC, ReactNode, Component, Children } from 'react'
 import { default as FastMarquee } from 'react-fast-marquee'
 
@@ -26,8 +26,7 @@ const Marquee: FC<MarqueeProps> = ({
   return (
     <FastMarquee
       pauseOnHover={true}
-      gradientWidth={50}
-      gradient={true}
+      gradient={false}
       className={rootClassName}
       speed={50}
     >

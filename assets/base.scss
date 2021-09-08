@@ -1,7 +1,3 @@
-// * {
-//   box-sizing: border-box;
-// }
-
 /* Custom Colour Golfway */
 $red-1: rgb(245, 120, 120);
 $green-1: #04af9a;
@@ -16,6 +12,7 @@ $grey-001: #e2e2e2;
 
 $grey-background-1: #a0a0a01f;
 $grey-overlay-1: #a0a0a06e;
+$black-overlay-1: #00000052;
 $white: #ffffff;
 $white-opacity: #ffffff8f;
 
@@ -58,12 +55,15 @@ $text: sofia-pro, sans-serif;
 @mixin paraCenterMargin {
   text-align: center;
   margin: 0px auto 20px;
+  @media (max-width: 570px) {
+    margin: 0px auto 0px;
+  }
 }
 
 @mixin paddingSection {
   padding: 4rem;
   @media (max-width: 700px) {
-    padding: 4rem 0 4rem;
+    padding: 4rem 2rem 4rem;
   }
   @media (max-width: 550px) {
     padding: 2rem 0 2rem;
@@ -229,6 +229,9 @@ $text: sofia-pro, sans-serif;
 
   @media (max-width: 1150px) {
     padding: 10px 30px 12px;
+  }
+  @media (max-width: 570px) {
+    padding: 5px 20px 7px;
   }
 
   // @media (max-width: 590px) {

@@ -1,0 +1,24 @@
+@use '../../assets' as *;
+.gameCard {
+  position: relative;
+  flex: 0 0 21%;
+  margin: 1rem;
+  .titleWrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    @include center;
+    background-color: $black-overlay-1;
+    transition: 200ms;
+    &:hover {
+      background-color: $green-1;
+    }
+    h3 {
+      max-width: 90%;
+      text-align: center;
+      @include fontHeadingThree;
+      color: $white;
+    }
+  }
+}
